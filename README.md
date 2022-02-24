@@ -1,2 +1,11 @@
 # EscapeRoom-VR
-Group work for University module.
+
+This is a group University project for the final year VR module.
+
+The given task was to design and develop a VR escape room game that implements good VR design practices. 
+
+### Collaborators:
+- [Gabriela Pyjas](https://github.com/gabpyj)
+- [Leena Jarvenpaa](https://github.com/leenajvp)
+- [Samuel Krzyszpien](https://github.com/taksobie95)
+- [Vanessa Pointer](https://github.com/Nessie-J)
