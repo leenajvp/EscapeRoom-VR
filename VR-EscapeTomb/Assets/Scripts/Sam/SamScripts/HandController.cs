@@ -4,26 +4,30 @@ using UnityEngine.XR;
 
 
 namespace Controllers
-{
-    public class HandController : MonoBehaviour
+{ 
+      public class HandController : MonoBehaviour
     {
         public InputDeviceCharacteristics controllerCharacteristics;
         private InputDevice targetDevice;
         public Animator handAnimator;
+        public Collider[] handCollider;
+        public GameObject currentObject;
+        public GameObject pickUp;
+        public float distance = 0.5f;
         public bool isTouching;
-        public GameObject touchingobj;
-        private Collider[] handCollider;
+        public Transform target;
+
         void Start()
         {
             GetInputDevice();
-            handCollider = GetComponentsInChildren<Collider>();
         }
 
         void GetInputDevice()
         {
             List<InputDevice> devices = new List<InputDevice>();
             // checking for lift of devices, device must be chose from the list 
-            InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
+           InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
+           
             if (devices.Count > 0)
             {
                 targetDevice = devices[0];
@@ -44,8 +48,9 @@ namespace Controllers
         }
 
         // Update is called once per frame
-        void FixedUpdate()
+        void Update()
         {
+            
             if (!targetDevice.isValid)
             {
                 GetInputDevice();
@@ -54,35 +59,27 @@ namespace Controllers
             {
                 UpdateHandAnimation();
             }
-            bool triggerValue;
-            if (targetDevice.TryGetFeatureValue(CommonUsages.gripButton, out triggerValue))
-            {
-                if(isTouching)
+            CheckPickUp();
+
+            
+                bool triggerValue;
+                if (targetDevice.TryGetFeatureValue(CommonUsages.gripButton, out triggerValue) && triggerValue)
                 {
-                    touchingobj.transform.position = transform.position;
-                    touchingobj.transform.rotation = transform.rotation;
+                    DisableHandCollider();
+                    Debug.Log("Trigger button was pressed");
+                    if (currentObject != null)
+                        Drop();
+                    PickUp();
                 }
-
-            }
+                else
+                {
+                    Drop();
+                    EnableHandCollider();
+                }
+            
         }
 
 
-        public void OnTriggerEnter(Collider other)
-        {
-            isTouching = true;
-            Debug.Log("isTouch" + isTouching);
-            touchingobj = other.gameObject;
-            DisableHandCollider();
-
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            touchingobj = null;
-            EnableHandCollider();
-            isTouching = false;
-
-        }
         public void EnableHandCollider()
         {
             foreach (var item in handCollider)
@@ -98,8 +95,39 @@ namespace Controllers
                 item.enabled = false;
             }
         }
+        public void CheckPickUp()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, distance))
+            {
+                if (hit.transform.tag == "InteractableObj")
+                {
+                    isTouching = true;
+                    pickUp = hit.transform.gameObject;
+                }
+            }
+            else
+            {
+                isTouching = false;
+            }
+        }
+        public void PickUp()
+        {
+            currentObject = pickUp;
+            currentObject.transform.position = target.position;
+            currentObject.transform.parent = target;
+            currentObject.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
+            currentObject.GetComponent<Rigidbody>().isKinematic = true;
+        }
+        public void Drop()
+        {
+            currentObject.transform.parent = null;
+            currentObject.GetComponent<Rigidbody>().isKinematic = false;
+            currentObject = null;
+        }
 
     }
+     
 }
 
 
