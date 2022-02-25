@@ -1,22 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-
 namespace Controllers
-{ 
-      public class HandController : MonoBehaviour
+{
+    public class HandController : MonoBehaviour
     {
         public InputDeviceCharacteristics controllerCharacteristics;
         private InputDevice targetDevice;
         public Animator handAnimator;
-        public Collider[] handCollider;
-        public GameObject currentObject;
-        public GameObject pickUp;
+        public GameObject[] collidersOff;
+        private GameObject currentObject;
         public float distance = 0.5f;
-        public bool isTouching;
+        public bool pickUpInHand;
         public Transform target;
-
+        private bool triggerValue;
         void Start()
         {
             GetInputDevice();
@@ -26,8 +25,13 @@ namespace Controllers
         {
             List<InputDevice> devices = new List<InputDevice>();
             // checking for lift of devices, device must be chose from the list 
-           InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
-           
+            InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
+            /*
+             * for(int i = 0; i < devices.Count;i++)
+            {
+                targetDevice = devices[i];
+            }
+            */
             if (devices.Count > 0)
             {
                 targetDevice = devices[0];
@@ -36,21 +40,24 @@ namespace Controllers
 
         void UpdateHandAnimation()
         {
-
+            //Animation
             if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
             {
+
                 handAnimator.SetFloat("Grip", gripValue);
             }
             else
             {
+
                 handAnimator.SetFloat("Grip", 0);
+
             }
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
-            
+
             if (!targetDevice.isValid)
             {
                 GetInputDevice();
@@ -59,75 +66,69 @@ namespace Controllers
             {
                 UpdateHandAnimation();
             }
+            // checking for picking item
             CheckPickUp();
 
-            
-                bool triggerValue;
-                if (targetDevice.TryGetFeatureValue(CommonUsages.gripButton, out triggerValue) && triggerValue)
+            if (targetDevice.TryGetFeatureValue(CommonUsages.gripButton, out triggerValue) && triggerValue)
+            {
+                DisableHandCollider();
+                if (currentObject != null)
                 {
-                    DisableHandCollider();
-                    Debug.Log("Trigger button was pressed");
-                    if (currentObject != null)
-                        Drop();
                     PickUp();
                 }
-                else
-                {
-                    Drop();
-                    EnableHandCollider();
-                }
-            
-        }
-
-
-        public void EnableHandCollider()
-        {
-            foreach (var item in handCollider)
+            }
+            else
             {
-                item.enabled = true;
+                StartCoroutine(Delay());
             }
         }
-
+        public IEnumerator Delay()
+        {
+            Drop();
+            yield return new WaitForSeconds(1);
+            EnableHandCollider();
+        }
+        public void EnableHandCollider()
+        {
+            foreach (var item in collidersOff)
+            {
+                item.gameObject.SetActive(true);
+            }
+        }
         public void DisableHandCollider()
         {
-            foreach (var item in handCollider)
+            foreach (var item in collidersOff)
             {
-                item.enabled = false;
+                item.gameObject.SetActive(false);
             }
         }
         public void CheckPickUp()
         {
             RaycastHit hit;
-            if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, distance))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, distance))
             {
                 if (hit.transform.tag == "InteractableObj")
                 {
-                    isTouching = true;
-                    pickUp = hit.transform.gameObject;
+                    currentObject = hit.transform.gameObject;
                 }
-            }
-            else
-            {
-                isTouching = false;
             }
         }
         public void PickUp()
         {
-            currentObject = pickUp;
             currentObject.transform.position = target.position;
             currentObject.transform.parent = target;
             currentObject.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
             currentObject.GetComponent<Rigidbody>().isKinematic = true;
+            pickUpInHand = true;
         }
         public void Drop()
         {
-            currentObject.transform.parent = null;
             currentObject.GetComponent<Rigidbody>().isKinematic = false;
             currentObject = null;
+            currentObject.transform.parent = null;
+            pickUpInHand = false;
         }
-
     }
-     
 }
 
 
