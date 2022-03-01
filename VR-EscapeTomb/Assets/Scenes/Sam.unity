@@ -789,7 +789,6 @@ GameObject:
   m_Component:
   - component: {fileID: 387298115}
   - component: {fileID: 387298114}
-  - component: {fileID: 387298116}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -831,20 +830,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &387298116
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387298113}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.1
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &429595577
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,8 +884,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   palm: {fileID: 307317196}
-  grabPoint: {fileID: 0}
-  followTarget: {fileID: 0}
 --- !u!54 &429595580
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1218,8 +1201,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   palm: {fileID: 1645262831}
-  grabPoint: {fileID: 0}
-  followTarget: {fileID: 0}
 --- !u!54 &1075366768
 Rigidbody:
   m_ObjectHideFlags: 0

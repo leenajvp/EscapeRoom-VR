@@ -18,7 +18,8 @@ namespace Controllers
         [SerializeField] HandController controller;
         public float reachdistance = 0.1f, jointDistance = 0.05f;
         public LayerMask grabableLayer;
-        public Transform palm, grabPoint, followTarget;
+        public Transform palm;
+        private Transform grabPoint, followTarget;
         private FixedJoint joint1, joint2;
         private Rigidbody body;
         void Start()
@@ -87,6 +88,7 @@ namespace Controllers
         
         void grab()
         {
+            // Sends a speare with coliders that check if there is any
             if (isGrabbing || heldObject) return;
             Collider[] grabableColliders = Physics.OverlapSphere(palm.position, reachdistance, grabableLayer);
             if (grabableColliders.Length < 1) return;
