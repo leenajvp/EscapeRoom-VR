@@ -10,48 +10,56 @@ namespace Controllers
         public InputDeviceCharacteristics controllerCharacteristics;
         private InputDevice targetDevice;
         public Animator handAnimator;
-        public GameObject[] collidersOff;
-        private GameObject currentObject;
-        public float distance = 0.5f;
-        public bool pickUpInHand;
-        public Transform target;
+       
+        public bool isGrabbing;
         private bool triggerValue;
+
+        private GameObject heldObject;
+        [SerializeField] HandController controller;
+        public float reachdistance = 0.1f, jointDistance = 0.05f;
+        public LayerMask grabableLayer;
+        public Transform palm;
+        private Transform grabPoint, followTarget;
+        private FixedJoint joint1, joint2;
+        private Rigidbody body;
         void Start()
         {
             GetInputDevice();
+            followTarget = controller.gameObject.transform;
+            body = GetComponent<Rigidbody>();
+            body.collisionDetectionMode = CollisionDetectionMode.Continuous;
+            body.interpolation = RigidbodyInterpolation.Interpolate;
+            body.mass = 20f;
+            body.maxAngularVelocity = 20f;
+
         }
 
         void GetInputDevice()
         {
             List<InputDevice> devices = new List<InputDevice>();
-            // checking for lift of devices, device must be chose from the list 
+            // checking for list of devices, device must be chose from the list 
             InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
-            /*
-             * for(int i = 0; i < devices.Count;i++)
-            {
-                targetDevice = devices[i];
-            }
-            */
+           
             if (devices.Count > 0)
             {
                 targetDevice = devices[0];
             }
         }
 
-        void UpdateHandAnimation()
+       void UpdateHandAnimation()
         {
             //Animation
             if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
             {
 
                 handAnimator.SetFloat("Grip", gripValue);
-            }
+           }
             else
-            {
+           {
 
-                handAnimator.SetFloat("Grip", 0);
+               handAnimator.SetFloat("Grip", 0);
 
-            }
+           }
         }
 
         // Update is called once per frame
@@ -66,69 +74,108 @@ namespace Controllers
             {
                 UpdateHandAnimation();
             }
-            // checking for picking item
-            CheckPickUp();
-
+           // getting value from gript Button 
             if (targetDevice.TryGetFeatureValue(CommonUsages.gripButton, out triggerValue) && triggerValue)
             {
-                DisableHandCollider();
-                if (currentObject != null)
-                {
-                    PickUp();
-                }
+                grab();
             }
             else
             {
-                StartCoroutine(Delay());
+                Release();
             }
         }
-        public IEnumerator Delay()
+        
+        
+        void grab()
         {
-            Drop();
-            yield return new WaitForSeconds(1);
-            EnableHandCollider();
-        }
-        public void EnableHandCollider()
-        {
-            foreach (var item in collidersOff)
+            // Sends a speare with coliders that check if there is any
+            if (isGrabbing || heldObject) return;
+            Collider[] grabableColliders = Physics.OverlapSphere(palm.position, reachdistance, grabableLayer);
+            if (grabableColliders.Length < 1) return;
+
+            var objectTograb = grabableColliders[0].transform.gameObject;
+            var objectBody = objectTograb.GetComponent<Rigidbody>();
+
+            if(objectBody != null)
             {
-                item.gameObject.SetActive(true);
-            }
-        }
-        public void DisableHandCollider()
-        {
-            foreach (var item in collidersOff)
+                heldObject = objectBody.gameObject;
+            }else
             {
-                item.gameObject.SetActive(false);
-            }
-        }
-        public void CheckPickUp()
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, distance))
-            {
-                if (hit.transform.tag == "InteractableObj")
+                objectBody = objectTograb.GetComponentInParent<Rigidbody>();
+                if(objectBody != null)
                 {
-                    currentObject = hit.transform.gameObject;
+                    heldObject = objectBody.gameObject;
+                }else
+                {
+                    return;
                 }
             }
+            StartCoroutine(GrabObject(grabableColliders[0], objectBody));
         }
-        public void PickUp()
+        private IEnumerator GrabObject(Collider collider, Rigidbody targetBody)
         {
-            currentObject.transform.position = target.position;
-            currentObject.transform.parent = target;
-            currentObject.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
-            currentObject.GetComponent<Rigidbody>().isKinematic = true;
-            pickUpInHand = true;
+            isGrabbing = true;
+            // Grab point
+            grabPoint = new GameObject().transform;
+            grabPoint.position = collider.ClosestPoint(palm.position);
+            grabPoint.parent = heldObject.transform;
+            // Move hand to grab object
+            followTarget = grabPoint;
+            while(grabPoint != null && Vector3.Distance(grabPoint.position, palm.position) > jointDistance && isGrabbing)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            body.velocity = Vector3.zero;
+            body.angularVelocity = Vector3.zero;
+            targetBody.velocity = Vector3.zero;
+            targetBody.angularVelocity = Vector3.zero;
+
+            targetBody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+            targetBody.interpolation = RigidbodyInterpolation.Interpolate;
+            // Attach joints 
+            joint1 = gameObject.AddComponent<FixedJoint>();
+            joint1.connectedBody = targetBody;
+            joint1.breakForce = float.PositiveInfinity;
+            joint1.breakTorque = float.PositiveInfinity;
+
+            joint1.connectedMassScale = 1;
+            joint1.massScale = 1;
+            joint1.enableCollision = false;
+            joint1.enablePreprocessing = false;
+
+            joint2 = heldObject.AddComponent<FixedJoint>();
+            joint2.connectedBody = body;
+            joint2.breakForce = float.PositiveInfinity;
+            joint2.breakTorque = float.PositiveInfinity;
+            
+            joint2.connectedMassScale = 1;
+            joint2.massScale = 1;
+            joint2.enableCollision = false;
+            joint2.enablePreprocessing = false;
+
+            followTarget = controller.transform.gameObject.transform;
         }
-        public void Drop()
+
+        public void Release()
         {
-            currentObject.GetComponent<Rigidbody>().isKinematic = false;
-            currentObject = null;
-            currentObject.transform.parent = null;
-            pickUpInHand = false;
+            if (joint1 != null) Destroy(joint1);
+            if (joint2 != null) Destroy(joint2);
+            if (grabPoint != null) Destroy(grabPoint.gameObject);
+
+            if(heldObject != null)
+            {
+                var targetBody = heldObject.GetComponent<Rigidbody>();
+                targetBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+                targetBody.interpolation = RigidbodyInterpolation.None;
+                heldObject = null;
+            }
+
+            isGrabbing = false;
+            followTarget = controller.gameObject.transform;
         }
     }
+    
 }
+
 
 
