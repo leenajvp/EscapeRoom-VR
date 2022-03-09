@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FixTelep : MonoBehaviour
+public class FixTeleport : MonoBehaviour
 {
-    public static FixTelep Instance;
+    public static FixTeleport Instance;
     public GameObject CameraXR;
+
     [SerializeField] private LineRenderer laser;
     [SerializeField] private int laserSteps = 25;
     [SerializeField] private float laserSegmentDistance = 1f;
     [SerializeField] private float dropPerSegment = 1f;
     [SerializeField] private float teleportGap = 1f;
-
     private float teleportTime;
     private bool triggerValue;
 
@@ -55,8 +55,7 @@ public class FixTelep : MonoBehaviour
                 this.transform.localRotation = orientation;
             }
 
-            //fix teleportation logic             
-
+            //fix teleportation logic
             if (controller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
             {
                 laser.gameObject.SetActive(true);
@@ -133,7 +132,6 @@ public class FixTelep : MonoBehaviour
     {
         teleportTime = 0f;
     }
-
 
 }
 
