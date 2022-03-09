@@ -4,19 +4,14 @@ using UnityEngine;
 public class UIRay : MonoBehaviour
 {
     public GameObject CameraXR;
-    [SerializeField] private GameObject canvas;
 
     [SerializeField] private LineRenderer laser;
-    [SerializeField] private Transform rayCenter;
     [SerializeField] private Transform laserAim;
     [SerializeField] private float maxDistance;
 
-    private bool canvasActive;
-
     void Start()
     {
-        canvasActive = true;
-        canvas.SetActive(true);
+        laser = GetComponentInChildren<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -43,34 +38,28 @@ public class UIRay : MonoBehaviour
             //UI Ray 
             bool triggerValue;
 
-            if (canvasActive == true)
+            if (controller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
             {
-                if (controller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
+                laser.gameObject.SetActive(true);
+
+                Vector3 origin = transform.position;
+                RaycastHit hit;
+
+                if (Physics.Raycast(origin, transform.forward, out hit, maxDistance))
                 {
-                    if (triggerValue)
+                    laser.SetPosition(0, origin);
+                    laser.SetPosition(1, hit.point);
+
+                    if (hit.transform.gameObject.tag == "UI")
                     {
-                        laser.enabled = true;
-
-                        Ray teleportRay = new Ray(rayCenter.transform.position, rayCenter.transform.forward);
-                        RaycastHit hit;
-
-                        if (Physics.Raycast(teleportRay, out hit, maxDistance))
-                        {
-                            laser.SetPosition(0, laserAim.transform.position);
-                            laser.SetPosition(1, hit.point);
-
-                            if (hit.transform.gameObject.tag == "Button")
-                            {
-                                //canvas.SetActive(false);
-                            }
-                        }
-
-                        else
-                        {
-                            laser.enabled = false;
-                        }
+                        //Destroy(hit.transform.gameObject);
                     }
                 }
+
+            }
+            else
+            {
+                laser.gameObject.SetActive(false);
             }
 
         }
