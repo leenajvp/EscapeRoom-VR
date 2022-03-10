@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: b0cb1dfc6936fed418394ba25ffec7c9
+<<<<<<< HEAD:VR-EscapeRoom/Assets/3DModels/Hands.meta
+guid: f8cdca9f1a54a8f4281269633b0d3bfe
+=======
+guid: ca54aa4a2cfa8e84e9335245b933f9da
+>>>>>>> f0cf115dc490aa3c2ab2c79d3aa3d36666b7ec7f:VR-EscapeRoom/Assets/Gabriela.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
