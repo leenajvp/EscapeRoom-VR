@@ -46,7 +46,7 @@ public class Hand : MonoBehaviour
         if(targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out triggerValue) && triggerValue)
         {
             Debug.Log("GRABBING");
-          GrabPoint();
+             GrabPoint();
         }
 
         else
@@ -54,6 +54,8 @@ public class Hand : MonoBehaviour
             Debug.Log("LETTING GO");
             ReleasePoint();
         }
+
+
     }
 
     private void FixedUpdate()
