@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Gabriela.unity
     guid: 240a8731eac7fe241b17d04e17142cb6
-  - enabled: 1
-    path: Assets/Scenes/UITestScene.unity
-    guid: ee7d61c342955704bb62410eb779bc7c
+  - enabled: 0
+    path: Assets/Scenes/GabrUI.unity
+    guid: 01405a394c9a6014c9dfce674f844c0f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 800a7009094d16344b2ffc9beb69ed4b,
       type: 2}

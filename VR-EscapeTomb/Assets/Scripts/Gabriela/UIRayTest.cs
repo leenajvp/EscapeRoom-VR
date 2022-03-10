@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class UIRay : MonoBehaviour
+public class UIRayTest : MonoBehaviour
 {
     public GameObject CameraXR;
 
@@ -9,9 +9,10 @@ public class UIRay : MonoBehaviour
     [SerializeField] private Transform laserAim;
     [SerializeField] private float maxDistance;
 
+
     void Start()
     {
-      //  laser = GetComponentInChildren<LineRenderer>();
+
     }
 
     // Update is called once per frame

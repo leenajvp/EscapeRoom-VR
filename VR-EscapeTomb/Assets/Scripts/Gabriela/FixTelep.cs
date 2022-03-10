@@ -87,6 +87,7 @@ public class FixTelep : MonoBehaviour
                             if (selectionRender != null)
                             {
                                 selectionRender.material.color = teleportMaterial.color;
+                                //ProgressFillShader.Instance.ChangeValue();
                             }
 
                             teleportTime = teleportTime + 1f * Time.deltaTime;
