@@ -5,16 +5,15 @@ using UnityEngine.XR;
 
 public class Hand : MonoBehaviour
 {
+    [Header("Controllers")]
     public InputDeviceCharacteristics controllerCharacteristics;
     private InputDevice targetDevice;
+    public bool triggerValue;
 
+    [Header("Climber")]
     public Climber climber = null;
-
-
     public Vector3 Delta { private set; get; } = Vector3.zero;
-
     private Vector3 lastPosition = Vector3.zero;
-
     private GameObject currentPoint = null;
     public List<GameObject> contactPoints = new List<GameObject>();
 
@@ -42,17 +41,18 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
-        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
-        {
-            if (triggerValue > 0.0f)
-            {
-                GrabPoint();
-            }
+        //trigger button - replace float with boolean value
 
-            else
-            {
-                ReleasePoint();
-            }
+        if(targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out triggerValue) && triggerValue)
+        {
+            Debug.Log("GRABBING");
+          GrabPoint();
+        }
+
+        else
+        {
+            Debug.Log("LETTING GO");
+            ReleasePoint();
         }
     }
 
@@ -93,12 +93,12 @@ public class Hand : MonoBehaviour
         currentPoint = null;
     }
 
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         AddPoint(other.gameObject);
-    }
+    }*/
 
-    private void AddPoint(GameObject newObject)
+   public void AddPoint(GameObject newObject)
     {
         //Will be replaced with checking for layer/layer mask - Tag is just for testing 
         if (newObject.CompareTag("ClimbPoint"))
@@ -107,10 +107,10 @@ public class Hand : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+  /*  private void OnTriggerExit(Collider other)
     {
         RemovePoint(other.gameObject);
-    }
+    } */
 
     public void RemovePoint(GameObject newObject)
     {
