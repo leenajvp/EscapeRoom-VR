@@ -47,7 +47,7 @@ public class FixTelep : MonoBehaviour
 
         foreach (var controller in rightHandedControllers)
         {
-           /* Vector3 position;
+             Vector3 position;
             if (controller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.devicePosition, out position))
             {
                 this.transform.localPosition = position;
@@ -58,8 +58,8 @@ public class FixTelep : MonoBehaviour
             {
                 this.transform.localRotation = orientation;
             }
-
-            */
+            
+            
 
             //fix teleportation logic             
 
