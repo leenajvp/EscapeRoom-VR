@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gabriela.unity
     guid: 240a8731eac7fe241b17d04e17142cb6
   - enabled: 0
     path: Assets/Scenes/GabrUI.unity
     guid: 01405a394c9a6014c9dfce674f844c0f
+  - enabled: 1
+    path: Assets/Scripts/Gabriela/WheelPuzzle.unity
+    guid: f86275da8d392594484382fe1e7c5de9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 800a7009094d16344b2ffc9beb69ed4b,
       type: 2}
