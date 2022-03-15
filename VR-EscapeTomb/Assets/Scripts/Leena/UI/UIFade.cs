@@ -7,7 +7,7 @@ public class UIFade : MonoBehaviour
 {
     protected CanvasGroup canvasGroup;
     protected float zeroAlpha = 0f;
-    [SerializeField] private float speed = 1f;
+    [SerializeField] protected float speed = 1f;
 
     public enum InOut {FadeIn,FadeOut }
     public InOut fadeInOrOut;
@@ -37,5 +37,10 @@ public class UIFade : MonoBehaviour
     {
         fadeInOrOut = InOut.FadeOut;
         canvasGroup.alpha -= Time.deltaTime * speed;
+
+        if (canvasGroup.alpha <= 0.1)
+        {
+            gameObject.SetActive(false);    
+        }
     }
 }

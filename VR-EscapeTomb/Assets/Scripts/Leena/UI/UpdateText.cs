@@ -28,4 +28,10 @@ public class UpdateText : UIFade
         FadeOut();
         changed = true;
     }
+
+    public override void FadeOut()
+    {
+        fadeInOrOut = InOut.FadeOut;
+        canvasGroup.alpha -= Time.deltaTime * speed;
+    }
 }
