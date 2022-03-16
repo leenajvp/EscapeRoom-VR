@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-{
-    public int RequiredAmmount;
+{   
     public static GameManager instance;
     public SlidingDoor door;
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +15,13 @@ public class GameManager : MonoBehaviour
     }
     public void Update()
     {
-        if(QuestManager.instance.CheckIfQuestComplete("Puzzle1"))
+      if(QuestManager.instance.CheckIfQuestComplete("Puzzle1"))
         {
-            Quest1Complete();
-            
+            door.open = true;
         }
     }
-    public void Quest1Complete()
-    {
-        //door.MoveDoor();
-        door.open = true;
-        
-    }
+    
+
 
 
 }

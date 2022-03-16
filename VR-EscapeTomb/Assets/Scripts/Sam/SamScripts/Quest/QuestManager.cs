@@ -6,15 +6,23 @@ public class QuestManager : MonoBehaviour
 {
     public string[] questNames;
     public bool[] questsComplete;
-
     public static QuestManager instance;
 
+    [Header("QUEST1")]
+    public int RequiredAmmount;
     // Start is called before the first frame update
     void Start()
     {
         
         instance = this;
         questsComplete = new bool[questNames.Length];
+    }
+    private void Update()
+    {
+        if (RequiredAmmount == 3)
+        {
+            MarkQuestIfComplete("Puzzle1");
+        }
     }
     public int GetQuestNumber(string questToFind)
     {
@@ -47,6 +55,6 @@ public class QuestManager : MonoBehaviour
     {
         questsComplete[GetQuestNumber(questName)] = false;
     }
-
+    
    
 }
