@@ -8,6 +8,9 @@ TagManager:
   - Ray
   - UI
   - ClimbPoint
+  - Snake
+  - Bowl
+  - Feather
   layers:
   - Default
   - TransparentFX
