@@ -9,6 +9,7 @@ public class GameTime: MonoBehaviour
 
     public Text timerText;
     public float totalTime;
+    public bool hasTime;
 
     // Start is called before the first frame update
     void Start()
@@ -25,13 +26,26 @@ public class GameTime: MonoBehaviour
     void Timer()
     {
         if (startGame == true)
-
         {
-            totalTime -= Time.deltaTime;
-            int minutes = (int)totalTime / 60;
-            int seconds = (int)totalTime % 60;
-
-            timerText.text = string.Format(" {0} : {1} ", minutes.ToString("00"), seconds.ToString("00"));
+            if (hasTime == true)
+            {
+                totalTime -= Time.deltaTime;
+                timerText.text = totalTime.ToString();
+                int minutes = (int)totalTime / 60;
+                int seconds = (int)totalTime % 60;
+                timerText.text = string.Format(" {0} : {1} ", minutes.ToString("00"), seconds.ToString("00"));
+                Debug.Log(timerText.text);
+            }
+            else
+            {
+                totalTime = 0;
+                totalTime += Time.deltaTime;
+                timerText.text = totalTime.ToString();
+                int minutes = (int)totalTime / 60;
+                int seconds = (int)totalTime % 60;
+                timerText.text = string.Format(" {0} : {1} ", minutes.ToString("00"), seconds.ToString("00"));
+                Debug.Log(timerText.text);
+            }  
         }
     }
 }
