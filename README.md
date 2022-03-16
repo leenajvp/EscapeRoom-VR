@@ -2,7 +2,7 @@
 
 This is a group University project for the final year VR module.
 
-The given task was to design and develop a VR escape room game that implements good VR design practices. 
+The given task was to design and develop a VR escape room game that implements good VR design practices. Any use of ‘Game creation kits’ (such as Unity XR Interaction toolkit) was strictly banned, all mechanics must be created by the team members.
 
 ### Collaborators:
 - [Gabriela Pyjas](https://github.com/gabpyj) (Programming (Locomotion, Puzzles))
