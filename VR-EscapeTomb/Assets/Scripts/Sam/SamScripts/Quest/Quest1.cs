@@ -3,19 +3,19 @@
 public class Quest1 : MonoBehaviour
 {
     public GameObject spawnPoint;
-    public Goal goal;
-    int RequiredAmmount;
+    public bool snake, bowl, feather;
+    public string questToCheck;
     void Update()
     {
-        if (RequiredAmmount == 3)
+        if(GameManager.instance.RequiredAmmount == 3)
         {
-            QuestManager.instance.MarkQuestIfComplete("Puzzle1");
+            QuestManager.instance.MarkQuestIfComplete(questToCheck);
         }
     }
     public void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.CompareTag ("Snake") && goal.snake)
+
+        if (other.gameObject.CompareTag("Snake") && snake)
         {
             Destroy(gameObject);
             other.gameObject.GetComponent<Rigidbody>().transform.position = spawnPoint.transform.position;
@@ -24,11 +24,9 @@ public class Quest1 : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             other.gameObject.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.None;
             other.gameObject.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
-            RequiredAmmount++;
-
-
+            GameManager.instance.RequiredAmmount++;
         }
-        else if (other.gameObject.tag == "Bowl" && goal.bowl)
+        else if (other.gameObject.tag == "Bowl" && bowl)
 
         {
             Destroy(gameObject);
@@ -38,10 +36,9 @@ public class Quest1 : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             other.gameObject.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.None;
             other.gameObject.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
-            RequiredAmmount++;
-            
+            GameManager.instance.RequiredAmmount++;
         }
-        else if (other.gameObject.tag == "Feather" && goal.feather)
+        else if (other.gameObject.tag == "Feather" && feather)
         {
             Destroy(gameObject);
             other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -49,9 +46,9 @@ public class Quest1 : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             other.gameObject.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.None;
             other.gameObject.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
-            RequiredAmmount++;
-            
+            GameManager.instance.RequiredAmmount++;
         }
     }
+    
 
 }

@@ -167,7 +167,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 79973103}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -194,15 +195,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79973102}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.18, y: 0.539, z: 1.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1337516537}
   - {fileID: 1134846126}
   - {fileID: 1679506581}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 27148367}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &156345026 stripped
 GameObject:
@@ -222,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980e232756018714c96a8e54d8cc3b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: 0
+  open: 1
   openDistance: 2.5
   openSpeed: 2
 --- !u!82 &156345030
@@ -1204,10 +1205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1134846125}
-  goal:
-    snake: 0
-    bowl: 0
-    feather: 1
+  snake: 0
+  bowl: 0
+  feather: 1
+  questToCheck: 
 --- !u!65 &1134846128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1520,10 +1521,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1337516536}
-  goal:
-    snake: 0
-    bowl: 1
-    feather: 0
+  snake: 0
+  bowl: 1
+  feather: 0
+  questToCheck: 
 --- !u!65 &1337516539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1719,7 +1720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195b12eb92d2f9146a42f01a018f392e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door1: {fileID: 0}
+  RequiredAmmount: 0
+  door: {fileID: 156345029}
 --- !u!4 &1647731681
 Transform:
   m_ObjectHideFlags: 0
@@ -2021,10 +2023,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1679506580}
-  goal:
-    snake: 1
-    bowl: 0
-    feather: 0
+  snake: 1
+  bowl: 0
+  feather: 0
+  questToCheck: 
 --- !u!65 &1679506583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2505,7 +2507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c496956b4a68a4ca47281146b524e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: F
 --- !u!54 &1964985159
 Rigidbody:
   m_ObjectHideFlags: 0

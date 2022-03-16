@@ -8,7 +8,7 @@ public class LockController : MonoBehaviour
     void Start()
     {
         result = new int[] { 0, 0, 0 };
-        corretCombination = new int[] { 3, 1, 4 };
+        corretCombination = new int[] { 0, 5, 4 };
         WheelPuzzle.Rotated += CheckResults;
     }
 
