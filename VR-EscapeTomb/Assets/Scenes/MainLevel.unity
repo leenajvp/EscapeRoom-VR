@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -303,6 +303,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1160698754, guid: 4471326a5241c474e8c53129f807840d, type: 3}
+      propertyPath: laserCor
+      value: 
+      objectReference: {fileID: 226473295}
     - target: {fileID: 5411696153500236438, guid: 4471326a5241c474e8c53129f807840d,
         type: 3}
       propertyPath: m_TrackingSpace
@@ -380,6 +384,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4471326a5241c474e8c53129f807840d, type: 3}
+--- !u!120 &226473295 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 1608541411, guid: 4471326a5241c474e8c53129f807840d,
+    type: 3}
+  m_PrefabInstance: {fileID: 226473294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &247501385
 PrefabInstance:
   m_ObjectHideFlags: 0

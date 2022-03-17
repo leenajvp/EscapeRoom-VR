@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class FixTelep : MonoBehaviour
 {
     public static FixTelep Instance;
     public GameObject CameraXR;
     [SerializeField] private LineRenderer laser;
+    [SerializeField] private LineRenderer laserCor;
+
     [SerializeField] private int laserSteps = 25;
     [SerializeField] private float laserSegmentDistance = 1f;
     [SerializeField] private float dropPerSegment = 1f;
@@ -38,7 +41,6 @@ public class FixTelep : MonoBehaviour
         startTime = Time.time;
         teleportTime = 0f;
     }
-
     void FixedUpdate()
     {
         var rightHandedControllers = new List<UnityEngine.XR.InputDevice>();
@@ -59,13 +61,44 @@ public class FixTelep : MonoBehaviour
                 this.transform.localRotation = orientation;
             }
 
+            //fix teleportation logic             
+
             if (controller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
             {
                 laser.gameObject.SetActive(true);
-                StartCoroutine(TeleportCorutine());
+                RaycastHit rayhit;
+                Vector3 origin = transform.position;
+                laser.SetPosition(0, origin);
+                for (int i = 0; i < laserSteps - 1; i++)
+                {
+                    Vector3 offset = (transform.forward + (Vector3.down * dropPerSegment * i)).normalized * laserSegmentDistance;
+                    if (Physics.Raycast(origin, offset, out rayhit, laserSegmentDistance))
+                    {
+                        for (int j = i + 1; j < laser.positionCount; j++)
+                        {
+                            laser.SetPosition(j, rayhit.point);
+                        }
+                        if (rayhit.transform.gameObject.tag == "Teleport")
+                        {
+                            laser.material.color = teleportMaterial.color;
+                            StartCoroutine(TeleportCorutine());
+                        }
+                        else
+                        {
+                            laser.material.color = normalMaterial.color;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        laser.SetPosition(i + 1, origin + offset);
+                        origin += offset;
+                    }
+                }
             }
             else
             {
+                laser.SetPosition(0, transform.position);
                 //pod restart color
                 foreach (GameObject pod in pods)
                 {
@@ -82,16 +115,11 @@ public class FixTelep : MonoBehaviour
         }
     }
 
-    void RestartTeleportTime()
-    {
-        teleportTime = 0f;
-    }
-
     public IEnumerator TeleportCorutine()
     {
         RaycastHit hit;
         Vector3 origin = transform.position;
-        laser.SetPosition(0, origin);
+        laserCor.SetPosition(0, origin);
         for (int i = 0; i < laserSteps - 1; i++)
         {
             Vector3 offset = (transform.forward + (Vector3.down * dropPerSegment * i)).normalized * laserSegmentDistance;
@@ -100,13 +128,11 @@ public class FixTelep : MonoBehaviour
             {
                 for (int j = i + 1; j < laser.positionCount; j++)
                 {
-                    laser.SetPosition(j, hit.point);
+                    laserCor.SetPosition(j, hit.point);
                 }
 
-                if (hit.transform.gameObject.tag == "Teleport")
+                if (hit.transform.gameObject.tag == "Teleport" && triggerValue)
                 {
-                    laser.material.color = teleportMaterial.color;
-
                     //pod color change
                     var selection = hit.transform;
                     var selectionRender = selection.Find("Shader").gameObject;
@@ -123,36 +149,40 @@ public class FixTelep : MonoBehaviour
                             }
                         }
                     }
+                    yield return new WaitForSeconds(2);
                     teleportTime = teleportTime + 1f * Time.deltaTime;
                     if (teleportTime >= teleportGap)
                     {
                         CameraXR.transform.position = hit.transform.position;
                         RestartTeleportTime();
                     }
+                    laserCor.gameObject.SetActive(false);
 
                     yield return new WaitForSeconds(1);
 
+                    laserCor.gameObject.SetActive(false);
+                    triggerValue = false;
+                    laserCor.SetPosition(0, transform.position);
                     fillRender.gameObject.GetComponent<Image>().fillAmount -= Mathf.MoveTowards(1, 0, speed * Time.deltaTime);
                     selectionRender.SetActive(false);
                 }
-                else
-                {
-                    laser.material.color = normalMaterial.color;
-                }
-
             }
             else
             {
-                laser.SetPosition(i + 1, origin + offset);
+                laserCor.SetPosition(i + 1, origin + offset);
                 origin += offset;
             }
-
         }
     }
-}
-    
 
-    
+    void RestartTeleportTime()
+    {
+        teleportTime = 0f;
+    }
+}
+
+
+
 
 
 
