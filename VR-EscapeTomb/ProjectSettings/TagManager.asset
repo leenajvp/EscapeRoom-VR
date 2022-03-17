@@ -11,6 +11,7 @@ TagManager:
   - Snake
   - Feather
   - Bowl
+  - Shader
   layers:
   - Default
   - TransparentFX
