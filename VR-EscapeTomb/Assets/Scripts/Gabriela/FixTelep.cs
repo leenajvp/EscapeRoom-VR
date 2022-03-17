@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FixTelep : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class FixTelep : MonoBehaviour
 
         foreach (var controller in rightHandedControllers)
         {
-             Vector3 position;
+            Vector3 position;
             if (controller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.devicePosition, out position))
             {
                 this.transform.localPosition = position;
@@ -58,8 +59,6 @@ public class FixTelep : MonoBehaviour
             {
                 this.transform.localRotation = orientation;
             }
-            
-            
 
             //fix teleportation logic             
 
@@ -88,13 +87,32 @@ public class FixTelep : MonoBehaviour
 
                             //pod color change
                             var selection = hit.transform;
-                            var selectionRender = selection.GetComponent<Renderer>();
-                            Animator anim = selection.GetComponent<Animator>();
+                            // var selectionRender = selection.GetComponent<Renderer>();
+                            var selectionRender = selection.GetComponent<Canvas>().GetComponentInChildren<Image>().GetComponentInChildren<Image>();
+
+                            //Animator anim = selection.GetComponent<Animator>();
 
                             if (selectionRender != null)
                             {
-                                selectionRender.material.color = teleportMaterial.color;
-                                anim.SetBool("isTelep", true);
+                               // selectionRender.material.color = teleportMaterial.color;
+                               // selectionRender.material.color = startColor;
+
+                                fillPod = true;
+                                {
+                                    if (fillPod == true)
+                                    {
+                                        //selectionRender.fillAmount = 0;
+                                        float speed = 1f;
+
+                                        selectionRender.fillAmount += Mathf.MoveTowards(0f, 1f, speed * Time.deltaTime);
+
+                                        //float t = (Time.deltaTime - startTime) * speed;
+
+                                        //selectionRender.material.color = Color.Lerp(startColor, endColor, t);
+                                    }
+                                }
+
+                                //anim.SetBool("isTelep", true);
 
                                 /*
                                 selectionRender.material.color = startColor;
@@ -116,7 +134,7 @@ public class FixTelep : MonoBehaviour
                             if (teleportTime >= teleportGap)
                             {
                                 CameraXR.transform.position = hit.transform.position;
-                                anim.SetBool("isTelep", false);
+                                // anim.SetBool("isTelep", false);
                                 // selectionRender.material.color = normalMaterial.color;
                                 RestartTeleportTime();
                             }
