@@ -10,10 +10,10 @@ public class QuestManager : MonoBehaviour
 
     [Header("QUEST1")]
     public int RequiredAmmount;
+   
     // Start is called before the first frame update
     void Start()
     {
-        
         instance = this;
         questsComplete = new bool[questNames.Length];
     }
@@ -55,6 +55,6 @@ public class QuestManager : MonoBehaviour
     {
         questsComplete[GetQuestNumber(questName)] = false;
     }
-    
    
+
 }

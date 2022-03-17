@@ -1,28 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Quest4 : MonoBehaviour
+[System.Serializable]
+public class Quest4  
 {
     public int requiredAmmount;
     public int currentAmmount;
-    // Start is called before the first frame update
-    void Start()
-    {
-        requiredAmmount = 0;
-        currentAmmount = 3;
-    }
+    public static Quest4 instance;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(currentAmmount == requiredAmmount)
-        {
-            Quest4Complete();
-        }
-    }
-    public void Quest4Complete()
-    {
-
-    }
 }

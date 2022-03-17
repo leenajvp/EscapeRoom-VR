@@ -8,6 +8,9 @@ TagManager:
   - Ray
   - UI
   - PlayerHand
+  - Snake
+  - Feather
+  - Bowl
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - LeftHand
   - RightHand
   - GrabbableTags
-  - 
+  - Papirus
   - 
   - 
   - 

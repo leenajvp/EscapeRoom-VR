@@ -16,6 +16,8 @@ public class PapirusPickUp : MonoBehaviour
         if (other.tag == "Player")
         {
             PickUp();
+           GameManager.instance.quest4.currentAmmount ++;
+            
         }
     }
 
