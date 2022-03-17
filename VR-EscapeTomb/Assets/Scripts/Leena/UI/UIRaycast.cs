@@ -1,22 +1,29 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class UIRaycast : MonoBehaviour
 {
+    private float triggerTimer = 0;
+    bool lastState = false;
+    bool triggerValue;
     private LineRenderer lineRenderer = null;
-    public GameObject selectedObject = null;
+    private GameObject selectedObject = null;
+    private List<InputDevice> rightHandedControllers = new List<InputDevice>();
 
-    private void Awake()
+    private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
     }
 
     private void Update()
     {
-        var rightHandedControllers = new List<UnityEngine.XR.InputDevice>();
-        var desiredCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Right | UnityEngine.XR.InputDeviceCharacteristics.Controller;
-        UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, rightHandedControllers);
+        var desiredCharacteristics = InputDeviceCharacteristics.HeldInHand | InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
+        var primaryButton = CommonUsages.primaryButton;
+        InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, rightHandedControllers);
+
+        lastState = triggerValue;
 
         foreach (var controller in rightHandedControllers)
         {
@@ -30,16 +37,14 @@ public class UIRaycast : MonoBehaviour
                 if (hit.collider)
                 {
                     Button buttonHit = hit.collider.gameObject.GetComponent<Button>();
-                    Image image = hit.collider.gameObject.GetComponent<Image>();
 
                     if (buttonHit)
                     {
+                        Image image = buttonHit.GetComponent<Image>();
                         selectedObject = buttonHit.gameObject;
                         image.color = Color.grey;
 
-                        bool triggerValue;
-
-                        if (controller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out triggerValue) && triggerValue)
+                        if (controller.TryGetFeatureValue(primaryButton, out triggerValue) && triggerValue)
                         {
                             buttonHit.GetComponent<Button>().onClick.Invoke();
                         }
@@ -49,6 +54,46 @@ public class UIRaycast : MonoBehaviour
                     {
                         selectedObject.GetComponent<Image>().color = Color.white;
                         selectedObject = null;
+                    }
+
+                    Slider volume = hit.collider.gameObject.GetComponent<Slider>();
+
+                    if (volume)
+                    {
+                        if (controller.TryGetFeatureValue(primaryButton, out triggerValue) && triggerValue)
+                        {
+                            if (triggerValue != lastState)
+                            {
+                                if (volume.value != 1)
+                                {
+                                    volume.value += 0.2f;
+                                }
+
+                                else
+                                {
+                                    volume.value = 0;
+                                }
+
+                                triggerTimer = Time.time;
+                            }
+                        }
+                    }
+
+                    Toggle toggle = hit.collider.gameObject.GetComponent<Toggle>();
+
+                    if (toggle)
+                    {
+                        if (Time.time < triggerTimer + 1f)
+                            return;
+
+                        if (controller.TryGetFeatureValue(primaryButton, out triggerValue) && triggerValue)
+                        {
+                            if (triggerValue != lastState)
+                            {
+                                toggle.isOn = !toggle.isOn;
+                                lastState = triggerValue;
+                            }
+                        }
                     }
 
                     else

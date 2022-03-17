@@ -45,14 +45,15 @@ public class Hand : MonoBehaviour
 
         if(targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out triggerValue) && triggerValue)
         {
-            Debug.Log("GRABBING");
+          
              GrabPoint();
         }
 
         else
         {
-            Debug.Log("LETTING GO");
+        
             ReleasePoint();
+            
         }
 
 
@@ -89,16 +90,17 @@ public class Hand : MonoBehaviour
     {
         if (currentPoint)
         {
-            climber.ClearHand();
+            climber.ClearHand(this);
         }
 
         currentPoint = null;
     }
 
-   /* private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         AddPoint(other.gameObject);
-    }*/
+    }
+    
 
    public void AddPoint(GameObject newObject)
     {
@@ -109,10 +111,10 @@ public class Hand : MonoBehaviour
         }
     }
 
-  /*  private void OnTriggerExit(Collider other)
+   private void OnTriggerExit(Collider other)
     {
         RemovePoint(other.gameObject);
-    } */
+    } 
 
     public void RemovePoint(GameObject newObject)
     {
