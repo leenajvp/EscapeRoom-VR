@@ -14,14 +14,6 @@ public class WheelPuzzle : MonoBehaviour
     private float t;
     private int numberShown = 6;
 
-    //private Transform rightRotation;
-    // public GameObject rightHand;
-    // private Transform rightHandOriginalParent;
-    // private bool rightHandOnWheel;
-    //  public Transform[] snappPositions;
-    //  public float currentWheelRotation;
-    //  public Transform directionalObject;
-
     void Start()
     {
         canRotate = true;
@@ -30,7 +22,7 @@ public class WheelPuzzle : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "PlayerHand")
+        if (col.gameObject.tag == "Player")
         {
             if (canRotate == true)
             {
@@ -65,82 +57,4 @@ public class WheelPuzzle : MonoBehaviour
 
         Rotated(name, numberShown);
     }
-
-
-    /*
-
-    void Update()
-    {
-        RealseHandFromWheel();
-
-        ConvertHandRotationToWheelRotation();
-
-        currentWheelRotation = -transform.rotation.eulerAngles.z;
-    }
-
-    void RealseHandFromWheel()
-    {
-        if (rightHandOnWheel == true) //button up
-        {
-            rightHand.transform.parent = rightHandOriginalParent;
-            rightHand.transform.rotation = rightHandOriginalParent.rotation;
-            rightHand.transform.position = rightHandOriginalParent.position;
-            rightHandOnWheel = false;
-        }
-
-        if (rightHandOnWheel == false)
-        {
-            transform.parent = null;
-        }
-    }
-
-    void ConvertHandRotationToWheelRotation()
-    {
-        if (rightHandOnWheel == true)
-        {
-            Quaternion newRot = Quaternion.Euler(0, 0, rightHandOriginalParent.transform.rotation.eulerAngles.z);
-            directionalObject.rotation = newRot;
-            this.transform.parent = directionalObject;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("PlayerHand"))
-        {
-            if (rightHandOnWheel == false ) //and button get down
-            {
-                PlaceHandOnWheel(ref rightHand, ref rightHandOriginalParent, ref rightHandOnWheel);
-            }
-        }
-    }
-    void PlaceHandOnWheel(ref GameObject hand, ref Transform originalParent, ref bool handOnWheel)
-    {
-        var shortestDistance = Vector3.Distance(snappPositions[0].position, hand.transform.position);
-        var bestSnapp = snappPositions[0];
-
-        foreach (var snappPosition in snappPositions)
-        {
-            if (snappPosition.childCount == 0)
-            {
-                var distance = Vector3.Distance(snappPosition.position, hand.transform.position);
-
-                if (distance < shortestDistance)
-                {
-                    shortestDistance = distance;
-                    bestSnapp = snappPosition;
-                }
-            }
-        }
-
-        originalParent = hand.transform.parent;
-
-        hand.transform.parent = bestSnapp.transform;
-        hand.transform.position = bestSnapp.transform.position;
-
-        handOnWheel = true;
-    }
-
-    */
-
 }
