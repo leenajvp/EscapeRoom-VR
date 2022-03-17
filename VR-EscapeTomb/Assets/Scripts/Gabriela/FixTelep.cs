@@ -11,17 +11,15 @@ public class FixTelep : MonoBehaviour
     [SerializeField] private float laserSegmentDistance = 1f;
     [SerializeField] private float dropPerSegment = 1f;
     [SerializeField] private float teleportGap = 1f;
+    [SerializeField] private Material teleportMaterial;
+    [SerializeField] private Material normalMaterial;
 
     private float teleportTime;
     private bool triggerValue;
     private bool fillPod;
     private float startTime;
-    [SerializeField] private Material teleportMaterial;
-    [SerializeField] private Material normalMaterial;
-    [SerializeField] private Color startColor;
-    [SerializeField] private Color endColor;
 
-    private GameObject[] pods;
+    public GameObject[] pods;
 
     void Awake()
     {
@@ -85,46 +83,19 @@ public class FixTelep : MonoBehaviour
 
                             //pod color change
                             var selection = hit.transform;
-                            // var selectionRender = selection.GetComponent<Renderer>();
-                            var selectionRender = selection.FindChild("Fillup").gameObject;
-                            //Animator anim = selection.GetComponent<Animator>();
+                            var selectionRender = selection.Find("Shader").gameObject;
 
                             if (selectionRender != null)
                             {
-
-                                // selectionRender.material.color = teleportMaterial.color;
-                                // selectionRender.material.color = startColor;
-
                                 fillPod = true;
                                 {
-                                    if (fillPod == true)
-                                    {
-                                        //selectionRender.fillAmount = 0;
-                                        float speed = 1f;
-                                        selectionRender.gameObject.GetComponentInChildren<Image>().fillAmount += Mathf.MoveTowards(0, 1, speed * Time.deltaTime);
-
-                                        //float t = (Time.deltaTime - startTime) * speed;
-
-                                        //selectionRender.material.color = Color.Lerp(startColor, endColor, t);
-                                    }
-
-                                }
-
-                                //anim.SetBool("isTelep", true);
-
-                                /*
-                                selectionRender.material.color = startColor;
-                                fillPod = true;
-                                {
-                                    if (fillPod == true)
+                                    if (fillPod)
                                     {
                                         float speed = 1f;
-                                        float t = (Time.time - startTime) * speed;
-                                        selectionRender.material.color = Color.Lerp(startColor, endColor, t);
+                                        selection.gameObject.GetComponent<Image>().fillAmount += Mathf.MoveTowards(0, 1, speed * Time.deltaTime);
+                                        selectionRender.SetActive(true);
                                     }
                                 }
-
-                                */
                             }
 
                             teleportTime = teleportTime + 1f * Time.deltaTime;
@@ -132,9 +103,8 @@ public class FixTelep : MonoBehaviour
                             if (teleportTime >= teleportGap)
                             {
                                 CameraXR.transform.position = hit.transform.position;
-                                selectionRender.gameObject.GetComponentInChildren<Image>().fillAmount = 0;
-                                // anim.SetBool("isTelep", false);
-                                // selectionRender.material.color = normalMaterial.color; 
+                                selection.gameObject.GetComponentInChildren<Image>().fillAmount = 0;
+                                selectionRender.SetActive(false);
                                 RestartTeleportTime();
                             }
                             return;
@@ -146,8 +116,7 @@ public class FixTelep : MonoBehaviour
                             //pod restart color
                             foreach (GameObject pod in pods)
                             {
-                                // pod.GetComponent<Renderer>().material.color = normalMaterial.color;
-                               
+                                pod.GetComponent<Image>().fillAmount = 0;
                                 fillPod = false;
                             }
                             return;
@@ -164,7 +133,6 @@ public class FixTelep : MonoBehaviour
 
             else
             {
-
                 teleportTime = 0f;
                 laser.gameObject.SetActive(false);
             }

@@ -1126,6 +1126,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shader
       objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_Pivot.x
