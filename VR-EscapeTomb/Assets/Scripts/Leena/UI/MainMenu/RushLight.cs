@@ -11,9 +11,8 @@ public class RushLight : MonoBehaviour, IDiegeticUI
 
     protected void Start()
     {
-        if (!isLit)
-            flame.SetActive(false);
-
+        isLit = false;
+        flame.SetActive(false);
         MenuToActivate.SetActive(false);
     }
     public void GetEvent()
@@ -34,6 +33,7 @@ public class RushLight : MonoBehaviour, IDiegeticUI
             flame.SetActive(true);
             isLit = true;
             StartCoroutine(BeginEventTimer());
+            lampCheck = 0;
         }
     }
 
