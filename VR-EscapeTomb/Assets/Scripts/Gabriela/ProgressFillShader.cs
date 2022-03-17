@@ -30,8 +30,18 @@ public class ProgressFillShader : MonoBehaviour
 
         fillRateValue += progressStep;
 
-
         objectMaterial.SetFloat("Fill Rate", fillRateValue);
 
     }
+
+    /*
+     if (fillPod == true)
+                                    {
+                                        float startTime = Time.time;
+
+                                        float t = (Time.time - startTime) * teleportGap;
+                                        Color currentColor = Color.Lerp(startColor, endColor, t);
+                                        selectionRender.material.color = currentColor;
+                                    }
+    */
 }

@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FixTelep : MonoBehaviour
 {
@@ -14,9 +14,13 @@ public class FixTelep : MonoBehaviour
 
     private float teleportTime;
     private bool triggerValue;
+    private bool fillPod;
+    private float startTime;
 
     [SerializeField] private Material teleportMaterial;
     [SerializeField] private Material normalMaterial;
+    [SerializeField] private Color startColor;
+    [SerializeField] private Color endColor;
 
     private GameObject[] pods;
 
@@ -32,6 +36,7 @@ public class FixTelep : MonoBehaviour
         laser = GetComponentInChildren<LineRenderer>();
         laser.material.color = normalMaterial.color;
 
+        startTime = Time.time;
         teleportTime = 0f;
     }
 
@@ -82,12 +87,46 @@ public class FixTelep : MonoBehaviour
 
                             //pod color change
                             var selection = hit.transform;
-                            var selectionRender = selection.GetComponent<Renderer>();
+                            // var selectionRender = selection.GetComponent<Renderer>();
+                            var selectionRender = selection.GetComponent<Canvas>().GetComponentInChildren<Image>().GetComponentInChildren<Image>();
+
+                            //Animator anim = selection.GetComponent<Animator>();
 
                             if (selectionRender != null)
                             {
-                                selectionRender.material.color = teleportMaterial.color;
-                                //ProgressFillShader.Instance.ChangeValue();
+                               // selectionRender.material.color = teleportMaterial.color;
+                               // selectionRender.material.color = startColor;
+
+                                fillPod = true;
+                                {
+                                    if (fillPod == true)
+                                    {
+                                        //selectionRender.fillAmount = 0;
+                                        float speed = 1f;
+
+                                        selectionRender.fillAmount += Mathf.MoveTowards(0f, 1f, speed * Time.deltaTime);
+
+                                        //float t = (Time.deltaTime - startTime) * speed;
+
+                                        //selectionRender.material.color = Color.Lerp(startColor, endColor, t);
+                                    }
+                                }
+
+                                //anim.SetBool("isTelep", true);
+
+                                /*
+                                selectionRender.material.color = startColor;
+                                fillPod = true;
+                                {
+                                    if (fillPod == true)
+                                    {
+                                        float speed = 1f;
+                                        float t = (Time.time - startTime) * speed;
+                                        selectionRender.material.color = Color.Lerp(startColor, endColor, t);
+                                    }
+                                }
+
+                                */
                             }
 
                             teleportTime = teleportTime + 1f * Time.deltaTime;
@@ -95,7 +134,8 @@ public class FixTelep : MonoBehaviour
                             if (teleportTime >= teleportGap)
                             {
                                 CameraXR.transform.position = hit.transform.position;
-                                selectionRender.material.color = normalMaterial.color;
+                                // anim.SetBool("isTelep", false);
+                                // selectionRender.material.color = normalMaterial.color;
                                 RestartTeleportTime();
                             }
                             return;
@@ -109,6 +149,8 @@ public class FixTelep : MonoBehaviour
                             foreach (GameObject pod in pods)
                             {
                                 pod.GetComponent<Renderer>().material.color = normalMaterial.color;
+
+                                fillPod = false;
                             }
                             return;
                         }

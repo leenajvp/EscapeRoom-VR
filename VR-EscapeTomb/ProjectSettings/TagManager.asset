@@ -7,7 +7,7 @@ TagManager:
   - Teleport
   - Ray
   - UI
-  - ClimbPoint
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
@@ -20,10 +20,10 @@ TagManager:
   - LeftHand
   - RightHand
   - GrabbableTags
-  - Player
-  - Rotation Puzzle Top
-  - Rotation Puzzle Mid
-  - Rotation Puzzle Bottom
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

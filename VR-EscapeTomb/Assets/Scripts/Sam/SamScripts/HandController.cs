@@ -10,7 +10,7 @@ namespace Controllers
         public InputDeviceCharacteristics controllerCharacteristics;
         private InputDevice targetDevice;
         public Animator handAnimator;
-       
+
         public bool isGrabbing;
         private bool triggerValue;
 
@@ -39,27 +39,27 @@ namespace Controllers
             List<InputDevice> devices = new List<InputDevice>();
             // checking for list of devices, device must be chose from the list 
             InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
-           
+
             if (devices.Count > 0)
             {
                 targetDevice = devices[0];
             }
         }
 
-       void UpdateHandAnimation()
+        void UpdateHandAnimation()
         {
             //Animation
             if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
             {
 
                 handAnimator.SetFloat("Grip", gripValue);
-           }
+            }
             else
-           {
+            {
 
-               handAnimator.SetFloat("Grip", 0);
+                handAnimator.SetFloat("Grip", 0);
 
-           }
+            }
         }
 
         // Update is called once per frame
@@ -74,7 +74,7 @@ namespace Controllers
             {
                 UpdateHandAnimation();
             }
-           // getting value from gript Button 
+            // getting value from gript Button 
             if (targetDevice.TryGetFeatureValue(CommonUsages.gripButton, out triggerValue) && triggerValue)
             {
                 grab();
@@ -84,8 +84,8 @@ namespace Controllers
                 Release();
             }
         }
-        
-        
+
+
         void grab()
         {
             // Sends a speare with coliders that check if there is any
@@ -96,16 +96,18 @@ namespace Controllers
             var objectTograb = grabableColliders[0].transform.gameObject;
             var objectBody = objectTograb.GetComponent<Rigidbody>();
 
-            if(objectBody != null)
+            if (objectBody != null)
             {
                 heldObject = objectBody.gameObject;
-            }else
+            }
+            else
             {
                 objectBody = objectTograb.GetComponentInParent<Rigidbody>();
-                if(objectBody != null)
+                if (objectBody != null)
                 {
                     heldObject = objectBody.gameObject;
-                }else
+                }
+                else
                 {
                     return;
                 }
@@ -121,7 +123,7 @@ namespace Controllers
             grabPoint.parent = heldObject.transform;
             // Move hand to grab object
             followTarget = grabPoint;
-            while(grabPoint != null && Vector3.Distance(grabPoint.position, palm.position) > jointDistance && isGrabbing)
+            while (grabPoint != null && Vector3.Distance(grabPoint.position, palm.position) > jointDistance && isGrabbing)
             {
                 yield return new WaitForEndOfFrame();
             }
@@ -147,7 +149,7 @@ namespace Controllers
             joint2.connectedBody = body;
             joint2.breakForce = float.PositiveInfinity;
             joint2.breakTorque = float.PositiveInfinity;
-            
+
             joint2.connectedMassScale = 1;
             joint2.massScale = 1;
             joint2.enableCollision = false;
@@ -162,7 +164,7 @@ namespace Controllers
             if (joint2 != null) Destroy(joint2);
             if (grabPoint != null) Destroy(grabPoint.gameObject);
 
-            if(heldObject != null)
+            if (heldObject != null)
             {
                 var targetBody = heldObject.GetComponent<Rigidbody>();
                 targetBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
@@ -174,8 +176,17 @@ namespace Controllers
             followTarget = controller.gameObject.transform;
         }
     }
-    
+
 }
+
+
+
+
+
+
+
+
+
 
 
 
