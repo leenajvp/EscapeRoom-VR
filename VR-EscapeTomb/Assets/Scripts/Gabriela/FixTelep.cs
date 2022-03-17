@@ -16,7 +16,6 @@ public class FixTelep : MonoBehaviour
     private bool triggerValue;
     private bool fillPod;
     private float startTime;
-
     [SerializeField] private Material teleportMaterial;
     [SerializeField] private Material normalMaterial;
     [SerializeField] private Color startColor;
@@ -69,7 +68,6 @@ public class FixTelep : MonoBehaviour
                 RaycastHit hit;
                 Vector3 origin = transform.position;
                 laser.SetPosition(0, origin);
-
                 for (int i = 0; i < laserSteps - 1; i++)
                 {
                     Vector3 offset = (transform.forward + (Vector3.down * dropPerSegment * i)).normalized * laserSegmentDistance;
@@ -88,14 +86,14 @@ public class FixTelep : MonoBehaviour
                             //pod color change
                             var selection = hit.transform;
                             // var selectionRender = selection.GetComponent<Renderer>();
-                            var selectionRender = selection.GetComponent<Canvas>().GetComponentInChildren<Image>().GetComponentInChildren<Image>();
-
+                            var selectionRender = selection.FindChild("Fillup").gameObject;
                             //Animator anim = selection.GetComponent<Animator>();
 
                             if (selectionRender != null)
                             {
-                               // selectionRender.material.color = teleportMaterial.color;
-                               // selectionRender.material.color = startColor;
+
+                                // selectionRender.material.color = teleportMaterial.color;
+                                // selectionRender.material.color = startColor;
 
                                 fillPod = true;
                                 {
@@ -103,13 +101,13 @@ public class FixTelep : MonoBehaviour
                                     {
                                         //selectionRender.fillAmount = 0;
                                         float speed = 1f;
-
-                                        selectionRender.fillAmount += Mathf.MoveTowards(0f, 1f, speed * Time.deltaTime);
+                                        selectionRender.gameObject.GetComponentInChildren<Image>().fillAmount += Mathf.MoveTowards(0, 1, speed * Time.deltaTime);
 
                                         //float t = (Time.deltaTime - startTime) * speed;
 
                                         //selectionRender.material.color = Color.Lerp(startColor, endColor, t);
                                     }
+
                                 }
 
                                 //anim.SetBool("isTelep", true);
@@ -134,8 +132,9 @@ public class FixTelep : MonoBehaviour
                             if (teleportTime >= teleportGap)
                             {
                                 CameraXR.transform.position = hit.transform.position;
+                                selectionRender.gameObject.GetComponentInChildren<Image>().fillAmount = 0;
                                 // anim.SetBool("isTelep", false);
-                                // selectionRender.material.color = normalMaterial.color;
+                                // selectionRender.material.color = normalMaterial.color; 
                                 RestartTeleportTime();
                             }
                             return;
@@ -144,12 +143,11 @@ public class FixTelep : MonoBehaviour
                         else
                         {
                             laser.material.color = normalMaterial.color;
-
                             //pod restart color
                             foreach (GameObject pod in pods)
                             {
-                                pod.GetComponent<Renderer>().material.color = normalMaterial.color;
-
+                                // pod.GetComponent<Renderer>().material.color = normalMaterial.color;
+                               
                                 fillPod = false;
                             }
                             return;
@@ -166,6 +164,7 @@ public class FixTelep : MonoBehaviour
 
             else
             {
+
                 teleportTime = 0f;
                 laser.gameObject.SetActive(false);
             }
