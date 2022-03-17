@@ -30,6 +30,6 @@ Material:
     - Vector1_DD707198: 2
     - Vector1_EC798404: 0.1
     m_Colors:
-    - Color_45275321: {r: 11.98431, g: 6.713726, b: 0, a: 1}
-    - Fire_Offset: {r: 0, g: -0.2, b: 0, a: 0}
+    - Color_45275321: {r: 11.984314, g: 8.470589, b: 0, a: 0}
+    - Fire_Offset: {r: 0, g: -0.26, b: 1.44, a: 0}
     - Fire_Offset_1: {r: -0.1, g: 0.5, b: 0, a: 0}

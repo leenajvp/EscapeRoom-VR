@@ -51,7 +51,7 @@ public class Climber : MonoBehaviour
         currentHand = hand;
     }
 
-    public void ClearHand()
+    public void ClearHand(Hand hand)
     {
         currentHand = null;
     }
