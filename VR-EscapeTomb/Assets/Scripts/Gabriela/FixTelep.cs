@@ -157,14 +157,14 @@ public class FixTelep : MonoBehaviour
                     teleportTime = teleportTime + 1f * Time.deltaTime;
                     if (teleportTime >= teleportGap)
                     {
-                        CameraXR.transform.position = hit.transform.position + new Vector3(0f, -0.4f);
+                        CameraXR.transform.position = hit.transform.position ;
                         RestartTeleportTime();
                     }
-                    laserCor.gameObject.SetActive(false);
+                    //laserCor.gameObject.SetActive(false);
 
                     yield return new WaitForSeconds(1);
 
-                    laserCor.gameObject.SetActive(false);
+                   // laserCor.gameObject.SetActive(false);
                     triggerValue = false;
                     laserCor.SetPosition(0, transform.position);
                     fillRender.gameObject.GetComponent<Image>().fillAmount -= Mathf.MoveTowards(1, 0, speed * Time.deltaTime);

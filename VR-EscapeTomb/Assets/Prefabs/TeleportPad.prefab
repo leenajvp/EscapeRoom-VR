@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4905071414313143658}
   - component: {fileID: 7623115830266025423}
   - component: {fileID: 4498719225311745654}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FillUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 670570571764503640}
   - component: {fileID: 4924854653626401117}
   - component: {fileID: 4924854653626401118}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TeleportPad
   m_TagString: Teleport
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.027, y: 0.03}
+  m_AnchoredPosition: {x: -1.0269775, y: 0.02999878}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7731174445556874738
