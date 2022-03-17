@@ -27,7 +27,7 @@ public class GameTime: MonoBehaviour
     {
         if (startGame == true)
         {
-            if (hasTime == true)
+            if (hasTime)
             {
                 totalTime -= Time.deltaTime;
                 timerText.text = totalTime.ToString();
@@ -38,7 +38,6 @@ public class GameTime: MonoBehaviour
             }
             else
             {
-                totalTime = 0;
                 totalTime += Time.deltaTime;
                 timerText.text = totalTime.ToString();
                 int minutes = (int)totalTime / 60;

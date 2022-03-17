@@ -10,7 +10,7 @@ namespace Controllers
         public InputDeviceCharacteristics controllerCharacteristics;
         private InputDevice targetDevice;
         public Animator handAnimator;
-
+        
         public bool isGrabbing;
         private bool triggerValue;
 
@@ -175,8 +175,10 @@ namespace Controllers
             isGrabbing = false;
             followTarget = controller.gameObject.transform;
         }
+       
     }
-
+    
+    
 }
 
 

@@ -6,12 +6,11 @@ public class GameManager : MonoBehaviour
 {   
     public static GameManager instance;
     public SlidingDoor door;
-
+    public List<Papirus> Items = new List<Papirus>();
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        
     }
     public void Update()
     {
@@ -20,8 +19,8 @@ public class GameManager : MonoBehaviour
             door.open = true;
         }
     }
-    
-
-
-
+   public void Add(Papirus papirus)
+    {
+        Items.Add(papirus);
+    }
 }
