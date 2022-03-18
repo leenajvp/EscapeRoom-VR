@@ -97,7 +97,6 @@ public class FixTelep : MonoBehaviour
             }
             else
             {
-
                 laser.SetPosition(0, transform.position);
                 //pod restart color
                 foreach (GameObject pod in pods)
@@ -147,7 +146,6 @@ public class FixTelep : MonoBehaviour
                         {
                             if (fillPod)
                             {
-
                                 fillRender.gameObject.GetComponent<Image>().fillAmount += Mathf.MoveTowards(0, 1, speed * Time.deltaTime);
                                 selectionRender.SetActive(true);
                             }
@@ -170,15 +168,12 @@ public class FixTelep : MonoBehaviour
                     fillRender.gameObject.GetComponent<Image>().fillAmount -= Mathf.MoveTowards(1, 0, speed * Time.deltaTime);
                     selectionRender.SetActive(false);
                 }
-
-
             }
             else
             {
                 laserCor.SetPosition(i + 1, origin + offset);
                 origin += offset;
             }
-
         }
     }
 }
