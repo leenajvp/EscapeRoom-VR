@@ -41,7 +41,7 @@ public class WheelPuzzle : MonoBehaviour
 
         for (t = 0.0f; t <= 1.0f; t += (turnSpeed * Time.deltaTime))
         {
-            wheel.transform.rotation = Quaternion.Slerp(rot_old, rot_new, t);
+            wheel.transform.rotation = Quaternion.Slerp(rot_old, rot_new, t).normalized;
             yield return new WaitForSeconds(1f);
         }
 
