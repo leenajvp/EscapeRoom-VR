@@ -5,8 +5,10 @@ using UnityEngine;
 namespace RotationPuzzle {
     public class RotaionPuzzleRings : MonoBehaviour
     {
+        [Header("Target Rotations")]
         public float LowRotationTarget;
         public float HighRotationTarget;
+
 
         protected RotationPuzzleMain rotaPuzzleMain;
 
@@ -21,7 +23,7 @@ namespace RotationPuzzle {
         }
 
         // Update is called once per frame
-        void Update()
+        protected virtual void Update()
         {
             //Required to find the correct eulerAngles needed - due to the objects scaling.
             // Debug.Log(transform.eulerAngles.y); 
@@ -36,11 +38,13 @@ namespace RotationPuzzle {
             {
               //  Debug.Log("MIDDLE = TRUE");
                 rotaPuzzleMain.isMiddlePartCompleted = true;
+                
             }
 
             else
             {
                 rotaPuzzleMain.isMiddlePartCompleted = false;
+                
               //  Debug.Log("MIDDLE = FALSE");
 
 

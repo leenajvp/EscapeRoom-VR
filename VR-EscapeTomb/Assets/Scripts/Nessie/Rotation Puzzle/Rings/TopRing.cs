@@ -11,13 +11,20 @@ namespace RotationPuzzle
         {
             base.Start();
         }
+
+        protected override void Update()
+        {
+            base.Update();
+        }
         protected override void CheckRingPos()
         {
-            base.CheckRingPos();
+            //  base.CheckRingPos();
+
+            Debug.Log(transform.eulerAngles.y);
 
             if (transform.eulerAngles.y >= LowRotationTarget && transform.eulerAngles.y <= HighRotationTarget)
             {
-                //Debug.Log("Top is Correct");
+                Debug.Log("Top is Correct");
                 rotaPuzzleMain.isTopPartCompleted = true;
             }
 
