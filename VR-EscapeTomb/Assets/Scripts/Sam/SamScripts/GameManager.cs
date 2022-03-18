@@ -16,12 +16,16 @@ public class GameManager : MonoBehaviour
     }
     public void Update()
     {
-      if(QuestManager.instance.CheckIfQuestComplete("Puzzle1"))
+      if(QuestManager.instance.CheckIfQuestComplete("StatueObjects"))
         {
             //door.MoveDoor();
             door.open = true;
         }
-      if(QuestManager.instance.CheckIfQuestComplete("Puzzle4"))
+      if(QuestManager.instance.CheckIfQuestComplete("Papirus"))
+        {
+
+        }
+      if(QuestManager.instance.CheckIfQuestComplete("WheelPuzzle"))
         {
 
         }

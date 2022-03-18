@@ -30,7 +30,7 @@ public class LockController : MonoBehaviour
         if (result[0] == corretCombination[0] && result[1] == corretCombination[1] && result[2] == corretCombination[2])
         {
             Debug.Log("Correct");
-            //correct = true;
+            QuestManager.instance.MarkQuestIfComplete("WheelPuzzle");
         }
     }
 
