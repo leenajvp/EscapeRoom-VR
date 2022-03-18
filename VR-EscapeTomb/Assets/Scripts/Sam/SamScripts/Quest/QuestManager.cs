@@ -21,8 +21,13 @@ public class QuestManager : MonoBehaviour
     {
         if (RequiredAmmount == 3)
         {
-            MarkQuestIfComplete("Puzzle1");
+            MarkQuestIfComplete("StatueObjects");
         }
+        if(GameManager.instance.quest4.requiredAmmount == 3)
+        {
+            MarkQuestIfComplete("Papirus");
+        }
+        
     }
     public int GetQuestNumber(string questToFind)
     {

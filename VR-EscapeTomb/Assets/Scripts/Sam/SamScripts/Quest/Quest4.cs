@@ -6,6 +6,5 @@ public class Quest4
 {
     public int requiredAmmount;
     public int currentAmmount;
-    public static Quest4 instance;
 
 }
