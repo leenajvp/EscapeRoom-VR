@@ -51,7 +51,7 @@ public class Hand : MonoBehaviour
 
         else
         {
-        
+            
             ReleasePoint();
             
         }
