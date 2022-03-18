@@ -221,7 +221,7 @@ PrefabInstance:
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12.22
+      value: -12.304
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -1607,7 +1607,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569552681}
-  m_Material: {fileID: 13400000, guid: 739a425adb4ab3544bab031a1102e352, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2675,7 +2675,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895620718}
-  m_Material: {fileID: 13400000, guid: 739a425adb4ab3544bab031a1102e352, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3089,7 +3089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117832020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.04, y: 0.366, z: 0}
+  m_LocalPosition: {x: -1.04, y: 1.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1950135407}
@@ -3312,7 +3312,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1188925557
 BoxCollider:
@@ -3321,7 +3321,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188925555}
-  m_Material: {fileID: 13400000, guid: 739a425adb4ab3544bab031a1102e352, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4333,7 +4333,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1578570726
 BoxCollider:
@@ -4342,7 +4342,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578570724}
-  m_Material: {fileID: 13400000, guid: 739a425adb4ab3544bab031a1102e352, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4632,7 +4632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670162430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.366, z: 0}
+  m_LocalPosition: {x: 0, y: 1.0020001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1950135407}
@@ -4780,7 +4780,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704788247}
-  m_Material: {fileID: 13400000, guid: 739a425adb4ab3544bab031a1102e352, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -5564,7 +5564,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1938091464
 BoxCollider:
@@ -5573,7 +5573,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938091462}
-  m_Material: {fileID: 13400000, guid: 739a425adb4ab3544bab031a1102e352, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -5756,7 +5756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950135406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57.886, y: 15.6534, z: -30.119}
+  m_LocalPosition: {x: 57.92, y: 15.6534, z: -30.12}
   m_LocalScale: {x: 0.59358686, y: 1.5617793, z: 3.0988028}
   m_Children:
   - {fileID: 1670162431}
@@ -11922,7 +11922,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2456190832511543634}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 6.2536435, y: 1.9614893, z: 4.07}
+  m_LocalPosition: {x: 6.2536435, y: 1.9614893, z: 4.76}
   m_LocalScale: {x: 437.00342, y: 834.6917, z: 250}
   m_Children: []
   m_Father: {fileID: 543450651765120680}
