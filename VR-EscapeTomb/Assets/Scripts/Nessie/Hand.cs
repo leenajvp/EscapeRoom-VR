@@ -96,10 +96,10 @@ public class Hand : MonoBehaviour
         currentPoint = null;
     }
 
-    private void OnTriggerEnter(Collider other)
+ /*   private void OnTriggerEnter(Collider other)
     {
         AddPoint(other.gameObject);
-    }
+    }*/
     
 
    public void AddPoint(GameObject newObject)
@@ -111,10 +111,10 @@ public class Hand : MonoBehaviour
         }
     }
 
-   private void OnTriggerExit(Collider other)
+  /* private void OnTriggerExit(Collider other)
     {
         RemovePoint(other.gameObject);
-    } 
+    } */
 
     public void RemovePoint(GameObject newObject)
     {
