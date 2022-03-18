@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using Climbing;
+
 
 public class Hand : MonoBehaviour
 {
