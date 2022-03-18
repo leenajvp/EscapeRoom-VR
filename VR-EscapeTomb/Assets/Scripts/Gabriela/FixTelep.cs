@@ -76,6 +76,7 @@ public class FixTelep : MonoBehaviour
                         for (int j = i + 1; j < laser.positionCount; j++)
                         {
                             laser.SetPosition(j, rayhit.point);
+                            Debug.Log("ray hit" + rayhit.transform.name);
                         }
                         if (rayhit.transform.gameObject.tag == "Teleport")
                         {
@@ -129,7 +130,7 @@ public class FixTelep : MonoBehaviour
 
             if (Physics.Raycast(origin, offset, out hit, laserSegmentDistance))
             {
-                for (int j = i + 1; j < laser.positionCount; j++)
+                for (int j = i + 1; j < laserCor.positionCount; j++)
                 {
                     laserCor.SetPosition(j, hit.point);
                 }
