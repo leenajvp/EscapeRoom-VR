@@ -29,8 +29,8 @@ TagManager:
   - Ground
   - GrabbableColliders
   - RotationPuzzle
-  - 
-  - 
+  - Player
+  - Climbing Points
   - 
   - 
   - 

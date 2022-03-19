@@ -11,12 +11,18 @@ public class Hand : MonoBehaviour
     public InputDeviceCharacteristics controllerCharacteristics;
     private InputDevice targetDevice;
     public bool triggerValue;
+  //  public LayerMask climbingLayer;
+
+    [Header("Animation")]
+    public Animator handAnimator;
 
     [Header("Climber")]
     public Climber climber = null;
     public Vector3 Delta { private set; get; } = Vector3.zero;
     private Vector3 lastPosition = Vector3.zero;
     private GameObject currentPoint = null;
+    public GameObject finalPoint;
+    public Transform teleportPoint;
     public List<GameObject> contactPoints = new List<GameObject>();
 
     void GetInputDevice()
@@ -41,11 +47,13 @@ public class Hand : MonoBehaviour
         lastPosition = transform.position;
     }
 
+    
+
     private void Update()
     {
         //trigger button - replace float with boolean value
 
-        if(targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out triggerValue) && triggerValue)
+        if(targetDevice.TryGetFeatureValue(CommonUsages.gripButton, out triggerValue) && triggerValue)
         {
           
              GrabPoint();
@@ -53,7 +61,7 @@ public class Hand : MonoBehaviour
 
         else
         {
-            
+           // Debug.Log("RELEASED"); 
             ReleasePoint();
             
         }
@@ -61,6 +69,7 @@ public class Hand : MonoBehaviour
 
     }
 
+    
     private void FixedUpdate()
     {
         lastPosition = transform.position;
@@ -70,12 +79,32 @@ public class Hand : MonoBehaviour
             GetInputDevice();
         }
 
-       
+        else
+        {
+            UpdateHandAnim();
+        }  
     }
 
     private void LateUpdate()
     {
         Delta = lastPosition - transform.position;
+    
+    }
+
+
+    //Updating the Animation for the hands
+    private void UpdateHandAnim()
+    {
+        //If the player is holding the grip - set the animatiom - if not no animation
+        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
+        {
+            handAnimator.SetFloat("Grip", gripValue);
+        }
+
+        else
+        {
+            handAnimator.SetFloat("Grip", 0);
+        }
     }
 
     private void GrabPoint()
@@ -86,6 +115,11 @@ public class Hand : MonoBehaviour
         {
             climber.SetHand(this);
         }
+
+        if(currentPoint == finalPoint)
+        {
+            climber.transform.position = teleportPoint.transform.position;
+        }
     }
 
     public void ReleasePoint()
@@ -93,6 +127,7 @@ public class Hand : MonoBehaviour
         if (currentPoint)
         {
             climber.ClearHand(this);
+            
         }
 
         currentPoint = null;
@@ -107,10 +142,13 @@ public class Hand : MonoBehaviour
    public void AddPoint(GameObject newObject)
     {
         //Will be replaced with checking for layer/layer mask - Tag is just for testing 
-        if (newObject.CompareTag("ClimbPoint"))
-        {
-            contactPoints.Add(newObject);
-        }
+        /* if (newObject.CompareTag("ClimbPoint"))
+         {
+             contactPoints.Add(newObject);
+         }*/
+
+        contactPoints.Add(newObject);
+       // Debug.Log("Point Added");
     }
 
   /* private void OnTriggerExit(Collider other)
@@ -120,10 +158,14 @@ public class Hand : MonoBehaviour
 
     public void RemovePoint(GameObject newObject)
     {
-        if (newObject.CompareTag("ClimbPoint"))
-        {
-            contactPoints.Remove(newObject);
-        }
+      //  if (newObject.CompareTag("ClimbPoint"))
+        //{
+        contactPoints.Remove(newObject);
+       // Debug.Log("Point Removed");
+        //}
     }
+
+
+
 }
 
