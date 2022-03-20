@@ -136,6 +136,7 @@ public class FixTelep : MonoBehaviour
                         teleportTime = teleportTime + 1f * Time.deltaTime;
                         if (teleportTime >= teleportGap)
                         {
+                            fillPod = false;
                             CameraXR.transform.position = selection.transform.position;
                             laser.gameObject.SetActive(false);
                             RestartTeleportTime();
