@@ -20,7 +20,7 @@ public class FixTelep : MonoBehaviour
     private bool fillPod;
 
     public GameObject[] pods;
-    public GameObject[] shaders;
+    private GameObject[] shaders;
     void Awake()
     {
         laser.positionCount = laserSteps;

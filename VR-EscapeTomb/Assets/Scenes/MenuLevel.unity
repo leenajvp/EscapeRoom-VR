@@ -33453,7 +33453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &638231912
 Transform:
   m_ObjectHideFlags: 0
@@ -54831,7 +54831,7 @@ MonoBehaviour:
   normalMaterial: {fileID: 2100000, guid: 84d5d8f128b94fc4d8f0f04815afbe27, type: 2}
   pods: []
   shaders:
-  - {fileID: 919132147683374297}
+  - {fileID: 1070646361}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -60706,6 +60706,12 @@ PrefabInstance:
 --- !u!224 &1070646360 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1070646359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1070646361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
     type: 3}
   m_PrefabInstance: {fileID: 1070646359}
   m_PrefabAsset: {fileID: 0}
@@ -84878,7 +84884,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.21754815
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -96642,12 +96648,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802868227901829503}
   m_Mesh: {fileID: -5731547941117289742, guid: e01c54b380dc228418c00cdeae58698a, type: 3}
---- !u!1 &919132147683374297 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5238780755389406030, guid: a9c044bf46adb30418a82c703115a5da,
-    type: 3}
-  m_PrefabInstance: {fileID: 4932156853031038871}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &919132148789430471
 GameObject:
   m_ObjectHideFlags: 0
