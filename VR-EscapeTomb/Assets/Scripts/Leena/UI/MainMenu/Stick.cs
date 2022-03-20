@@ -6,6 +6,12 @@ public class Stick : MonoBehaviour
     public GameObject fire;
     public float burnTime = 10.0f;
 
+    private void Start()
+    {
+        fire.SetActive(false);
+        isLit = false;
+    }
+
     void Update()
     {
         if (isLit)

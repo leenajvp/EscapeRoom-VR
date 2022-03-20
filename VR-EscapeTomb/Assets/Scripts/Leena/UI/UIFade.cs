@@ -1,20 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class UIFade : MonoBehaviour
 {
-    protected CanvasGroup canvasGroup;
-    protected float zeroAlpha = 0f;
-    [SerializeField] protected float speed = 1f;
-
-    public enum InOut {FadeIn,FadeOut }
+    public enum InOut { FadeIn, FadeOut }
     public InOut fadeInOrOut;
+    [Header("Fade In/Out Speed")]
+    [SerializeField] protected float speed = 1f;
+    [SerializeField] protected CanvasGroup canvasGroup;
+    protected float zeroAlpha = 0f;
 
     protected virtual void Start()
     {
-        canvasGroup = GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
+
         canvasGroup.alpha = zeroAlpha;
     }
 
@@ -40,7 +40,7 @@ public class UIFade : MonoBehaviour
 
         if (canvasGroup.alpha <= 0.1)
         {
-            gameObject.SetActive(false);    
+            gameObject.SetActive(false);
         }
     }
 }
