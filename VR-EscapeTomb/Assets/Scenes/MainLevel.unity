@@ -23176,8 +23176,8 @@ MonoBehaviour:
   - {fileID: 1027008365}
   - {fileID: 1529948886}
   teleportsInSecondRoom:
+  - {fileID: 1558430150}
   - {fileID: 26845543}
-  - {fileID: 883341667}
   - {fileID: 624269580}
   - {fileID: 1081792445}
   - {fileID: 1158106158}
@@ -23186,7 +23186,7 @@ MonoBehaviour:
   - {fileID: 1134609659}
   - {fileID: 1690246572}
   - {fileID: 2022760867}
-  - {fileID: 1558430150}
+  altarTeleport: {fileID: 883341667}
   papirusTeleport: 0
   papirus:
   - {fileID: 1578570724}

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public ObjectHides[] hiddenSpotsFirstLevel;
     public ObjectHides[] hiddenSpotsSecondLevel;
     public GameObject[] teleportsInSecondRoom;
+    public GameObject altarTeleport;
     public bool papirusTeleport;
     public GameObject[] papirus;
     public List<Papirus> Items = new List<Papirus>();
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
         if (QuestManager.instance.questsComplete[4])
         {
             door[1].open = true;
+            altarTeleport.gameObject.SetActive(true);
             if(papirusTeleport)
             {
                 for (int i = 0; i < papirus.Length; i++)
@@ -69,7 +71,8 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        if(!isTesting)
+        
+        if (!isTesting)
         {
             player.transform.position = playerStartPosition.transform.position;
         }
