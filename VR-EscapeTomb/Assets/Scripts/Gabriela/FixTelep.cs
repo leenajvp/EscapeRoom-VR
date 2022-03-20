@@ -20,7 +20,7 @@ public class FixTelep : MonoBehaviour
     private bool fillPod;
 
     public GameObject[] pods;
-    public GameObject[] shaders;
+    private GameObject[] shaders;
     void Awake()
     {
         laser.positionCount = laserSteps;
@@ -30,7 +30,7 @@ public class FixTelep : MonoBehaviour
     {
         Instance = this;
         pods = GameObject.FindGameObjectsWithTag("Teleport");
-        //shaders = GameObject.FindGameObjectsWithTag("Shader");
+        shaders = GameObject.FindGameObjectsWithTag("Shader");
         laser = GetComponentInChildren<LineRenderer>();
         laser.material.color = normalMaterial.color;
         teleportTime = 0f;
@@ -136,6 +136,7 @@ public class FixTelep : MonoBehaviour
                         teleportTime = teleportTime + 1f * Time.deltaTime;
                         if (teleportTime >= teleportGap)
                         {
+                            fillPod = false;
                             CameraXR.transform.position = selection.transform.position;
                             laser.gameObject.SetActive(false);
                             RestartTeleportTime();
