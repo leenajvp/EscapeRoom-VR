@@ -12,6 +12,7 @@ TagManager:
   - Feather
   - Bowl
   - Shader
+  - ClimbPoint
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - Papirus
   - Ground
   - GrabbableColliders
-  - Placeholder
-  - 
+  - RotationPuzzle
+  - IgnoreLight
   - 
   - 
   - 
