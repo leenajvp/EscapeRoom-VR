@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof (AudioSource))]
+[RequireComponent(typeof(AudioSource))]
 public class SlidingDoor : MonoBehaviour
 {
     [Header("Door Movement Values")]
