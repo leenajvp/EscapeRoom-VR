@@ -15,7 +15,7 @@ public class UIFade : MonoBehaviour
         if (canvasGroup == null)
             canvasGroup = GetComponent<CanvasGroup>();
 
-        canvasGroup.alpha = zeroAlpha;
+        canvasGroup.alpha = 0;
     }
 
     protected virtual void Update()
