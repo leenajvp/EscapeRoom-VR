@@ -8,7 +8,7 @@ public class ThrowPuzzle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TheowBalls ball = other.gameObject.GetComponent<TheowBalls>();
+        ThrowBalls ball = other.gameObject.GetComponent<ThrowBalls>();
 
         if(ball)
             completed = true;
