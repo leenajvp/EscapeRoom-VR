@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RotationPuzzle;
+using ButtonPuzzle;
 
 public class QuestManager : MonoBehaviour
 {
@@ -8,8 +10,8 @@ public class QuestManager : MonoBehaviour
     public bool[] questsComplete;
     public static QuestManager instance;
     public ThrowPuzzle throwPuzzle;
-    public ButtonPuzzle.ButtonPuzzleManager buttonPuzzle;
-    public RotationPuzzle.RotationPuzzleMain rotationPuzzle;
+    public ButtonPuzzleManager buttonPuzzle;
+    public RotationPuzzleMain rotationPuzzle;
     [Header("QUEST1")]
     public int RequiredAmmount;
    

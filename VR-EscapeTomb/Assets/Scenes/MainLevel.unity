@@ -9029,7 +9029,7 @@ PrefabInstance:
     - target: {fileID: 2382969966762456537, guid: 22ba4a8ea51cf8242bfa569e9c6e4150,
         type: 3}
       propertyPath: isPuzzleCompleted
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2765449340532550899, guid: 22ba4a8ea51cf8242bfa569e9c6e4150,
         type: 3}
