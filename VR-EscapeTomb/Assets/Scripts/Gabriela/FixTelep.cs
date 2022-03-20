@@ -30,7 +30,7 @@ public class FixTelep : MonoBehaviour
     {
         Instance = this;
         pods = GameObject.FindGameObjectsWithTag("Teleport");
-        //shaders = GameObject.FindGameObjectsWithTag("Shader");
+        shaders = GameObject.FindGameObjectsWithTag("Shader");
         laser = GetComponentInChildren<LineRenderer>();
         laser.material.color = normalMaterial.color;
         teleportTime = 0f;
