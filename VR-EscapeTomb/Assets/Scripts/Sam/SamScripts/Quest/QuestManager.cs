@@ -7,7 +7,9 @@ public class QuestManager : MonoBehaviour
     public string[] questNames;
     public bool[] questsComplete;
     public static QuestManager instance;
-
+    public ThrowPuzzle throwPuzzle;
+    public ButtonPuzzle.ButtonPuzzleManager buttonPuzzle;
+    public RotationPuzzle.RotationPuzzleMain rotationPuzzle;
     [Header("QUEST1")]
     public int RequiredAmmount;
    
@@ -23,11 +25,22 @@ public class QuestManager : MonoBehaviour
         {
             MarkQuestIfComplete("StatueObjects");
         }
-        if(GameManager.instance.quest4.requiredAmmount == 3)
+        if(GameManager.instance.quest4.currentAmmount == GameManager.instance.quest4.requiredAmmount)
         {
             MarkQuestIfComplete("Papirus");
         }
-        
+        if(buttonPuzzle.completed)
+        {
+            MarkQuestIfComplete("ButtonPuzzle");
+        }
+        if(rotationPuzzle.isPuzzleCompleted)
+        {
+            MarkQuestIfComplete("WheelPuzzle");
+        }
+        if (throwPuzzle.completed)
+        {
+            MarkQuestIfComplete("ThrowPuzzle");
+        }
     }
     public int GetQuestNumber(string questToFind)
     {

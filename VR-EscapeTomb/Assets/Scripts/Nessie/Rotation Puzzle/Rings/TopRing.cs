@@ -20,7 +20,7 @@ namespace RotationPuzzle
         {
             //  base.CheckRingPos();
 
-            Debug.Log(transform.eulerAngles.y);
+           // Debug.Log(transform.eulerAngles.y);
 
             if (transform.eulerAngles.y >= LowRotationTarget && transform.eulerAngles.y <= HighRotationTarget)
             {
