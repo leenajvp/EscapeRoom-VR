@@ -30,7 +30,7 @@ TagManager:
   - GrabbableColliders
   - RotationPuzzle
   - IgnoreLight
-  - 
+  - Player
   - 
   - 
   - 
