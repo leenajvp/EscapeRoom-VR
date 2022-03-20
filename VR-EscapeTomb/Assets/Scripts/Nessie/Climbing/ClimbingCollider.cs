@@ -19,9 +19,12 @@ namespace Climbing {
         private void OnTriggerEnter(Collider other)
         {
 
+          //  Debug.Log("Touching something");
+
+            //Checking the object is on the correct layer before adding it to the climb point list
             if((climbableLayer.value & (1 << other.transform.gameObject.layer)) > 0 )
             {
-                Debug.Log("TOUCHING");
+                //Debug.Log("TOUCHING");
                 gameObject.GetComponentInParent<Hand>().AddPoint(other.gameObject);
             }
 
