@@ -11,7 +11,6 @@ public class SlidingDoor : MonoBehaviour
     private Transform doorPos;
     private AudioSource doorSound;
 
-    // Start is called before the first frame update
     void Start()
     {
         open = false;
@@ -20,8 +19,6 @@ public class SlidingDoor : MonoBehaviour
         doorSound = GetComponent<AudioSource>();
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         if (open)
@@ -34,6 +31,8 @@ public class SlidingDoor : MonoBehaviour
     public void MoveDoor()
     {
         open = !open;
+
         doorSound.Play();
     }
+
 }
