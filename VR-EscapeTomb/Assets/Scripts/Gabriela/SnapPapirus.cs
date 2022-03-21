@@ -22,6 +22,7 @@ public class SnapPapirus : MonoBehaviour
                 transform.position = new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z);
                 transform.rotation = correctForm.transform.rotation;
                 rb.isKinematic = true;
+                correctForm.gameObject.SetActive(false);
             }
 
             else if (socketNumber == SocketNumber.Socket2)
@@ -29,13 +30,15 @@ public class SnapPapirus : MonoBehaviour
                 transform.position = new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z);
                 transform.rotation = correctForm.transform.rotation;
                 rb.isKinematic = true;
+                correctForm.gameObject.SetActive(false);
             }
 
-            else if (socketNumber == SocketNumber.Socket1)
+            else if (socketNumber == SocketNumber.Socket3)
             {
                 transform.position = new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z);
                 transform.rotation = correctForm.transform.rotation;
                 rb.isKinematic = true;
+                correctForm.gameObject.SetActive(false);
             }
         }
     }

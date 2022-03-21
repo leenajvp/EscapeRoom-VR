@@ -11,13 +11,13 @@ public class PapirusPickUp : MonoBehaviour
         GameManager.instance.Add(Item);
         
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             PickUp();
-           GameManager.instance.quest4.currentAmmount ++;
-            
+            GameManager.instance.quest4.currentAmmount++;
+
         }
     }
 
