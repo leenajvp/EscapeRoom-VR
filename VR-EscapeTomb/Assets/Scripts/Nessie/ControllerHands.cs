@@ -14,8 +14,7 @@ namespace Controllers {
         public Animator handAnimator;
 
         public bool isGrabbing;
-        private bool triggerValue;
-
+        public static ControllerHands controllers;
         private GameObject heldObject;
         [SerializeField] ControllerHands controller;
         public float reachdistance = 0.1f, jointDistance = 0.05f;
@@ -43,6 +42,7 @@ namespace Controllers {
 
         void Start()
         {
+            controllers = this;
             GetInputDevice();
             followTarget = controller.gameObject.transform;
             body = GetComponent<Rigidbody>();
@@ -110,7 +110,7 @@ namespace Controllers {
                 if (!isGrabbing)
                 {
                     grab();
-                    //grabbing = true
+                    isGrabbing = true;
                 }
 
                 
@@ -118,7 +118,7 @@ namespace Controllers {
 
             else if (isGrabbing && gribStrenght < 0.9f)
             {
-                // isGrabbing = false;
+                isGrabbing = false;
                 Release();
             }
 
@@ -164,7 +164,7 @@ namespace Controllers {
         }
         private IEnumerator GrabObject(Collider collider, Rigidbody targetBody)
         {
-            isGrabbing = true;
+           // isGrabbing = true;
             // Grab point
             grabPoint = new GameObject().transform;
             grabPoint.position = collider.ClosestPoint(palm.position);
@@ -220,7 +220,7 @@ namespace Controllers {
                 heldObject = null;
             }
 
-            isGrabbing = false;
+           // isGrabbing = false;
             followTarget = controller.gameObject.transform;
         }
 

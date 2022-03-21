@@ -5,51 +5,21 @@ using UnityEngine;
 public class SnapPapirus : MonoBehaviour
 {
     public GameObject correctForm;
-    private bool moving;
-    private bool finish;
-    private Vector3 resetPosition;
-
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        resetPosition = this.transform.localPosition;
-        moving = false;
+        rb = gameObject.GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnCollisionEnter(Collision collision)
     {
-        if (!moving)
+        if (collision.gameObject.name == "Papirus3Socet")
         {
-            OnMove();
-        }
-    }
+            transform.position = new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z);
+            transform.rotation = correctForm.transform.rotation;
+            rb.isKinematic = true;
 
-    private void OnMove()
-    {
-        if (Mathf.Abs(this.transform.localPosition.x - correctForm.transform.localPosition.x) <= 0.5f && 
-            Mathf.Abs (this.transform.localPosition.y - correctForm.transform.localPosition.y) <= 0.5f)
-        {
-            this.transform.position = new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z);
         }
-        else
-        {
-            this.transform.position = new Vector3(resetPosition.x, resetPosition.y, resetPosition.z);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            moving = true;
-        }
-        else
-            moving = false;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        moving = false;  
+   
     }
 }
