@@ -17,7 +17,7 @@ namespace Controllers {
         private bool triggerValue;
 
         private GameObject heldObject;
-        [SerializeField] HandController controller;
+        [SerializeField] ControllerHands controller;
         public float reachdistance = 0.1f, jointDistance = 0.05f;
         public LayerMask grabableLayer;
         public Transform palm;

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -733,7 +733,6 @@ GameObject:
   - component: {fileID: 44894073}
   - component: {fileID: 44894072}
   - component: {fileID: 44894071}
-  - component: {fileID: 44894074}
   m_Layer: 9
   m_Name: RightHand (1)
   m_TagString: Player
@@ -765,9 +764,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44894069}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b4a737903b82a43bb95804a2149147, type: 3}
+  m_Script: {fileID: 11500000, guid: 490017821403a694f89ffe30cb368f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controllerCharacteristics: 512
@@ -778,8 +777,13 @@ MonoBehaviour:
   jointDistance: 0.05
   grabableLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   palm: {fileID: 566014156}
+  climbCol: {fileID: 1998965562}
+  climber: {fileID: 1362361769}
+  contactPoints: []
+  finalPoint: {fileID: 1404246999}
+  teleportPoint: {fileID: 980228915}
 --- !u!114 &44894072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,25 +813,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &44894074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44894069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fcc31298beabc643820a52af326ff8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controllerCharacteristics: 512
-  triggerValue: 0
-  handAnimator: {fileID: 1799288947}
-  climber: {fileID: 1362361769}
-  finalPoint: {fileID: 1404246999}
-  teleportPoint: {fileID: 980228915}
-  contactPoints: []
 --- !u!1001 &48110061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15607,7 +15592,6 @@ GameObject:
   - component: {fileID: 1418886718}
   - component: {fileID: 1418886717}
   - component: {fileID: 1418886716}
-  - component: {fileID: 1418886719}
   m_Layer: 8
   m_Name: LeftHand (1)
   m_TagString: Untagged
@@ -15639,12 +15623,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418886714}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b4a737903b82a43bb95804a2149147, type: 3}
+  m_Script: {fileID: 11500000, guid: 490017821403a694f89ffe30cb368f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerCharacteristics: 256
+  controllerCharacteristics: 0
   handAnimator: {fileID: 1023869798}
   isGrabbing: 0
   controller: {fileID: 1418886716}
@@ -15652,8 +15636,13 @@ MonoBehaviour:
   jointDistance: 0.05
   grabableLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   palm: {fileID: 1690124954}
+  climbCol: {fileID: 774501060}
+  climber: {fileID: 1362361769}
+  contactPoints: []
+  finalPoint: {fileID: 1404246999}
+  teleportPoint: {fileID: 980228915}
 --- !u!114 &1418886717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15683,25 +15672,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1418886719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418886714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fcc31298beabc643820a52af326ff8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controllerCharacteristics: 256
-  triggerValue: 0
-  handAnimator: {fileID: 1023869798}
-  climber: {fileID: 1362361769}
-  finalPoint: {fileID: 1404246999}
-  teleportPoint: {fileID: 980228915}
-  contactPoints: []
 --- !u!1 &1424691773
 GameObject:
   m_ObjectHideFlags: 0
