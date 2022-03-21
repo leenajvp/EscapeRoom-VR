@@ -30,8 +30,8 @@ TagManager:
   - GrabbableColliders
   - RotationPuzzle
   - IgnoreLight
-  - Player
-  - Climbing Points
+  - Buttons
+  - 
   - 
   - 
   - 

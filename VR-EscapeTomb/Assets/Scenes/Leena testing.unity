@@ -3113,6 +3113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
+  moveAxis: 0
   moveBackAmount: 0.1
   moveUpkAmount: 0.7
   openSpeed: 0.5
@@ -11576,7 +11577,6 @@ MonoBehaviour:
   orderNumber: 1
   resetSpeed: 1
   reset: 0
-  moveOnX: 0
 --- !u!1 &1575424487
 GameObject:
   m_ObjectHideFlags: 0
@@ -11946,7 +11946,6 @@ MonoBehaviour:
   normalMaterial: {fileID: 2100000, guid: 84d5d8f128b94fc4d8f0f04815afbe27, type: 2}
   pods:
   - {fileID: 293009448}
-  shaders: []
 --- !u!23 &1646428600
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12073,7 +12072,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658615711}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99b4a737903b82a43bb95804a2149147, type: 3}
   m_Name: 
@@ -12124,7 +12123,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658615711}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 600b4ced685c7104ea54f38a1e19e157, type: 3}
   m_Name: 
@@ -12133,7 +12132,7 @@ MonoBehaviour:
   handAnimator: {fileID: 2088614067}
   isGrabbing: 0
   controller: {fileID: 1658615713}
-  reachdistance: 0.1
+  reachdistance: 0.05
   jointDistance: 0.05
   grabableLayer:
     serializedVersion: 2
@@ -13932,7 +13931,6 @@ MonoBehaviour:
   orderNumber: 2
   resetSpeed: 1
   reset: 0
-  moveOnX: 0
 --- !u!1 &1875641880
 GameObject:
   m_ObjectHideFlags: 0
@@ -14478,7 +14476,6 @@ MonoBehaviour:
   orderNumber: 3
   resetSpeed: 1
   reset: 0
-  moveOnX: 0
 --- !u!1 &1985797605
 GameObject:
   m_ObjectHideFlags: 0
@@ -15341,7 +15338,6 @@ MonoBehaviour:
   orderNumber: 4
   resetSpeed: 1
   reset: 0
-  moveOnX: 0
 --- !u!1 &2121315602
 GameObject:
   m_ObjectHideFlags: 0
