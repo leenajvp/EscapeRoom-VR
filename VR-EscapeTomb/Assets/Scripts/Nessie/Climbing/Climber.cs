@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Controllers;
 
 namespace Climbing
 {
@@ -9,7 +10,8 @@ namespace Climbing
         public float gravity = 45.0f;
         public float sensitivity = 45.0f;
 
-        public Hand currentHand = null;
+        //  public Hand currentHand = null;
+        public ControllerHands currentHand = null;
         private CharacterController controller = null;
 
         private void Awake()
@@ -45,7 +47,7 @@ namespace Climbing
         }
 
         //Checking what current hand is being used to climb
-        public void SetHand(Hand hand)
+        public void SetHand( ControllerHands hand)
         {
             if (currentHand)
             {
@@ -57,7 +59,7 @@ namespace Climbing
         }
 
         //return the hand to null
-        public void ClearHand(Hand hand)
+        public void ClearHand()
         {
             currentHand = null;
         }
