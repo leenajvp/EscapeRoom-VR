@@ -23,12 +23,7 @@ namespace ButtonPuzzle
             reset = false;
             defaultPos = transform.position;
 
-
-            if (manager == null)
-            {
-                try { manager = transform.parent.GetComponent<ButtonPuzzleManager>(); }
-                catch { Debug.LogError(name + "Manager is null"); }
-            }
+            if (manager == null) try { manager = transform.parent.GetComponent<ButtonPuzzleManager>(); } catch { Debug.LogError(name + "Manager is null"); }
         }
 
         void Update()
@@ -53,6 +48,7 @@ namespace ButtonPuzzle
         {
             if (!pressed)
             {
+               // rb.isKinematic = true;
                 manager.AddNumber(orderNumber);
                 pressed = true;
             }

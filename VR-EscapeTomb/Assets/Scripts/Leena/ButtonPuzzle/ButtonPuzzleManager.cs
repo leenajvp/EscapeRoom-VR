@@ -14,6 +14,8 @@ namespace ButtonPuzzle
         [Tooltip("Sequence required, must be same lenght as button quantity")]
         public string correctSolution = "1234";
         public string enteredSequence;
+        [Tooltip("Activate light when puzzle completed")]
+        [SerializeField] private Light lightToActivate;
         private int currentNum = 0;
 
         void Start()
@@ -22,6 +24,9 @@ namespace ButtonPuzzle
 
             if (correctSolution.Length > buttons.Count)
                 Debug.LogError(name + "Correct sequence is too long");
+
+            if (lightToActivate != null)
+                lightToActivate.gameObject.SetActive(false);
         }
 
         void Update()
@@ -29,7 +34,13 @@ namespace ButtonPuzzle
             bool isEqual = Enumerable.SequenceEqual(correctSolution, enteredSequence);
 
             if (isEqual)
+            {
                 completed = true;
+
+                if(lightToActivate != null)
+                    lightToActivate.gameObject.SetActive(true);
+            }
+                
         }
 
         public void AddNumber(string entry)
