@@ -48,7 +48,7 @@ namespace ButtonPuzzle
         {
             if (!pressed)
             {
-               // rb.isKinematic = true;
+                rb.isKinematic = true;
                 manager.AddNumber(orderNumber);
                 pressed = true;
             }

@@ -1,43 +1,43 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 [RequireComponent(typeof(Light))]
 public class CandleLight : MonoBehaviour
 {
-    [SerializeField] private float maxIntensity = 0.3f;
-    [SerializeField] private float mininIntensity = 0.15f;
-    [SerializeField] private float maxRange = 4.0f;
-    [SerializeField] private float minRange = 1.0f;
-    [SerializeField] private float minChangeSpeed = 1.0f;
-    [SerializeField] private float maxChangeSpeed = 2.0f;
+    private float minIntensity = 0.15f;
+    private float minChangeSpeed = 1.0f;
+    private float maxChangeSpeed = 2.0f;
+    private float changeSpeed = 5;
+    private float changeSpeed2 = 10;
     private Light _light;
     public float timer = 0;
 
-
     private void Start()
     {
-        _light = GetComponent<Light>();
-    }
+        changeSpeed = Random.Range(3, 5);
+        changeSpeed2 = Random.Range(5, 10);
 
+        _light = GetComponent<Light>();
+        _light.intensity = minIntensity;
+    }
 
     private void Update()
     {
-        timer += Time.deltaTime * 1;
+        timer += Time.deltaTime * Random.Range(minChangeSpeed, maxChangeSpeed);
 
-        if (timer > 5)
+        if (timer < changeSpeed)
         {
-            _light.intensity = Mathf.Lerp( maxIntensity, mininIntensity, 0.1f);
-            timer = 0;
+            _light.intensity += Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
+            _light.range += Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
+            _light.gameObject.transform.position += new Vector3(transform.position.x, transform.position.y, transform.position.z) * Time.deltaTime * 0.005f;
         }
 
-
-        timer += Time.deltaTime * Random.Range(1f, 2f);
-
-        if (timer > 5)
+        if (timer > changeSpeed)
         {
-           // _light.range = Mathf.Lerp(Random.Range(maxRange, minRange), Random.Range(maxRange, minRange), 0.1f);
-
-            timer = 0;
+            _light.intensity -= Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
+            _light.range -= Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
+            _light.gameObject.transform.position -= new Vector3(transform.position.x, transform.position.y, transform.position.z) * Time.deltaTime * 0.005f;
+            if (timer >= changeSpeed2)
+                timer = 0;
         }
     }
 }
