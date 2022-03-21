@@ -11,10 +11,12 @@ public class UIRaycast : MonoBehaviour
     private LineRenderer lineRenderer = null;
     private GameObject selectedObject = null;
     private List<InputDevice> rightHandedControllers = new List<InputDevice>();
+    private FixTelep teleportation => FindObjectOfType<FixTelep>();
 
     private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        teleportation.gameObject.SetActive(false);
     }
 
     private void Update()
