@@ -777,7 +777,7 @@ MonoBehaviour:
   jointDistance: 0.05
   grabableLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   palm: {fileID: 566014156}
   climbCol: {fileID: 1998965562}
   climber: {fileID: 1362361769}
@@ -14580,7 +14580,7 @@ GameObject:
   - component: {fileID: 1362361766}
   - component: {fileID: 1362361768}
   - component: {fileID: 1362361769}
-  m_Layer: 16
+  m_Layer: 18
   m_Name: Player(With Climbing Stuff Attached)
   m_TagString: Player
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -14617,7 +14617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362361765}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.51, y: 0.73, z: -3.075}
+  m_LocalPosition: {x: -2.07, y: 0.73, z: -0.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 44894070}
@@ -15594,7 +15594,7 @@ GameObject:
   - component: {fileID: 1418886716}
   m_Layer: 8
   m_Name: LeftHand (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15628,7 +15628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490017821403a694f89ffe30cb368f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerCharacteristics: 0
+  controllerCharacteristics: 256
   handAnimator: {fileID: 1023869798}
   isGrabbing: 0
   controller: {fileID: 1418886716}
@@ -15636,7 +15636,7 @@ MonoBehaviour:
   jointDistance: 0.05
   grabableLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   palm: {fileID: 1690124954}
   climbCol: {fileID: 774501060}
   climber: {fileID: 1362361769}
@@ -23705,6 +23705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  spikes: {fileID: 0}
 --- !u!65 &2060880724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25548,6 +25549,7 @@ MonoBehaviour:
   - {fileID: 7623545439176661179}
   correctSolution: 12345
   enteredSequence: 
+  lightToActivate: {fileID: 0}
 --- !u!65 &1031313168429611978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27614,7 +27616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1735717845}
   playerStartPosition: {fileID: 705733716}
-  isTesting: 0
+  isTesting: 1
   door:
   - {fileID: 1916256373}
   - {fileID: 1232008797}

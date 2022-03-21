@@ -241,6 +241,7 @@ namespace Controllers {
             if (currentPoint == finalPoint)
             {
                 climber.transform.position = teleportPoint.transform.position;
+                climber.ClearHand();
             }
         }
 
