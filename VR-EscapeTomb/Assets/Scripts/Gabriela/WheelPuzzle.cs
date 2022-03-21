@@ -11,23 +11,12 @@ public class WheelPuzzle : MonoBehaviour
     [SerializeField] private float turnSpeed = 0.5f;
 
     private bool canRotate;
-    private bool startRotate;
     private float t;
     private int numberShown = 6;
-
-
-    void FixedUpdate()
-    {
-        if (startRotate)
-        {
-            StartCoroutine(Turn());
-        }
-    }
 
     void Start()
     {
         canRotate = true;
-        startRotate = false;
         numberShown = 0;
     }
 
@@ -37,7 +26,7 @@ public class WheelPuzzle : MonoBehaviour
         {
             if (canRotate == true)
             {
-                startRotate = true;
+                StartCoroutine(Turn());
             }
         }
     }
