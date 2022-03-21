@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 186205949}
   - component: {fileID: 186205948}
   - component: {fileID: 186205952}
+  - component: {fileID: 186205953}
   m_Layer: 8
   m_Name: LeftHand (1)
   m_TagString: Untagged
@@ -216,7 +217,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186205947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fcc31298beabc643820a52af326ff8d, type: 3}
   m_Name: 
@@ -228,6 +229,33 @@ MonoBehaviour:
   finalPoint: {fileID: 0}
   teleportPoint: {fileID: 186339496}
   contactPoints: []
+--- !u!114 &186205953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186205947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490017821403a694f89ffe30cb368f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerCharacteristics: 256
+  handAnimator: {fileID: 1697843058}
+  isGrabbing: 0
+  controller: {fileID: 186205948}
+  reachdistance: 0.1
+  jointDistance: 0.05
+  grabableLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  palm: {fileID: 1522710307}
+  climbCol: {fileID: 0}
+  climber: {fileID: 227911998}
+  contactPoints: []
+  finalPoint: {fileID: 617621817}
+  teleportPoint: {fileID: 186339496}
 --- !u!1 &186339495
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 186339496}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Teleport Location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,6 +375,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.299
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.075
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f16cc9e586f1646ab15b00e483a335, type: 3}
 --- !u!1 &547641155
@@ -441,6 +479,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &617621817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8002801637763337652, guid: 09f16cc9e586f1646ab15b00e483a335,
+    type: 3}
+  m_PrefabInstance: {fileID: 1881697736}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &695820065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -517,6 +561,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.303
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.446
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f16cc9e586f1646ab15b00e483a335, type: 3}
@@ -596,6 +655,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.688
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f16cc9e586f1646ab15b00e483a335, type: 3}
@@ -727,7 +801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029481255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.033, y: 0.0319, z: 0.0211}
+  m_LocalPosition: {x: 0.033, y: 0.0319, z: 0.049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2109425022}
@@ -804,7 +878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170229177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.028, y: 0.03190005, z: 0.021100044}
+  m_LocalPosition: {x: -0.028, y: 0.03190005, z: 0.048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 186205951}
@@ -930,6 +1004,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.361
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f16cc9e586f1646ab15b00e483a335, type: 3}
@@ -1103,6 +1187,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.438
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.452
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f16cc9e586f1646ab15b00e483a335, type: 3}
@@ -2014,10 +2113,30 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337652, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_Name
+      value: Final Point
+      objectReference: {fileID: 0}
     - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
         type: 3}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002801637763337659, guid: 09f16cc9e586f1646ab15b00e483a335,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f16cc9e586f1646ab15b00e483a335, type: 3}
@@ -2348,6 +2467,7 @@ GameObject:
   - component: {fileID: 2109425020}
   - component: {fileID: 2109425019}
   - component: {fileID: 2109425023}
+  - component: {fileID: 2109425024}
   m_Layer: 9
   m_Name: RightHand (1)
   m_TagString: Untagged
@@ -2430,7 +2550,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109425018}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fcc31298beabc643820a52af326ff8d, type: 3}
   m_Name: 
@@ -2442,6 +2562,33 @@ MonoBehaviour:
   finalPoint: {fileID: 0}
   teleportPoint: {fileID: 186339496}
   contactPoints: []
+--- !u!114 &2109425024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109425018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490017821403a694f89ffe30cb368f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerCharacteristics: 512
+  handAnimator: {fileID: 1521333050}
+  isGrabbing: 0
+  controller: {fileID: 2109425019}
+  reachdistance: 0.1
+  jointDistance: 0.05
+  grabableLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  palm: {fileID: 1382735300}
+  climbCol: {fileID: 1029481258}
+  climber: {fileID: 227911998}
+  contactPoints: []
+  finalPoint: {fileID: 617621817}
+  teleportPoint: {fileID: 186339496}
 --- !u!1001 &4654902721741305740
 PrefabInstance:
   m_ObjectHideFlags: 0

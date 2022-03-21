@@ -113,7 +113,7 @@ public class Hand : MonoBehaviour
 
         if (currentPoint)
         {
-            climber.SetHand(this);
+          //  climber.SetHand(this);
         }
 
         if(currentPoint == finalPoint)
@@ -126,7 +126,7 @@ public class Hand : MonoBehaviour
     {
         if (currentPoint)
         {
-            climber.ClearHand(this);
+         //  climber.ClearHand(this);
             
         }
 
