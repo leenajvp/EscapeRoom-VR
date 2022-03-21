@@ -102,8 +102,8 @@ public class ObjectThrowing : MonoBehaviour
 
         else if (isGrabbing && gribStrenght < 0.9f)
         {
-            isGrabbing = false;
             Release();
+            isGrabbing = false;
         }
     }
 

@@ -22,7 +22,6 @@ public class UIRaycast : MonoBehaviour
         var desiredCharacteristics = InputDeviceCharacteristics.HeldInHand | InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
         var primaryButton = CommonUsages.primaryButton;
         InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, rightHandedControllers);
-
         lastState = triggerValue;
 
         foreach (var controller in rightHandedControllers)
@@ -31,11 +30,11 @@ public class UIRaycast : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, 30))
             {
-                lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, transform.position.z));
-                lineRenderer.SetPosition(1, hit.point);
-
                 if (hit.collider)
                 {
+                    lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, transform.position.z));
+                    lineRenderer.SetPosition(1, hit.point);
+
                     Button buttonHit = hit.collider.gameObject.GetComponent<Button>();
 
                     if (buttonHit)

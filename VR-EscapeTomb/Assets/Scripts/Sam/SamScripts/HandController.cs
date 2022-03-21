@@ -83,13 +83,13 @@ namespace Controllers
                 if (!isGrabbing)
                 {
                     grab();
-                    //grabbing = true;
+                    isGrabbing = true;
                 }
             }
 
             else if (isGrabbing && gribStrenght < 0.9f)
             {
-               // isGrabbing = false;
+                isGrabbing = false;
                 Release();
             }
         }
@@ -125,7 +125,7 @@ namespace Controllers
         }
         private IEnumerator GrabObject(Collider collider, Rigidbody targetBody)
         {
-            isGrabbing = true;
+           // isGrabbing = true;
             // Grab point
             grabPoint = new GameObject().transform;
             grabPoint.position = collider.ClosestPoint(palm.position);
@@ -181,7 +181,7 @@ namespace Controllers
                 heldObject = null;
             }
 
-            isGrabbing = false;
+          //  isGrabbing = false;
             followTarget = controller.gameObject.transform;
         }
        
