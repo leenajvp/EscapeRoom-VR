@@ -23,6 +23,7 @@ namespace Climbing
             calcMovement();
         }
 
+        //Calculation for the players movement as to whether they are climbing or going to be falling.
         private void calcMovement()
         {
             Vector3 movement = Vector3.zero;
@@ -39,20 +40,23 @@ namespace Climbing
             }
 
 
-            //THIS LINE OF CODE IS THE ISSUE I THINK
+            //Move the player controller
             controller.Move(movement * Time.deltaTime);
         }
 
+        //Checking what current hand is being used to climb
         public void SetHand(Hand hand)
         {
             if (currentHand)
             {
                 currentHand.ReleasePoint();
+                currentHand = null;
             }
 
             currentHand = hand;
         }
 
+        //return the hand to null
         public void ClearHand(Hand hand)
         {
             currentHand = null;
