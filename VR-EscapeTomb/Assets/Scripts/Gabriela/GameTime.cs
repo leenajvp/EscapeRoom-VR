@@ -27,7 +27,7 @@ public class GameTime: MonoBehaviour
     {
         if (startGame == true)
         {
-            if (hasTime)
+            if (PlayerPrefs.GetInt("Timer") == 1)// (hasTime)
             {
                 totalTime -= Time.deltaTime;
                 timerText.text = totalTime.ToString();

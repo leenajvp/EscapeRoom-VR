@@ -10,6 +10,8 @@ public class CandleLight : MonoBehaviour
     private float changeSpeed2 = 10;
     private Light _light;
     public float timer = 0;
+    [SerializeField] private float moveTimer = 0.005f;
+    private Vector3 centrePos;
 
     private void Start()
     {
@@ -18,6 +20,7 @@ public class CandleLight : MonoBehaviour
 
         _light = GetComponent<Light>();
         _light.intensity = minIntensity;
+        centrePos = transform.position;
     }
 
     private void Update()
@@ -28,14 +31,14 @@ public class CandleLight : MonoBehaviour
         {
             _light.intensity += Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
             _light.range += Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
-            _light.gameObject.transform.position += new Vector3(transform.position.x, transform.position.y, transform.position.z) * Time.deltaTime * 0.005f;
+            _light.gameObject.transform.position += new Vector3(transform.position.x, transform.position.y, transform.position.z) * Time.deltaTime * moveTimer;
         }
 
         if (timer > changeSpeed)
         {
             _light.intensity -= Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
             _light.range -= Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
-            _light.gameObject.transform.position -= new Vector3(transform.position.x, transform.position.y, transform.position.z) * Time.deltaTime * 0.005f;
+            _light.gameObject.transform.position -= centrePos * Time.deltaTime * moveTimer;
             if (timer >= changeSpeed2)
                 timer = 0;
         }

@@ -50,12 +50,12 @@ public class PlayerSettings : MonoBehaviour
     {
         if (timerToggle.isOn == false)
         {
-            PlayerPrefs.SetInt("Clues", 0); // Clues ff
+            PlayerPrefs.SetInt("Timer", 0); // timer ff
         }
 
         else if (timerToggle.isOn == true)
         {
-            PlayerPrefs.SetInt("Clues", 1); // Clues on
+            PlayerPrefs.SetInt("Timer", 1); // timer on
         }
     }
 
