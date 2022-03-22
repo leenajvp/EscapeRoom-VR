@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using Climbing;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using Climbing;
 
-namespace Controllers {
+namespace Controllers
+{
 
     public class ControllerHands : MonoBehaviour
     {
@@ -23,7 +24,7 @@ namespace Controllers {
         private Transform grabPoint, followTarget;
         private FixedJoint joint1, joint2;
         private Rigidbody body;
-
+        public GameObject handsForCliming;
 
         //Nessie - Climbing
         [Header("Climbing - Scripts")]
@@ -105,7 +106,7 @@ namespace Controllers {
             if (gribStrenght > 0.6f)
             {
                 GrabPoint();
-               
+
 
                 if (!isGrabbing)
                 {
@@ -113,7 +114,7 @@ namespace Controllers {
                     isGrabbing = true;
                 }
 
-                
+
             }
 
             else if (isGrabbing && gribStrenght < 0.9f)
@@ -125,7 +126,7 @@ namespace Controllers {
             else if (gribStrenght < 0.9f)
             {
                 ReleasePoint();
-                
+
             }
         }
 
@@ -164,7 +165,7 @@ namespace Controllers {
         }
         private IEnumerator GrabObject(Collider collider, Rigidbody targetBody)
         {
-           // isGrabbing = true;
+            // isGrabbing = true;
             // Grab point
             grabPoint = new GameObject().transform;
             grabPoint.position = collider.ClosestPoint(palm.position);
@@ -220,7 +221,7 @@ namespace Controllers {
                 heldObject = null;
             }
 
-           // isGrabbing = false;
+            // isGrabbing = false;
             followTarget = controller.gameObject.transform;
         }
 
@@ -271,7 +272,7 @@ namespace Controllers {
              }*/
 
             contactPoints.Add(newObject);
-            
+
             // Debug.Log("Point Added");
         }
 
@@ -285,9 +286,17 @@ namespace Controllers {
             //  if (newObject.CompareTag("ClimbPoint"))
             //{
             contactPoints.Remove(newObject);
-            
+
             // Debug.Log("Point Removed");
             //}
+        }
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.layer == 17)
+            {
+
+                handsForCliming.SetActive(true);
+            }
         }
 
     }

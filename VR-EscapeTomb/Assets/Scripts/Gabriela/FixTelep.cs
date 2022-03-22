@@ -7,6 +7,7 @@ public class FixTelep : MonoBehaviour
 {
     public static FixTelep Instance;
     public GameObject CameraXR;
+    public Climbing.Climber climber;
     [SerializeField] private LineRenderer laser;
     [SerializeField] private int laserSteps = 25;
     [SerializeField] private float laserSegmentDistance = 1f;
@@ -140,6 +141,7 @@ public class FixTelep : MonoBehaviour
                             CameraXR.transform.position = selection.transform.position;
                             laser.gameObject.SetActive(false);
                             RestartTeleportTime();
+                            climber.ClearHand();
                         }
                     }
                 }
