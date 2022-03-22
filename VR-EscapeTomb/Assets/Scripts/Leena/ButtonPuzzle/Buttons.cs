@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace ButtonPuzzle
 {
@@ -7,7 +8,8 @@ namespace ButtonPuzzle
         [Header("Button values")]
         [Tooltip("Object to manage the buttons")]
         [SerializeField] private ButtonPuzzleManager manager;
-        [SerializeField] string orderNumber = "1";
+        //[SerializeField] string orderNumber = "1";
+        [SerializeField] public int num = 1;
         [Tooltip("Speed that the button returns to default position")]
         [SerializeField] float resetSpeed = 1.0f;
         [HideInInspector] public bool reset = false;
@@ -15,6 +17,9 @@ namespace ButtonPuzzle
         private float timer = 0;
         private Vector3 defaultPos;
         private Rigidbody rb;
+
+        public GameObject trigger;
+        float pressTimer = 0;
 
         void Start()
         {
@@ -35,7 +40,7 @@ namespace ButtonPuzzle
 
                 transform.position = new Vector3(Mathf.Lerp(transform.position.x, defaultPos.x, Time.deltaTime * resetSpeed), transform.position.y, Mathf.Lerp(transform.position.z, defaultPos.z, Time.deltaTime * resetSpeed));
 
-                if (timer >= 1f)
+                if (timer >= 0.5f)
                 {
                     rb.isKinematic = false;
                     reset = false;
@@ -44,19 +49,24 @@ namespace ButtonPuzzle
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision collision)
         {
-            if (!pressed)
+            if(collision.gameObject == trigger && !pressed)
             {
                 rb.isKinematic = true;
-                manager.AddNumber(orderNumber);
+                manager.AddNumber(num);
+                pressTimer = 0;
                 pressed = true;
             }
         }
 
-        private void OnTriggerExit(Collider other)
+        private void OnCollisionExit(Collision collision)
         {
-            pressed = false;
+            if (collision.gameObject == trigger && pressed)
+            {
+                pressed = false;
+            }
+
         }
     }
 }

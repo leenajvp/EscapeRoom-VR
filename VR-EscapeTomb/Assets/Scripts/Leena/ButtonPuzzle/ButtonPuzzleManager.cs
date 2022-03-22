@@ -8,19 +8,25 @@ namespace ButtonPuzzle
     {
         public bool completed;
 
-        [Header("Button Puzzle")] 
+        [Header("Button Puzzle")]
         [Tooltip("All buttons in list should be childed to this object")]
         [SerializeField] private List<Buttons> buttons = new List<Buttons>();
         [Tooltip("Sequence required, must be same lenght as button quantity")]
-        public string correctSolution = "1234";
+        // public string correctSolution = "1234";
+        public int[] correctSolution;
+        public List<int> enetered = new List<int>();
+        public List<int> checkNum = new List<int>();
         public string enteredSequence;
         [Tooltip("Activate light when puzzle completed")]
         [SerializeField] private Light lightToActivate;
-        private int currentNum = 0;
+        public int currentNum = 1;
+
+        public bool received = false;
 
         void Start()
         {
             completed = false;
+            received = false;
 
             if (correctSolution.Length > buttons.Count)
                 Debug.LogError(name + "Correct sequence is too long");
@@ -31,36 +37,28 @@ namespace ButtonPuzzle
 
         void Update()
         {
-            bool isEqual = Enumerable.SequenceEqual(correctSolution, enteredSequence);
-
-            if (isEqual)
+            if (currentNum > buttons.Count)
             {
                 completed = true;
 
-                if(lightToActivate != null)
+                if (lightToActivate != null)
                     lightToActivate.gameObject.SetActive(true);
             }
-                
         }
 
-        public void AddNumber(string entry)
+        public void AddNumber(int entry)
         {
-            for (int i = currentNum; i < correctSolution.Length; i++)
+            if (entry == currentNum)
             {
-                if (entry == correctSolution[i].ToString())
-                {
-                    enteredSequence += entry;
-                    currentNum++;
-                    break;
-                }
+                currentNum++;
+                return;
+            }
 
-                else
-                {
-                    buttons.ForEach(button => button.reset = true);
-                    currentNum = 0;
-                    enteredSequence = "";
-                    break;
-                }
+            else
+            {
+                buttons.ForEach(button => button.reset = true);
+                currentNum = 1;
+                return;
             }
         }
     }
