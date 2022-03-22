@@ -14,6 +14,8 @@ public class QuestManager : MonoBehaviour
     public RotationPuzzleMain rotationPuzzle;
     [Header("QUEST1")]
     public int RequiredAmmount;
+
+    public int currentQuest;
    
     // Start is called before the first frame update
     void Start()

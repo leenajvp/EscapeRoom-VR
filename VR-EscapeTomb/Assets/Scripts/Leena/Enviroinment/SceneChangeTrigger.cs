@@ -2,18 +2,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartGameTrigger : MonoBehaviour
+public class SceneChangeTrigger : MonoBehaviour
 {
-    bool enter;
-    private void Update()
-    {
-        if (enter)
-            Debug.Log("enter");
-    }
+    public enum Scene { MainMenu, MainLevel}
+    public Scene scene;
 
     private void OnTriggerStay(Collider other)
     {
-        enter = true;
         StartCoroutine(StartGame());
     }
 
@@ -21,6 +16,10 @@ public class StartGameTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
+        if(scene == Scene.MainMenu)
+            SceneManager.LoadScene("MainMenu");
+
+        else
         SceneManager.LoadScene("MainLevel");
     }
 }
