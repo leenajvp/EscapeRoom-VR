@@ -1351,7 +1351,7 @@ CharacterController:
   m_Height: 1.12
   m_Radius: 0.09
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.65, z: 0}
@@ -1384,8 +1384,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67782831}
-  m_LocalRotation: {x: -0, y: -0.1318076, z: -0, w: 0.9912753}
-  m_LocalPosition: {x: -4.6, y: 0.73, z: -8.28}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.683, y: 0.73, z: -15.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1723901461}
@@ -1396,7 +1396,7 @@ Transform:
   - {fileID: 477637365}
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: -15.148001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &72403607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2852,7 +2852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171844538}
   m_LocalRotation: {x: 0.7071067, y: 0.7071068, z: 0.00000003793077, w: 0.000000068839384}
-  m_LocalPosition: {x: 0.45040607, y: 0.797, z: 1.275}
+  m_LocalPosition: {x: 0.315, y: 0.896, z: -0.21}
   m_LocalScale: {x: 8.286238, y: 13.79942, z: 14.325643}
   m_Children: []
   m_Father: {fileID: 1904421844}
@@ -4961,7 +4961,7 @@ PrefabInstance:
     - target: {fileID: 3074541740603082113, guid: 199b900cb3a6d5744be5a585044a76f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 50
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 3074541740603082113, guid: 199b900cb3a6d5744be5a585044a76f5,
         type: 3}
@@ -7387,6 +7387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraXR: {fileID: 67782831}
+  climber: {fileID: 67782832}
   laser: {fileID: 1791107720}
   laserSteps: 25
   laserSegmentDistance: 1
@@ -10135,7 +10136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &629727996
 Transform:
   m_ObjectHideFlags: 0
@@ -13209,7 +13210,7 @@ PrefabInstance:
     - target: {fileID: 3074541740603082113, guid: 199b900cb3a6d5744be5a585044a76f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 52
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 3074541740603082113, guid: 199b900cb3a6d5744be5a585044a76f5,
         type: 3}
@@ -15924,7 +15925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1012783134
 Transform:
   m_ObjectHideFlags: 0
@@ -21326,7 +21327,7 @@ PrefabInstance:
     - target: {fileID: 3074541740603082113, guid: 199b900cb3a6d5744be5a585044a76f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 49
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3074541740603082113, guid: 199b900cb3a6d5744be5a585044a76f5,
         type: 3}
@@ -25231,6 +25232,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   palm: {fileID: 622110597}
+  handsForCliming: {fileID: 629727995}
   climbCol: {fileID: 629727997}
   climber: {fileID: 67782832}
   contactPoints: []
@@ -25300,7 +25302,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c5ec9abe643b9084781b2786ec118d5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.139
+      value: 1.133
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5ec9abe643b9084781b2786ec118d5d,
         type: 3}
@@ -25749,7 +25751,7 @@ PrefabInstance:
     - target: {fileID: 3074541740603082113, guid: 199b900cb3a6d5744be5a585044a76f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 51
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3074541740603082113, guid: 199b900cb3a6d5744be5a585044a76f5,
         type: 3}
@@ -28085,6 +28087,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   palm: {fileID: 508958790}
+  handsForCliming: {fileID: 1012783133}
   climbCol: {fileID: 1012783135}
   climber: {fileID: 67782832}
   contactPoints: []
