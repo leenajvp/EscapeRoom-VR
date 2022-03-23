@@ -79,6 +79,17 @@ public class FixTelep : MonoBehaviour
                         {
                             laser.material.color = teleportMaterial.color;
                             StartCoroutine(TeleportCorutine());
+                            teleportTime = teleportTime + 1f * Time.deltaTime;
+                            if (teleportTime >= teleportGap)
+                            {
+                                fillPod = false;
+                                CameraXR.transform.position = hit.transform.position;
+                                laser.gameObject.SetActive(false);
+                                RestartTeleportTime();
+                                climber.ClearHand();
+                                triggerValue = false;
+                            }
+                            return;
 
                         }
                         else
@@ -134,15 +145,7 @@ public class FixTelep : MonoBehaviour
                         fillRender.gameObject.GetComponent<Image>().fillAmount += Mathf.MoveTowards(0, 1, speed * Time.deltaTime);
                         selectionRender.SetActive(true);
                         yield return new WaitForSeconds(2);
-                        teleportTime = teleportTime + 1f * Time.deltaTime;
-                        if (teleportTime >= teleportGap)
-                        {
-                            fillPod = false;
-                            CameraXR.transform.position = selection.transform.position;
-                            laser.gameObject.SetActive(false);
-                            RestartTeleportTime();
-                            climber.ClearHand();
-                        }
+                        
                     }
                 }
             }

@@ -1946,7 +1946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67782831}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.44, y: 0.73, z: -20.07}
+  m_LocalPosition: {x: -2.44, y: 0, z: -20.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1723901461}
@@ -8739,7 +8739,7 @@ MonoBehaviour:
   laserSteps: 25
   laserSegmentDistance: 1
   dropPerSegment: 0.1
-  teleportGap: 3
+  teleportGap: 2
   teleportMaterial: {fileID: 2100000, guid: 84d5d8f128b94fc4d8f0f04815afbe27, type: 2}
   normalMaterial: {fileID: 2100000, guid: 84d5d8f128b94fc4d8f0f04815afbe27, type: 2}
   pods: []
@@ -24346,7 +24346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357138981}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.22, y: 0.49, z: 6.9}
+  m_LocalPosition: {x: 1.22, y: 0.47, z: 6.9}
   m_LocalScale: {x: 0.87, y: 0.87, z: 0.87}
   m_Children:
   - {fileID: 1311292618}
