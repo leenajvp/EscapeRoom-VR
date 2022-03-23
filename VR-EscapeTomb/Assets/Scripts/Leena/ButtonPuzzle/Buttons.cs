@@ -23,6 +23,7 @@ namespace ButtonPuzzle
 
         void Start()
         {
+            
             rb = GetComponent<Rigidbody>();
             pressed = false;
             reset = false;

@@ -35,15 +35,17 @@ public class GameTime: MonoBehaviour
                 int seconds = (int)totalTime % 60;
                 timerText.text = string.Format(" {0} : {1} ", minutes.ToString("00"), seconds.ToString("00"));
                 Debug.Log(timerText.text);
+                Debug.Log("TIMER ON");
             }
-            else
+            else if(PlayerPrefs.GetInt("Timer") == 0)
             {
                 totalTime += Time.deltaTime;
                 timerText.text = totalTime.ToString();
                 int minutes = (int)totalTime / 60;
                 int seconds = (int)totalTime % 60;
                 timerText.text = string.Format(" {0} : {1} ", minutes.ToString("00"), seconds.ToString("00"));
-               // Debug.Log(timerText.text);
+                // Debug.Log(timerText.text);
+                Debug.Log("TIMER OFF");
             }  
         }
     }

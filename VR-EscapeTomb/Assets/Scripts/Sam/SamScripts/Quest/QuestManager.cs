@@ -14,12 +14,14 @@ public class QuestManager : MonoBehaviour
     public RotationPuzzleMain rotationPuzzle;
     [Header("QUEST1")]
     public int RequiredAmmount;
+    public bool quest1Complete;
 
     public int currentQuest;
    
     // Start is called before the first frame update
     void Start()
     {
+        quest1Complete = false;
         instance = this;
         questsComplete = new bool[questNames.Length];
     }
@@ -27,6 +29,7 @@ public class QuestManager : MonoBehaviour
     {
         if (RequiredAmmount == 3)
         {
+            quest1Complete = true;
             MarkQuestIfComplete("StatueObjects");
         }
         if(GameManager.instance.quest4.currentAmmount == GameManager.instance.quest4.requiredAmmount)

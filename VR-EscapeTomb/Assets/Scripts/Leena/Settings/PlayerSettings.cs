@@ -1,22 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class PlayerSettings : MonoBehaviour
 {
-
     //[Header("Master AudioMixer")]
-   // [SerializeField] private AudioMixer audioMixer;
+    // [SerializeField] private AudioMixer audioMixer; // NESSIE REMOVE THIS COMMENT WHEN AUDIOMIXER DONE
 
     [Header("Toggle Audio On/Off")]
     [SerializeField] private Toggle audioToggle;
 
-    [Header("Toggle Clues On/Off")]
-    [SerializeField] private Toggle clueToggle;
-
-    [Header("Timer Clues On/Off")]
+    [Header("Toggle Timer On/Off")]
     [SerializeField] private Toggle timerToggle;
 
     [Header("Sliders to Manager AudioMixer")]
@@ -25,77 +19,75 @@ public class PlayerSettings : MonoBehaviour
 
     private void Start()
     {
-        audioToggle.isOn = true;
-
-        if (PlayerPrefs.GetInt("SoundSettings") == 0)
+        if (!PlayerPrefs.HasKey("SoundSettings"))
         {
+            PlayerPrefs.SetInt("SoundSettings", 1);
             audioToggle.isOn = true;
+            AudioListener.volume = 1;
         }
 
-        else if (PlayerPrefs.GetInt("SoundSettings") == 1)
+        if (!PlayerPrefs.HasKey("Timer"))
         {
-            audioToggle.isOn = false;
+            PlayerPrefs.SetInt("Timer", 1);
+            timerToggle.isOn = true;
         }
+
+        CheckPrefs("SoundSettings", audioToggle);
+        CheckPrefs("Timer", timerToggle);
     }
 
     private void Update()
     {
         SoundSettings();
         TimerSettings();
-        ClueSettings();
     }
 
+    private void CheckPrefs(string playerpref, Toggle toggle)
+    {
+        if (PlayerPrefs.GetInt(playerpref) == 0)
+        {
+            toggle.isOn = false;
+        }
+
+        else
+        {
+            toggle.isOn = true;
+        }
+    }
 
     public void TimerSettings()
     {
         if (timerToggle.isOn == false)
-        {
-            PlayerPrefs.SetInt("Timer", 0); // timer ff
-        }
+            PlayerPrefs.SetInt("Timer", 0); // timer off
 
-        else if (timerToggle.isOn == true)
-        {
+        else
             PlayerPrefs.SetInt("Timer", 1); // timer on
-        }
-    }
-
-    public void ClueSettings()
-    {
-        if (clueToggle.isOn == false)
-        {
-            PlayerPrefs.SetInt("Clues", 0); // Clues ff
-        }
-
-        else if (clueToggle.isOn == true)
-        {
-            PlayerPrefs.SetInt("Clues", 1); // Clues on
-        }
     }
 
     public void SoundSettings()
     {
-        if (audioToggle.isOn == true)
+        if (audioToggle.isOn == false)
         {
             PlayerPrefs.SetInt("SoundSettings", 0); // sound on
-            AudioListener.volume = 1;
+            AudioListener.volume = 0;
         }
 
-        else if (audioToggle.isOn == false)
+        else if (audioToggle.isOn == true)
         {
             PlayerPrefs.SetInt("SoundSettings", 1); // sound off
-            AudioListener.volume = 0;
+            AudioListener.volume = 1;
         }
     }
 
     public void SetSFXLevel(float sfxLvl)
     {
-       // audioMixer.SetFloat("sfxVol", sfxLvl); // change to correct names from  audio mixer
+        // audioMixer.SetFloat("sfxVol", sfxLvl); // change to correct names from  audio mixer // NESSIE
         PlayerPrefs.SetFloat("sfxVol", sfxLvl);
     }
 
     public void SetMusicLevel(float musicLvl)
     {
-        // audioMixer.SetFloat("mVol", musicLvl);  // change to correct names from  audio mixer
+        // audioMixer.SetFloat("mVol", musicLvl);  // change to correct names from  audio mixer // NESSIE
         PlayerPrefs.SetFloat("mVol", musicLvl);
     }
 }

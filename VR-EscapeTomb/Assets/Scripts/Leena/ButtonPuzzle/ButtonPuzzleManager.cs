@@ -12,7 +12,6 @@ namespace ButtonPuzzle
         [Tooltip("All buttons in list should be childed to this object")]
         [SerializeField] private List<Buttons> buttons = new List<Buttons>();
         [Tooltip("Sequence required, must be same lenght as button quantity")]
-        // public string correctSolution = "1234";
         public int[] correctSolution;
         public List<int> enetered = new List<int>();
         public List<int> checkNum = new List<int>();
@@ -21,12 +20,10 @@ namespace ButtonPuzzle
         [SerializeField] private Light lightToActivate;
         public int currentNum = 1;
 
-        public bool received = false;
-
         void Start()
         {
+            currentNum = 1;
             completed = false;
-            received = false;
 
             if (correctSolution.Length > buttons.Count)
                 Debug.LogError(name + "Correct sequence is too long");

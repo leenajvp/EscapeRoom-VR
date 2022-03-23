@@ -4,7 +4,7 @@ public class ObjectHides : MonoBehaviour
 {
     public enum MoveDir { xPlus, zPlus, xMinus, zMinus }
     public bool unlocked = false;
-    private bool open = false;
+    public bool open = false;
 
     [Header("Movement Values")]
     public MoveDir moveAxis;

@@ -12,18 +12,25 @@ public class GameManager : MonoBehaviour
     public ObjectHides[] hiddenSpotsFirstLevel;
     public ObjectHides[] hiddenSpotsSecondLevel;
     public GameObject[] teleportsInSecondRoom;
+    public GameObject[] exitGameTeleports;
     public GameObject altarTeleport;
     public bool papirusTeleport;
     public GameObject[] papirus;
     public List<Papirus> Items = new List<Papirus>();
     [Header("QUEST4")]
     public Quest4 quest4;
+    public bool gameComplete = false;
     // Start is called before the first frame update
     void Start()
     {
-        
         instance = this;
         StartGame();
+        SetSounds();
+        gameComplete = false;
+
+        altarTeleport.gameObject.SetActive(false);
+        foreach (GameObject t in exitGameTeleports)
+            gameObject.SetActive(false);
     }
     public void Update()
     {
@@ -63,6 +70,10 @@ public class GameManager : MonoBehaviour
         if(QuestManager.instance.questsComplete[6])
         {
             door[2].open = true;
+
+            gameComplete = true;
+            foreach(GameObject t in exitGameTeleports)
+                gameObject.SetActive(true);
         }
     }
     public void Add(Papirus papirus)
@@ -87,4 +98,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void SetSounds()
+    {
+        if(PlayerPrefs.GetInt("SoundSettings") == 0)
+            AudioListener.volume = 0;
+
+        else
+            AudioListener.volume = 1;
+    }
 }

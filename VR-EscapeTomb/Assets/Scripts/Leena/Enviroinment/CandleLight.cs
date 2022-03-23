@@ -31,14 +31,14 @@ public class CandleLight : MonoBehaviour
         {
             _light.intensity += Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
             _light.range += Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
-            _light.gameObject.transform.position += new Vector3(transform.position.x, transform.position.y, transform.position.z) * Time.deltaTime * moveTimer;
+            //_light.gameObject.transform.position += new Vector3 (centrePos.x + 0.3f,centrePos.y + 0.3f,centrePos.z) * Time.deltaTime * moveTimer;
         }
 
         if (timer > changeSpeed)
         {
             _light.intensity -= Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
             _light.range -= Random.Range(0.1f, 0.3f) * Time.deltaTime * 0.1f;
-            _light.gameObject.transform.position -= centrePos * Time.deltaTime * moveTimer;
+          //  _light.gameObject.transform.position -= centrePos * Time.deltaTime * moveTimer;
             if (timer >= changeSpeed2)
                 timer = 0;
         }
