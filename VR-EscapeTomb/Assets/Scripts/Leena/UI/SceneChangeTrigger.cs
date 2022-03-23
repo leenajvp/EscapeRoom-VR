@@ -7,24 +7,30 @@ public class SceneChangeTrigger : MonoBehaviour
     [Header("Load Scene")]
     [Tooltip("Menu = 0, Game Level = 1")]
     [SerializeField] private int sceneToLoad;
-    [SerializeField] private Canvas loadCanvas;
+     private Canvas loadCanvas;
+   [SerializeField] private GameObject player;
 
     private void Start()
     {
+
         PlayerPrefs.SetInt("NextScene", sceneToLoad);
-        loadCanvas.gameObject.SetActive(false);
+
+       // loadCanvas.gameObject.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
     {
-        loadCanvas.gameObject.SetActive(true);
-        StartCoroutine(LoadScene());
+            SceneManager.LoadScene(2);
+            //loadCanvas.gameObject.SetActive(true);
+            //StartCoroutine(LoadScene());
+        
+
     }
 
-    private IEnumerator LoadScene()
-    {
-        yield return new WaitForSeconds(1);
+    //private IEnumerator LoadScene()
+    //{
+    //    yield return new WaitForSeconds(1);
         
-        SceneManager.LoadScene(0);
-    }
+    //    SceneManager.LoadScene(0);
+    //}
 }

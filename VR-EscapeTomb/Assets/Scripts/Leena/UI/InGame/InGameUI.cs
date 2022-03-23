@@ -19,6 +19,7 @@ namespace UI
         [Header("Quit Game Settings")]
         [SerializeField] private GameObject exitDoor;
         [SerializeField] private GameObject exitTeleportation;
+        [SerializeField] private float secondsToCancel = 30.0f;
 
         [Header("Statue puzzle and hide doors")]
         [SerializeField] private QuestManager statuePuzzle;
@@ -30,7 +31,7 @@ namespace UI
 
         [Header("Button puzzle and clue object")]
         [SerializeField] private ButtonPuzzle.ButtonPuzzleManager buttonPuzzle;
-        [SerializeField] private List<Hints> quest3Clues = new List<Hints>();
+        [SerializeField] private Hints buttonPuzzleClue;
 
         [Header("Rotation puzzle and clue objects")]
         [SerializeField] private RotationPuzzle.RotationPuzzleMain rotPuzzle;
@@ -137,7 +138,7 @@ namespace UI
             //Check quest 3 button puzzle
             if (!buttonPuzzle.completed)
             {
-                quest3Clues.ForEach(hint => hint.playerNeedsHint = true);
+                buttonPuzzleClue.playerNeedsHint = true;
                 return;
             }
 
@@ -163,14 +164,14 @@ namespace UI
 
             quest1Clues.ForEach(hint => hint.playerNeedsHint = false);
             quest2Clues.ForEach(hint => hint.playerNeedsHint = false);
-            quest3Clues.ForEach(hint => hint.playerNeedsHint = false);
+            buttonPuzzleClue.playerNeedsHint = true;
             quest4Clues.ForEach(hint => hint.playerNeedsHint = false);
             quest5Clues.ForEach(hint => hint.playerNeedsHint = false);
         }
 
         private IEnumerator CancelExit()
         {
-            yield return new WaitForSeconds(40);
+            yield return new WaitForSeconds(secondsToCancel);
             reset = true;
             exitDoor.GetComponent<SlidingDoor>().MoveDoor();
             exitTeleportation.SetActive(true);

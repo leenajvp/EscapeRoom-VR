@@ -13,13 +13,14 @@ public class LoadingScene : MonoBehaviour
 
     void Start()
     {
-        nextScene = PlayerPrefs.GetInt("NextScene");
         StartCoroutine(LoadSyncOp());
     }
 
 
     private IEnumerator LoadSyncOp()
     {
+        Debug.Log("Nect scene " + PlayerPrefs.GetInt("NextScene"));
+        nextScene = PlayerPrefs.GetInt("NextScene");
         AsyncOperation loadLevel = SceneManager.LoadSceneAsync(nextScene);
         yield return new WaitForEndOfFrame();
     }

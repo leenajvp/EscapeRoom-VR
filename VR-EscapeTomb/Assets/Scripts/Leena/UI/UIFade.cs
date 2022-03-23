@@ -3,7 +3,7 @@
 [RequireComponent(typeof(CanvasGroup))]
 public class UIFade : MonoBehaviour
 {
-    public enum InOut { FadeIn, FadeOut }
+    public enum InOut { FadeIn, FadeOut}
     public InOut fadeInOrOut;
     [Header("Fade In/Out Speed")]
     [SerializeField] protected float speed = 1f;

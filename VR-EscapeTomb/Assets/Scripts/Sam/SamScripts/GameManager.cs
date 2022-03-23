@@ -29,8 +29,9 @@ public class GameManager : MonoBehaviour
         gameComplete = false;
 
         altarTeleport.gameObject.SetActive(false);
+
         foreach (GameObject t in exitGameTeleports)
-            gameObject.SetActive(false);
+           t.gameObject.SetActive(false);
     }
     public void Update()
     {
