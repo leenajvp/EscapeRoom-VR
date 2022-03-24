@@ -1,18 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ThrowBalls : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private bool held = false;
+    private Vector3 velocity;
+    private Rigidbody rb;
+    private GameObject holdingHand;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        FixedJoint joint = GetComponent<FixedJoint>();
+
+        if (joint != null)
+        {
+            holdingHand = joint.connectedBody.gameObject.GetComponent<HandTrackingPhysics>().palm.gameObject; // possibly do somenthing with centre of mass
+            velocity = rb.velocity;
+            held = true;
+            rb.mass = 0;
+        }
+
+        if (joint == null && held)
+        {
+            if (velocity.y > 1f)
+            {
+                rb.drag = 1;
+                Debug.Log("y slowed");
+            }
+
+            if (velocity.x > 1f)
+            {
+                rb.drag = 1;
+                Debug.Log("x slowed");
+            }
+
+            if (velocity.z > 1f)
+            {
+                rb.drag = 2;
+                Debug.Log("z slowed");
+            }
+
+            held = false;
+        }
     }
 }

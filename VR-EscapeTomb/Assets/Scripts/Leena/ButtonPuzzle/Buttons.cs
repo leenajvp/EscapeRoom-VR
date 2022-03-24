@@ -36,14 +36,14 @@ namespace ButtonPuzzle
         {
             if (reset)
             {
-                rb.isKinematic = true;
+                rb.isKinematic = false;
                 timer += Time.deltaTime * 0.5f;
 
                 transform.position = new Vector3(Mathf.Lerp(transform.position.x, defaultPos.x, Time.deltaTime * resetSpeed), transform.position.y, Mathf.Lerp(transform.position.z, defaultPos.z, Time.deltaTime * resetSpeed));
 
-                if (timer >= 0.5f)
+                if (timer >= 1.0f)
                 {
-                    rb.isKinematic = false;
+                  //  rb.isKinematic = false;
                     reset = false;
                     timer = 0;
                 }

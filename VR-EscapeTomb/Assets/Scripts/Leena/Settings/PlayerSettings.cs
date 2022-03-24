@@ -17,7 +17,7 @@ public class PlayerSettings : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
 
-    private void Start()
+    private void Awake()
     {
         if (!PlayerPrefs.HasKey("SoundSettings"))
         {
@@ -42,7 +42,7 @@ public class PlayerSettings : MonoBehaviour
         TimerSettings();
     }
 
-    private void CheckPrefs(string playerpref, Toggle toggle)
+    public static void CheckPrefs(string playerpref, Toggle toggle)
     {
         if (PlayerPrefs.GetInt(playerpref) == 0)
         {

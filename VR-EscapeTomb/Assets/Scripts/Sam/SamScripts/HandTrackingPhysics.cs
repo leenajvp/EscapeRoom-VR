@@ -7,6 +7,7 @@ public class HandTrackingPhysics : MonoBehaviour
 {
     public Transform target;
     private Rigidbody rb;
+    public GameObject palm;
     
     // Start is called before the first frame update
     void Start()

@@ -153,7 +153,7 @@ namespace UI
 
             if (!finalPuzzle.gameComplete)
             {
-                quest4Clues.ForEach(hint => hint.playerNeedsHint = true);
+                quest5Clues.ForEach(hint => hint.playerNeedsHint = true);
             }
             
         }
@@ -164,7 +164,7 @@ namespace UI
 
             quest1Clues.ForEach(hint => hint.playerNeedsHint = false);
             quest2Clues.ForEach(hint => hint.playerNeedsHint = false);
-            buttonPuzzleClue.playerNeedsHint = true;
+            buttonPuzzleClue.playerNeedsHint = false;
             quest4Clues.ForEach(hint => hint.playerNeedsHint = false);
             quest5Clues.ForEach(hint => hint.playerNeedsHint = false);
         }

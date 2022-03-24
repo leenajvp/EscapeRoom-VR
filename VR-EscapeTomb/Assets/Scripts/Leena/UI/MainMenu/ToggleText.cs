@@ -7,6 +7,12 @@ public class ToggleText : MonoBehaviour
     private Text text => GetComponent<Text>();
     private Toggle toggle => GetComponent<Toggle>();
 
+
+    private void Start()
+    {
+        ChangeText();
+    }
+
     public void ChangeText()
     {
         if (toggle.isOn)
