@@ -16,7 +16,6 @@ public class GameTime : MonoBehaviour
 
     [Header("Game Over")]
     [SerializeField] private GameObject gameoverMenu;
-    [SerializeField] private Text gameoverTimerTxt;
 
     // Start is called before the first frame update
     void Start()

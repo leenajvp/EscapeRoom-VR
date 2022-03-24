@@ -4718,7 +4718,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c5ec9abe643b9084781b2786ec118d5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.87
+      value: 0.974
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5ec9abe643b9084781b2786ec118d5d,
         type: 3}
@@ -41562,9 +41562,8 @@ MonoBehaviour:
   timerText: {fileID: 613060845}
   totalTime: 0
   hasTime: 0
-  startTime: 5
+  startTime: 900
   gameoverMenu: {fileID: 614967958}
-  gameoverTimerTxt: {fileID: 0}
 --- !u!4 &4784684544195036030
 Transform:
   m_ObjectHideFlags: 0
