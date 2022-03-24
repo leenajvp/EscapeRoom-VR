@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour
     public bool papirusTeleport;
     public GameObject[] papirus;
     public List<Papirus> Items = new List<Papirus>();
-    [Header("QUEST4")]
-    public Quest4 quest4;
     public bool gameComplete = false;
     // Start is called before the first frame update
     void Start()

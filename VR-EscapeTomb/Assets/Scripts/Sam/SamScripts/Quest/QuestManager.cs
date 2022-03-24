@@ -15,6 +15,8 @@ public class QuestManager : MonoBehaviour
     [Header("QUEST1")]
     public int RequiredAmmount;
     public bool quest1Complete;
+    [Header("QUEST4")]
+    public Quest4 quest4;
 
     public int currentQuest;
    
@@ -32,7 +34,7 @@ public class QuestManager : MonoBehaviour
             quest1Complete = true;
             MarkQuestIfComplete("StatueObjects");
         }
-        if(GameManager.instance.quest4.currentAmmount == GameManager.instance.quest4.requiredAmmount)
+        if(quest4.part1 && quest4.part2 && quest4.part3)
         {
             MarkQuestIfComplete("Papirus");
         }
