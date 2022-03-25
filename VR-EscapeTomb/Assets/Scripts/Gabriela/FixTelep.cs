@@ -22,6 +22,12 @@ public class FixTelep : MonoBehaviour
 
     public GameObject[] pods;
     private GameObject[] shaders;
+
+    //NESSIE - AUDIO
+    [Header("Audio Bools")]
+    public bool isTeleporting;
+   
+
     void Awake()
     {
         laser.positionCount = laserSteps;
@@ -80,6 +86,9 @@ public class FixTelep : MonoBehaviour
                             laser.material.color = teleportMaterial.color;
                             StartCoroutine(TeleportCorutine());
                             teleportTime = teleportTime + 1f * Time.deltaTime;
+
+                        
+
                             if (teleportTime >= teleportGap)
                             {
                                 fillPod = false;
@@ -88,12 +97,21 @@ public class FixTelep : MonoBehaviour
                                 RestartTeleportTime();
                                 climber.ClearHand();
                                 triggerValue = false;
+
+                                //NESSIE - AUDIO
+                                isTeleporting = true;
+                              //  Debug.Log("istele");
+                                
                             }
                             return;
 
                         }
                         else
                         {
+                            //NESSIE - AUDIO
+                            isTeleporting = false;
+                            
+
                             laser.material.color = normalMaterial.color;
                             return;
                         }
@@ -146,12 +164,15 @@ public class FixTelep : MonoBehaviour
                         selectionRender.SetActive(true);
                         yield return new WaitForSeconds(2);
                         
-                    }
+                       
+
+                    }   
                 }
             }
             triggerValue = false;
             fillRender.gameObject.GetComponent<Image>().fillAmount -= Mathf.MoveTowards(1, 0, speed * Time.deltaTime);
             selectionRender.SetActive(false);
+           
         }
     }
     

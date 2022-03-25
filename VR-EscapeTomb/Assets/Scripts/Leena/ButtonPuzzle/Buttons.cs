@@ -13,7 +13,7 @@ namespace ButtonPuzzle
         [Tooltip("Speed that the button returns to default position")]
         [SerializeField] float resetSpeed = 1.0f;
         [HideInInspector] public bool reset = false;
-        private bool pressed = false;
+        public bool pressed = false;
         private float timer = 0;
         private Vector3 defaultPos;
         private Rigidbody rb;

@@ -7,7 +7,11 @@ public class SnapPapirus : MonoBehaviour
 
     public GameObject correctForm;
     private Rigidbody rb;
-    // Start is called before the first frame update
+
+
+    //NESSIE - SOUND
+    [Header("Audio")]
+    public AudioSource audioSource;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -23,6 +27,9 @@ public class SnapPapirus : MonoBehaviour
                 transform.rotation = correctForm.transform.rotation;
                 rb.isKinematic = true;
                 correctForm.gameObject.SetActive(false);
+
+                //Audio
+                
             }
 
             else if (socketNumber == SocketNumber.Socket2)
@@ -31,6 +38,9 @@ public class SnapPapirus : MonoBehaviour
                 transform.rotation = correctForm.transform.rotation;
                 rb.isKinematic = true;
                 correctForm.gameObject.SetActive(false);
+
+                //Audio
+                audioSource.Play();
             }
 
             else if (socketNumber == SocketNumber.Socket3)
@@ -39,6 +49,9 @@ public class SnapPapirus : MonoBehaviour
                 transform.rotation = correctForm.transform.rotation;
                 rb.isKinematic = true;
                 correctForm.gameObject.SetActive(false);
+
+                //Audio
+                audioSource.Play();
             }
         }
     }

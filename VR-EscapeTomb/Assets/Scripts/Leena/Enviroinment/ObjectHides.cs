@@ -16,13 +16,17 @@ public class ObjectHides : MonoBehaviour
     private float openTime = 0f;
 
     [Header("Sound Effects")]
-    [SerializeField] private AudioSource moveBack = null;
-    [SerializeField] private AudioSource moveUp = null;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip moveBack = null;
+    [SerializeField] private AudioClip moveUp = null;
 
     private void Start()
     {
         defaultPos = transform.position;
         currentPos = gameObject.transform;
+
+        //NESSIE - AUDIO
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -42,16 +46,17 @@ public class ObjectHides : MonoBehaviour
 
             if (moveAxis == MoveDir.zPlus)
                 currentPos.position = new Vector3(currentPos.position.x, currentPos.position.y, Mathf.Lerp(currentPos.position.z, defaultPos.z + moveBackAmount, Time.deltaTime * openSpeed)); // move back z
-
-            //if (!moveBack.isPlaying)
-            //    moveBack.Play(); // Nessie to finish programming sounds
+           
+            //NESSIE - AUDIO
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(moveBack);
 
             if (openTime >= 1.0f)
             {
                 currentPos.position = new Vector3(currentPos.position.x, Mathf.Lerp(currentPos.position.y, defaultPos.y + moveUpkAmount, Time.deltaTime * openSpeed), currentPos.position.z); // move up
 
-                //if (!moveUp.isPlaying)
-                //    moveUp.Play(); // Nessie to finish programming sounds
+                if (!audioSource.isPlaying)
+                    audioSource.PlayOneShot(moveUp);
             }
         }
     }

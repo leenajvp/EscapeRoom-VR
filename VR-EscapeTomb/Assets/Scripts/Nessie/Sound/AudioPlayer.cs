@@ -6,22 +6,42 @@ using Controllers;
 namespace Audio {
     public class AudioPlayer : MonoBehaviour
     {
-        public ControllerHands leftController;
-        public ControllerHands rightController;
+        [Header("Other Classes")]
+        public FixTelep teleporting;
+
+        [Header("Audio")]
+        public AudioSource playerAudioSource;
+        public AudioClip teleportSelect;
+        public AudioClip sandStep;
 
         private void Start()
         {
-           
+
+        }
+
+        private void Update()
+        {
+            checkTeleport();
         }
         void CheckGrab()
         {
-           if (leftController.isGrabbing || rightController.isGrabbing)
-            {
-                Debug.Log("GRABING");
-            }
+
 
         }
 
+        private void checkTeleport()
+        {
+          
 
+                if (teleporting.isTeleporting && !playerAudioSource.isPlaying)
+                {
+                    playerAudioSource.PlayOneShot(sandStep);
+                }
+
+
+            
+
+
+        }
     }
 }

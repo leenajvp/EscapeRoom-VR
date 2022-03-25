@@ -19,6 +19,9 @@ public class Hints : MonoBehaviour
 
     private float distance;
 
+    //NESSIE-AUDIO
+    public AudioSource audioSource;
+
     private void Start()
     {
         thisRenderer = GetComponent<MeshRenderer>();
@@ -32,6 +35,11 @@ public class Hints : MonoBehaviour
         {
             thisRenderer.material = hintMaterial;
             distance = Vector3.Distance(transform.position, player.transform.position);
+
+            if(!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
 
             if(distance < playeeDetectionDistance)
             {
