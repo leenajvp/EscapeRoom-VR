@@ -135,7 +135,7 @@ namespace Controllers
             Delta = lastPosition - transform.position;
         }
 
-        void grab()
+        public void grab()
         {
             // Sends a speare with coliders that check if there is any
             if (isGrabbing || heldObject) return;
@@ -235,7 +235,7 @@ namespace Controllers
             if (currentPoint)
             {
                 climber.SetHand(this);
-                Debug.Log("grabbing point");
+               // Debug.Log("grabbing point");
 
             }
 

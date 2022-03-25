@@ -24,7 +24,7 @@ namespace RotationPuzzle
 
             if (transform.eulerAngles.y >= LowRotationTarget && transform.eulerAngles.y <= HighRotationTarget)
             {
-                Debug.Log("Top is Correct");
+              //  Debug.Log("Top is Correct");
                 rotaPuzzleMain.isTopPartCompleted = true;
             }
 
