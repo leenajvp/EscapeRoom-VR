@@ -10,21 +10,26 @@ namespace Audio {
 
         public bool soundPlayed;
 
+        private float soundLength;
+
         public override void Start()
         {
             base.Start();
+
+            soundLength = audioSource.clip.length;
 
            button = GetComponent<Buttons>();
         }
 
         private void checkPush()
         {
-            if (button.pressed)
+            if (button.pressed && !soundPlayed)
             {
-                if (!soundPlayed)
+                StartCoroutine(pushSound());
+
+                if (!audioSource.isPlaying)
                 {
                     audioSource.Play();
-                    soundPlayed = true;
                 }
             }
 
@@ -32,6 +37,12 @@ namespace Audio {
             {
                 soundPlayed = false;
             }
+        }
+
+        IEnumerator pushSound()
+        {
+                yield return new WaitForSeconds(soundLength);
+                audioSource.Stop();
         }
 
     }
