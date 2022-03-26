@@ -12,9 +12,12 @@ namespace Audio
 
         public override void Start()
         {
+            audioSource.enabled = false;
             base.Start();
 
             rigiBod = GetComponent<Rigidbody>();
+
+            StartCoroutine(warmUp());
         }
 
         private void Update()
@@ -24,10 +27,17 @@ namespace Audio
             if (isMoving)
             {
                 audioSource.Play();
-                Debug.Log("Moving");
+              //  Debug.Log("Moving");
             }
           
 
+        }
+
+        IEnumerator warmUp()
+        {
+            audioSource.enabled = false;
+            yield return new WaitForSeconds(2.0f);
+            audioSource.enabled = true;
         }
 
         IEnumerator checkMoving()

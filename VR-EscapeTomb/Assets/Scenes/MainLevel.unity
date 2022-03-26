@@ -388,7 +388,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -1093,7 +1093,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -2817,7 +2817,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -3058,7 +3058,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -3979,7 +3979,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -4372,7 +4372,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -5630,7 +5630,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -6482,7 +6482,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -7398,102 +7398,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6487295664359056722, guid: a8a2ebe648f15f948a157ef08f83a024, type: 3}
---- !u!82 &263590916
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263590910}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &269945157 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7179222956073176625, guid: 358fe0d953f8144479d4b93f248fca46,
@@ -7893,7 +7797,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -10266,7 +10170,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -11019,7 +10923,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -11652,7 +11556,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -12287,7 +12191,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -12633,7 +12537,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -13421,7 +13325,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -15148,7 +15052,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -15218,7 +15122,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.566
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -15756,7 +15660,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -17085,7 +16989,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -17125,7 +17029,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -18169,7 +18073,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -21363,7 +21267,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -21797,7 +21701,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -22371,7 +22275,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -23756,7 +23660,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -24185,7 +24089,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -24540,7 +24444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5096aefd3923b60408b18f063b1098a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 963124816}
   rigiBod: {fileID: 963124812}
   isMoving: 0
 --- !u!1001 &966467738
@@ -25468,6 +25372,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RotationPuzzle -Final
       objectReference: {fileID: 0}
+    - target: {fileID: 2382969966762456536, guid: 22ba4a8ea51cf8242bfa569e9c6e4150,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2382969966762456537, guid: 22ba4a8ea51cf8242bfa569e9c6e4150,
         type: 3}
       propertyPath: isPuzzleCompleted
@@ -26382,7 +26291,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -29143,7 +29052,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -31538,7 +31447,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -33283,7 +33192,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -33593,7 +33502,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -34093,7 +34002,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -34357,7 +34266,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -34830,7 +34739,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -37661,7 +37570,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -38649,7 +38558,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -39236,7 +39145,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -39597,7 +39506,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -43144,7 +43053,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -43416,7 +43325,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -43766,7 +43675,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -45255,7 +45164,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -47329,7 +47238,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -47939,7 +47848,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
@@ -49708,7 +49617,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.06
+  MinDistance: 1
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 0
