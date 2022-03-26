@@ -42,7 +42,7 @@ namespace UI
         [SerializeField] private List<Hints> quest5Clues = new List<Hints>();
 
         private bool quest5;
-        private bool pressed = false, reset = false;
+        public bool pressed = false, reset = false;
         private float timer = 0;
         private Vector3 defaultPos;
         private Rigidbody rb;
@@ -79,6 +79,7 @@ namespace UI
             {
                 rb.isKinematic = true;
                 pressed = true;
+
 
                 if (function == Functions.GetClue)
                 {

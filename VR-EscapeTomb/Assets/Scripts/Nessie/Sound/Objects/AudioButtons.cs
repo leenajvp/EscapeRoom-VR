@@ -21,7 +21,7 @@ namespace Audio {
         {
             if (button.pressed)
             {
-                if (!soundPlayed && !audioSource.isPlaying)
+                if (!soundPlayed)
                 {
                     audioSource.Play();
                     soundPlayed = true;
