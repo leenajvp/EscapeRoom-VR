@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UI;
 
+
 namespace Audio {
     public class AudioUIButton : AudioObjectBase
     {
@@ -12,7 +13,6 @@ namespace Audio {
         public override void Start()
         {
             base.Start();
-
             inGameUI = GetComponent<InGameUI>();
         }
 

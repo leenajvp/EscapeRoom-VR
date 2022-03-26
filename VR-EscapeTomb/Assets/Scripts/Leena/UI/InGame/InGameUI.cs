@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace UI
 {
-
     public class InGameUI : MonoBehaviour
     {
         public enum Functions { GetClue, QuitGame };
@@ -121,6 +120,7 @@ namespace UI
                     if (!hide.gameObject.GetComponent<ObjectHides>().open)
                     {
                         hide.playerNeedsHint = true;
+                        hide.audioSource.Play();
                         break;
                     }
                 }
@@ -132,7 +132,7 @@ namespace UI
             if (!throwPuzzle.completed)
             {
                 quest2Clues.ForEach(hint => hint.playerNeedsHint = true);
-
+                quest2Clues.ForEach(hint => hint.audioSource.Play());
                 return;
             }
 
@@ -140,6 +140,7 @@ namespace UI
             if (!buttonPuzzle.completed)
             {
                 buttonPuzzleClue.playerNeedsHint = true;
+                buttonPuzzleClue.audioSource.Play();
                 return;
             }
 
@@ -147,16 +148,16 @@ namespace UI
             if (!rotPuzzle.isPuzzleCompleted)
             {
                 quest4Clues.ForEach(hint => hint.playerNeedsHint = true);
+                quest4Clues.ForEach(hint => hint.audioSource.Play());
                 return;
             }
 
             //Check quest 5 (final) climbing puzzle
-
             if (!finalPuzzle.gameComplete)
             {
                 quest5Clues.ForEach(hint => hint.playerNeedsHint = true);
+                quest5Clues.ForEach(hint => hint.audioSource.Play());
             }
-            
         }
 
         private IEnumerator GlowTimer()

@@ -15,6 +15,7 @@ public class SnapPapirus : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -29,7 +30,8 @@ public class SnapPapirus : MonoBehaviour
                 correctForm.gameObject.SetActive(false);
 
                 //Audio
-                
+                audioSource.Play();
+
             }
 
             else if (socketNumber == SocketNumber.Socket2)

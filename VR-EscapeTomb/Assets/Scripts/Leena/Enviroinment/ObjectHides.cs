@@ -20,6 +20,9 @@ public class ObjectHides : MonoBehaviour
     [SerializeField] private AudioClip moveBack = null;
     [SerializeField] private AudioClip moveUp = null;
 
+    private bool movingXZ;
+    private bool movingY;
+
     private void Start()
     {
         defaultPos = transform.position;
@@ -29,8 +32,14 @@ public class ObjectHides : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     private void Update()
     {
+        Sounds();
         if (open)
         {
             openTime += Time.deltaTime * openSpeed;
@@ -46,19 +55,39 @@ public class ObjectHides : MonoBehaviour
 
             if (moveAxis == MoveDir.zPlus)
                 currentPos.position = new Vector3(currentPos.position.x, currentPos.position.y, Mathf.Lerp(currentPos.position.z, defaultPos.z + moveBackAmount, Time.deltaTime * openSpeed)); // move back z
-           
+           movingXZ = true;
             //NESSIE - AUDIO
-            if (!audioSource.isPlaying)
-                audioSource.PlayOneShot(moveBack);
+            //if (!audioSource.isPlaying)
+            //    audioSource.PlayOneShot(moveBack);
 
             if (openTime >= 1.0f)
             {
                 currentPos.position = new Vector3(currentPos.position.x, Mathf.Lerp(currentPos.position.y, defaultPos.y + moveUpkAmount, Time.deltaTime * openSpeed), currentPos.position.z); // move up
-
-                if (!audioSource.isPlaying)
-                    audioSource.PlayOneShot(moveUp);
+                movingXZ=false;
+                movingY = true;
+                //if (!audioSource.isPlaying)
+                //    audioSource.PlayOneShot(moveUp);
             }
         }
+    }
+
+    private void Sounds()
+    {
+        if (movingXZ && !movingY)
+        {
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(moveBack);
+        }
+
+        else if (movingY && !movingXZ)
+        {
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(moveUp);
+            movingY = false;
+        }
+
+        if (!movingXZ && !movingY)
+            audioSource.Stop();
     }
 
     private void OnCollisionEnter(Collision collision)

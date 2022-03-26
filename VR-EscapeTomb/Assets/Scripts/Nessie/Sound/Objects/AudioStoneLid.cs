@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Audio
@@ -12,25 +11,59 @@ namespace Audio
 
         public override void Start()
         {
-            audioSource.enabled = false;
             base.Start();
-
+            audioSource.enabled = false;
             rigiBod = GetComponent<Rigidbody>();
-
             StartCoroutine(warmUp());
+        }
+
+        private void OnCollisionStay(Collision collision)
+        {
+            if (rigiBod.velocity.x != 0 || rigiBod.velocity.z != 0)
+            {
+                if (!audioSource.isPlaying)
+                    audioSource.Play();
+            }
+
+            else
+                audioSource.Stop();
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (rigiBod.velocity.x != 0 || rigiBod.velocity.z != 0)
+            {
+                if (!audioSource.isPlaying)
+                    audioSource.Play();
+            }
+
+            else
+                audioSource.Stop();
+
+            //COULD HAVE A THUD SOUND HERE
+            if (gameObject.transform.childCount == 0)
+            {
+                //play thud
+                //if (!thud.isPlaying)
+                //    thud.Play();
+            }
+
         }
 
         private void Update()
         {
             StartCoroutine(checkMoving());
 
+            if (gameObject.transform.childCount == 0)
+            {
+                audioSource.Stop();
+            }
+
             if (isMoving)
             {
-                audioSource.Play();
-              //  Debug.Log("Moving");
+                // audioSource.Play();
+                //  Debug.Log("Moving");
             }
-          
-
         }
 
         IEnumerator warmUp()
@@ -49,7 +82,7 @@ namespace Audio
             if (startPos.x != finalPos.x || startPos.y != finalPos.y || startPos.z != finalPos.z)
             {
                 isMoving = true;
-                
+
             }
 
             else

@@ -25,6 +25,8 @@ public class Hints : MonoBehaviour
     private void Start()
     {
         thisRenderer = GetComponent<MeshRenderer>();
+
+        if(audioSource == null)
         audioSource = GetComponent<AudioSource>();
 
         if (player == null) { try { player = GameObject.Find("Player").gameObject; } catch { Debug.LogError(name + "object named Player not found in hierarchy"); } }
@@ -36,20 +38,16 @@ public class Hints : MonoBehaviour
         {
             thisRenderer.material = hintMaterial;
             distance = Vector3.Distance(transform.position, player.transform.position);
-            audioSource.Play();
-            
 
             if(distance < playerDetectionDistance)
             {
                 playerNeedsHint = false;
-                audioSource.Stop();
             }
         }
 
         else
         {
             thisRenderer.material = normalMaterial;
-            audioSource.Stop();
         }
     }
 }
