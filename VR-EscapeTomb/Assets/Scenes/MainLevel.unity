@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -50076,7 +50076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 67782831}
-  playerDetectionDistance: 3
+  playerDetectionDistance: 4
   playerNeedsHint: 0
   normalMaterial: {fileID: 2100000, guid: 2f2826421c765524f91ef7a4e26eb956, type: 2}
   hintMaterial: {fileID: 2100000, guid: 240e406bc57fc8644934ebff1b5a65e3, type: 2}

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
@@ -7,10 +8,15 @@ using UnityEngine.XR;
 public class UIRaycast : MonoBehaviour
 {
     [Header("UI Sounds")]
-    [SerializeField] private AudioSource hoverSound;
     [SerializeField] private AudioSource buttonClick;
     [SerializeField] private AudioSource sliderClick;
     [SerializeField] private AudioSource toggleSound;
+
+    [Header("Haptic feedback")]
+    [SerializeField] private float duration = 0.1f;
+    [SerializeField] private float strenght = 0.1f;
+    public bool hapticOn = false;
+
 
     private float triggerTimer = 0;
     private bool lastState = false;
@@ -52,12 +58,11 @@ public class UIRaycast : MonoBehaviour
                         Image image = buttonHit.GetComponent<Image>();
                         selectedObject = buttonHit.gameObject;
                         image.color = Color.grey;
-                        //hoverSound.Play(); 
 
                         if (controller.TryGetFeatureValue(primaryButton, out triggerValue) && triggerValue)
                         {
                             buttonHit.GetComponent<Button>().onClick.Invoke();
-                            //buttonClick.Play();
+                            buttonClick.Play();
                         }
                     }
 
@@ -75,7 +80,7 @@ public class UIRaycast : MonoBehaviour
                         {
                             if (triggerValue != lastState)
                             {
-                                //sliderClick.Play();
+                                sliderClick.Play();
 
                                 if (volume.value != 1)
                                     volume.value += 0.2f;
@@ -99,16 +104,31 @@ public class UIRaycast : MonoBehaviour
                         {
                             if (triggerValue != lastState)
                             {
-                                //toggleSound.Play();
+                                toggleSound.Play();
                                 toggle.isOn = !toggle.isOn;
                                 lastState = triggerValue;
                             }
                         }
                     }
 
-                    else
-                        return;
+                    if(volume || buttonHit|| toggle)
+                    {
+                        if (!hapticOn)
+                        {
+                            rightHandedControllers.ForEach(c => c.SendHapticImpulse(0, strenght, 0.01f));
+                            hapticOn = true;
+                        }
+
+                    }
+
+                    else if  (!volume || !buttonHit || !toggle)
+                    {
+                        hapticOn = false;
+                    }
+
                 }
+
+
             }
         }
     }
