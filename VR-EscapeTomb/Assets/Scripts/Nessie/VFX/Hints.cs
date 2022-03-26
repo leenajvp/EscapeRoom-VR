@@ -7,7 +7,7 @@ public class Hints : MonoBehaviour
     [Header("Player Character detection")]
     [SerializeField] private GameObject player;
     [Tooltip("Object will turn on normal material when player is within this distance")]
-    [SerializeField] private float playeeDetectionDistance = 3;
+    [SerializeField] private float playerDetectionDistance = 3;
 
     [Header("Hint Bool")]
     public bool playerNeedsHint;
@@ -41,7 +41,7 @@ public class Hints : MonoBehaviour
                 audioSource.Play();
             }
 
-            if(distance < playeeDetectionDistance)
+            if(distance < playerDetectionDistance)
             {
                 playerNeedsHint = false;
             }
