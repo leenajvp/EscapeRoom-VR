@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
@@ -40,8 +39,10 @@ public class UIRaycast : MonoBehaviour
         InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, rightHandedControllers);
         lastState = triggerValue;
 
+
         foreach (var controller in rightHandedControllers)
         {
+            var controllerInput = controller.TryGetFeatureValue(primaryButton, out triggerValue) && triggerValue;
             RaycastHit hit;
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, 30))
@@ -59,7 +60,7 @@ public class UIRaycast : MonoBehaviour
                         selectedObject = buttonHit.gameObject;
                         image.color = Color.grey;
 
-                        if (controller.TryGetFeatureValue(primaryButton, out triggerValue) && triggerValue)
+                        if (controllerInput)
                         {
                             buttonHit.GetComponent<Button>().onClick.Invoke();
                             buttonClick.Play();
@@ -72,46 +73,47 @@ public class UIRaycast : MonoBehaviour
                         selectedObject = null;
                     }
 
-                    Slider volume = hit.collider.gameObject.GetComponent<Slider>();
+                    Slider sliderHit = hit.collider.gameObject.GetComponent<Slider>();
 
-                    if (volume)
+                    if (sliderHit)
                     {
-                        if (controller.TryGetFeatureValue(primaryButton, out triggerValue) && triggerValue)
+                        if (controllerInput)
                         {
                             if (triggerValue != lastState)
                             {
-                                sliderClick.Play();
+                                if (!sliderHit.GetComponent<VolumeBar>().background)
+                                    sliderClick.Play();
 
-                                if (volume.value != 1)
-                                    volume.value += 0.2f;
+                                if (sliderHit.value != 1)
+                                    sliderHit.value += 0.2f;
 
                                 else
-                                    volume.value = 0;
+                                    sliderHit.value = 0;
 
                                 triggerTimer = Time.time;
                             }
                         }
                     }
 
-                    Toggle toggle = hit.collider.gameObject.GetComponent<Toggle>();
+                    Toggle toggleHit = hit.collider.gameObject.GetComponent<Toggle>();
 
-                    if (toggle)
+                    if (toggleHit)
                     {
                         if (Time.time < triggerTimer + 1f)
                             return;
 
-                        if (controller.TryGetFeatureValue(primaryButton, out triggerValue) && triggerValue)
+                        if (controllerInput)
                         {
                             if (triggerValue != lastState)
                             {
                                 toggleSound.Play();
-                                toggle.isOn = !toggle.isOn;
+                                toggleHit.isOn = !toggleHit.isOn;
                                 lastState = triggerValue;
                             }
                         }
                     }
 
-                    if(volume || buttonHit|| toggle)
+                    if (sliderHit || buttonHit || toggleHit)
                     {
                         if (!hapticOn)
                         {
@@ -121,7 +123,7 @@ public class UIRaycast : MonoBehaviour
 
                     }
 
-                    else if  (!volume || !buttonHit || !toggle)
+                    else if (!sliderHit || !buttonHit || !toggleHit)
                     {
                         hapticOn = false;
                     }

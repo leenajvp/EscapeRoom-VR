@@ -41,7 +41,7 @@ namespace ButtonPuzzle
 
                 transform.position = new Vector3(Mathf.Lerp(transform.position.x, defaultPos.x, Time.deltaTime * resetSpeed), transform.position.y, Mathf.Lerp(transform.position.z, defaultPos.z, Time.deltaTime * resetSpeed));
 
-                if (timer >= 1.0f)
+                if (timer >= 1.5f)
                 {
                   //  rb.isKinematic = false;
                     reset = false;

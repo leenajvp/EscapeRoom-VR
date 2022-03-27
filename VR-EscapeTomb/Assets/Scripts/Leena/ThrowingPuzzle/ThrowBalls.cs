@@ -14,37 +14,29 @@ public class ThrowBalls : MonoBehaviour
 
     void Update()
     {
-        FixedJoint joint = GetComponent<FixedJoint>();
+        float maxDarg = 1.5f;
 
-        if (joint != null)
+        if (transform.childCount != 0)
         {
-            holdingHand = joint.connectedBody.gameObject.GetComponent<HandTrackingPhysics>().palm.gameObject; // possibly do somenthing with centre of mass
             velocity = rb.velocity;
             held = true;
-            rb.mass = 0;
+            rb.mass = 3;
+            rb.drag = 0.5f;
         }
 
-        if (joint == null && held)
+        if (transform.childCount == 0 && held)
         {
-            if (velocity.y > 1f || velocity.y < -1f)
+            if (velocity.z > -0.5f || velocity.z < -0.5f || velocity.x > -0.5f || velocity.x < -0.5f || velocity.y > 0.5f || velocity.y < -0.5f)
             {
-                rb.drag = 1;
-                Debug.Log("y slowed");
+                rb.mass += 1f;
+
+                if (rb.drag <= maxDarg)
+                    rb.drag += 0.1f;
+
+                Debug.Log("ball slowed");
             }
 
-            if (velocity.x > 1f || velocity.x < -1f)
-            {
-                rb.drag = 2;
-                Debug.Log("x slowed");
-            }
-
-            if (velocity.z > 1f || velocity.z < -1f)
-            {
-                rb.drag = 2;
-                Debug.Log("z slowed");
-            }
-
-            held = false;
+            // held = false;
         }
     }
 }

@@ -4,9 +4,6 @@ using UnityEngine.Audio;
 
 public class PlayerSettings : MonoBehaviour
 {
-    //[Header("Master AudioMixer")]
-    // [SerializeField] private AudioMixer audioMixer; // NESSIE REMOVE THIS COMMENT WHEN AUDIOMIXER DONE
-
     [Header("Toggle Audio On/Off")]
     [SerializeField] private Toggle audioToggle;
 
@@ -37,6 +34,24 @@ public class PlayerSettings : MonoBehaviour
             timerToggle.isOn = true;
         }
 
+        if (!PlayerPrefs.HasKey("mVol"))
+        {
+            PlayerPrefs.SetInt("mVol", 1);
+            sfxSlider.value = 1;
+        }
+
+        if (!PlayerPrefs.HasKey("sfxVol"))
+        {
+            PlayerPrefs.SetFloat("sfxVol", 1);
+            sfxSlider.value = 1;
+        }
+
+        float currentSFX = PlayerPrefs.GetFloat("sfxVol");
+        float currentMusic = PlayerPrefs.GetFloat("mVol");
+
+        musicSlider.value = currentMusic;
+        sfxSlider.value = currentSFX;
+
         CheckPrefs("SoundSettings", audioToggle);
         CheckPrefs("Timer", timerToggle);
     }
@@ -45,6 +60,10 @@ public class PlayerSettings : MonoBehaviour
     {
         SoundSettings();
         TimerSettings();
+
+        //This version of Unity has a possible bug on slider single value so as work around sliders are checked on update
+        SetSFXLevel(sfxSlider.value);
+        SetMusicLevel(musicSlider.value);
     }
 
     public static void CheckPrefs(string playerpref, Toggle toggle)
@@ -87,14 +106,14 @@ public class PlayerSettings : MonoBehaviour
     public void SetSFXLevel(float sfxLvl)
     {
         // NESSIE
-        sfxMixer.SetFloat("sfxVol", sfxLvl); // change to correct names from  audio mixer 
+        sfxMixer.SetFloat("Volume", sfxLvl); // change to correct names from  audio mixer 
         PlayerPrefs.SetFloat("sfxVol", sfxLvl);
     }
 
     public void SetMusicLevel(float musicLvl)
     {
         // NESSIE
-        musicMixer.SetFloat("mVol", musicLvl);  // change to correct names from  audio mixer 
+        musicMixer.SetFloat("Volume", musicLvl);  // change to correct names from  audio mixer 
         PlayerPrefs.SetFloat("mVol", musicLvl);
     }
 }

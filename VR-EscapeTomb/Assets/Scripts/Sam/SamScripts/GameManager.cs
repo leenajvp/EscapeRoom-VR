@@ -29,8 +29,6 @@ public class GameManager : MonoBehaviour
         SetSounds();
         gameComplete = false;
 
-        altarTeleport.gameObject.SetActive(false);
-
         foreach (GameObject t in exitGameTeleports)
            t.gameObject.SetActive(false);
     }

@@ -6,14 +6,5 @@ using UnityEngine.UI;
 public class VolumeBar : MonoBehaviour
 {
     public Image fill;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool background = false;
 }
