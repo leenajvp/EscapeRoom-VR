@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -478,8 +478,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -591,6 +606,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -605,6 +625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -1398,8 +1423,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -1511,6 +1551,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1525,6 +1570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -1792,8 +1842,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3256073743388690278, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -1935,6 +2000,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1949,6 +2019,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExitTeleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -5117,8 +5192,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -5230,6 +5320,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5244,6 +5339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -7556,8 +7656,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -7669,6 +7784,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -7683,6 +7803,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -8394,8 +8519,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -8507,6 +8647,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -8521,6 +8666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -10337,8 +10487,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -10450,6 +10615,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -10464,6 +10634,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleport_Altar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -12526,6 +12701,9 @@ MonoBehaviour:
   teleportGap: 2
   teleportMaterial: {fileID: 2100000, guid: 2eed1883cdc0bcf4982dfe64c6975b41, type: 2}
   normalMaterial: {fileID: 2100000, guid: 84d5d8f128b94fc4d8f0f04815afbe27, type: 2}
+  teleport:
+    serializedVersion: 2
+    m_Bits: 4
   pods: []
   isTeleporting: 0
 --- !u!23 &477637367
@@ -14064,8 +14242,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -14177,6 +14370,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -14191,6 +14389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -14404,8 +14607,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3256073743388690278, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -14547,6 +14765,11 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -14566,6 +14789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExitTeleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -15505,8 +15733,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -15618,6 +15861,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -15632,6 +15880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -17255,8 +17508,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -17368,6 +17636,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -17382,6 +17655,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -18536,8 +18814,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -18654,6 +18947,11 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -18673,6 +18971,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -20084,8 +20387,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -20197,6 +20515,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -20211,6 +20534,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -20234,8 +20562,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -20352,6 +20695,11 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -20371,6 +20719,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -23762,8 +24115,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -23875,6 +24243,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -23889,6 +24262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -24045,8 +24423,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -24158,6 +24551,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -24172,6 +24570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -28653,8 +29056,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -28766,6 +29184,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -28780,6 +29203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -30767,8 +31195,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -30880,6 +31323,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -30894,6 +31342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -32245,6 +32698,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -32252,6 +32710,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -32363,6 +32831,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -32382,6 +32855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -33226,7 +33704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357138982}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34453,8 +34931,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -34566,6 +35059,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -34580,6 +35078,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -35397,8 +35900,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -35510,6 +36028,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -35524,6 +36047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -38065,8 +38593,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -38178,6 +38721,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -38192,6 +38740,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -39937,8 +40490,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -40050,6 +40618,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -40064,6 +40637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -46718,8 +47296,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -46831,6 +47424,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -46845,6 +47443,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -47110,8 +47713,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -47223,6 +47841,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -47237,6 +47860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -47608,8 +48236,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -47721,6 +48364,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -47735,6 +48383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -48159,8 +48812,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -48272,6 +48940,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -48286,6 +48959,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -48514,8 +49192,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -48627,6 +49320,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -48641,6 +49339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_FirstRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -49053,8 +49756,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -49166,6 +49884,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -49180,6 +49903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -49455,8 +50183,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -49568,6 +50311,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -49582,6 +50330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -50513,8 +51266,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -50626,6 +51394,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -50640,6 +51413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleports_SecondRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -50949,8 +51727,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
       propertyPath: m_TagString
       value: Shader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
@@ -51062,6 +51855,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -51076,6 +51874,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExitTeleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}

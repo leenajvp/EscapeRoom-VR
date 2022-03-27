@@ -36,8 +36,9 @@ public class GameManager : MonoBehaviour
     {
         if (QuestManager.instance.questsComplete[1])
         {
-            door[0].open = true;
-            
+            door[0].MoveDoor();
+            QuestManager.instance.MarkQuestIncomplete("StatueObjects");
+
         }
         if (QuestManager.instance.questsComplete[2])
         {
@@ -55,13 +56,14 @@ public class GameManager : MonoBehaviour
         }
         if (QuestManager.instance.questsComplete[4])
         {
-            door[1].open = true;
+            door[1].MoveDoor();
             altarTeleport.gameObject.SetActive(true);
-            if(papirusTeleport)
+            if (papirusTeleport)
             {
                 for (int i = 0; i < papirus.Length; i++)
                     papirus[i].SetActive(true);
             }
+            QuestManager.instance.MarkQuestIncomplete("Papirus");
         }
         if (QuestManager.instance.questsComplete[5])
         {
@@ -69,11 +71,12 @@ public class GameManager : MonoBehaviour
         }
         if(QuestManager.instance.questsComplete[6])
         {
-            door[2].open = true;
+            door[2].MoveDoor();
 
             gameComplete = true;
-            foreach(GameObject t in exitGameTeleports)
+            foreach (GameObject t in exitGameTeleports)
                 gameObject.SetActive(true);
+            QuestManager.instance.MarkQuestIncomplete("RotationPuzzle");
         }
     }
     public void Add(Papirus papirus)

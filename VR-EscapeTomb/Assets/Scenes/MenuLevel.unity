@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -51046,12 +51046,15 @@ MonoBehaviour:
   CameraXR: {fileID: 1915186821}
   climber: {fileID: 0}
   laser: {fileID: 1844704284}
-  laserSteps: 25
-  laserSegmentDistance: 1
+  laserSteps: 40
+  laserSegmentDistance: 0.4
   dropPerSegment: 0.1
-  teleportGap: 3
+  teleportGap: 2
   teleportMaterial: {fileID: 2100000, guid: 2eed1883cdc0bcf4982dfe64c6975b41, type: 2}
   normalMaterial: {fileID: 2100000, guid: 84d5d8f128b94fc4d8f0f04815afbe27, type: 2}
+  teleport:
+    serializedVersion: 2
+    m_Bits: 4
   pods: []
   isTeleporting: 0
 --- !u!23 &893527637
@@ -51221,8 +51224,8 @@ MonoBehaviour:
   buttonClick: {fileID: 643643218}
   sliderClick: {fileID: 997125549}
   toggleSound: {fileID: 590804647}
-  duration: 0.1
-  strenght: 0.03
+  duration: 0.3
+  strenght: 1
   hapticOn: 0
 --- !u!114 &912463900
 MonoBehaviour:
@@ -61916,6 +61919,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1781557680884682361, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557681817208931, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781557682621768837, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4441710097271091266, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_Pivot.x
@@ -62026,6 +62044,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4834408880963204486, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4905071414313143658, guid: f6d1f90b8bdc06a438787797730f8b27,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -62045,6 +62068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleport_StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924854653626401119, guid: f6d1f90b8bdc06a438787797730f8b27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1f90b8bdc06a438787797730f8b27, type: 3}
@@ -86108,7 +86136,7 @@ GameObject:
   - component: {fileID: 1763320531}
   - component: {fileID: 1763320532}
   - component: {fileID: 1763320533}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: StartGameTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86962,7 +86990,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.04
     widthCurve:
       serializedVersion: 2
       m_Curve:

@@ -15,6 +15,7 @@ public class FixTelep : MonoBehaviour
     [SerializeField] private float teleportGap = 1f;
     [SerializeField] private Material teleportMaterial;
     [SerializeField] private Material normalMaterial;
+    public LayerMask teleport;
     public RaycastHit hit;
     private float teleportTime;
     private bool triggerValue;
@@ -73,7 +74,7 @@ public class FixTelep : MonoBehaviour
                 for (int i = 0; i < laserSteps - 1; i++)
                 {
                     Vector3 offset = (transform.forward + (Vector3.down * dropPerSegment * i)).normalized * laserSegmentDistance;
-                    if (Physics.Raycast(origin, offset, out hit, laserSegmentDistance))
+                    if (Physics.Raycast(origin, offset, out hit, laserSegmentDistance, teleport))
                     {
                         for (int j = i + 1; j < laser.positionCount; j++)
                         {
