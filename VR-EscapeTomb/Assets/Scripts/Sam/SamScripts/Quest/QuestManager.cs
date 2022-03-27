@@ -19,11 +19,17 @@ public class QuestManager : MonoBehaviour
     public Quest4 quest4;
 
     public int currentQuest;
+
+    //NESSIE - AUDIO
+    [Header("Audio")]
+    public bool quest4Complete;
+
    
     // Start is called before the first frame update
     void Start()
     {
         quest1Complete = false;
+        quest4Complete = false;
         instance = this;
         questsComplete = new bool[questNames.Length];
     }
@@ -36,6 +42,7 @@ public class QuestManager : MonoBehaviour
         }
         if(quest4.part1 && quest4.part2 && quest4.part3)
         {
+            quest4Complete = true;
             MarkQuestIfComplete("Papirus");
         }
         if(buttonPuzzle.completed)
@@ -77,11 +84,16 @@ public class QuestManager : MonoBehaviour
     public void MarkQuestIfComplete(string questToMark)
     {
         questsComplete[GetQuestNumber(questToMark)] = true;
+
+        
+       
     }
     public void MarkQuestIncomplete(string questName)
     {
         questsComplete[GetQuestNumber(questName)] = false;
     }
+
+  
    
 
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Audio {
+   
     public class AudioObjectBase : MonoBehaviour
     {
         [Header("Audio Source")]

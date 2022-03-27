@@ -26,10 +26,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_8984EA79: 5
-    - Vector1_AEFD914D: 1.2
-    - Vector1_DD707198: 2
+    - Vector1_AEFD914D: -0.39
+    - Vector1_DD707198: 2.48
     - Vector1_EC798404: 0.1
     m_Colors:
     - Color_45275321: {r: 11.98431, g: 6.713726, b: 0, a: 1}
     - Fire_Offset: {r: 0, g: -0.17, b: 0, a: 0}
-    - Fire_Offset_1: {r: -0.1, g: -0.5, b: 0, a: 0}
+    - Fire_Offset_1: {r: -0.1, g: 0.7, b: 1, a: 0}

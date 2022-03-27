@@ -7,7 +7,7 @@ namespace Audio
     {
         public Rigidbody rigiBod;
         public bool isMoving;
-
+        public AudioClip thud;
 
         public override void Start()
         {
@@ -43,9 +43,10 @@ namespace Audio
             //COULD HAVE A THUD SOUND HERE
             if (gameObject.transform.childCount == 0)
             {
-                //play thud
-                //if (!thud.isPlaying)
-                //    thud.Play();
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.PlayOneShot(thud);
+                }
             }
 
         }

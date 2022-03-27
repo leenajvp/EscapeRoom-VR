@@ -17,6 +17,11 @@ public class PlayerSettings : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
 
+    //NESSIE - AUDIO
+    [Header("Audio Mixer")]
+    [SerializeField] private AudioMixer musicMixer;
+    [SerializeField] private AudioMixer sfxMixer;
+
     private void Awake()
     {
         if (!PlayerPrefs.HasKey("SoundSettings"))
@@ -81,13 +86,15 @@ public class PlayerSettings : MonoBehaviour
 
     public void SetSFXLevel(float sfxLvl)
     {
-        // audioMixer.SetFloat("sfxVol", sfxLvl); // change to correct names from  audio mixer // NESSIE
+        // NESSIE
+        sfxMixer.SetFloat("sfxVol", sfxLvl); // change to correct names from  audio mixer 
         PlayerPrefs.SetFloat("sfxVol", sfxLvl);
     }
 
     public void SetMusicLevel(float musicLvl)
     {
-        // audioMixer.SetFloat("mVol", musicLvl);  // change to correct names from  audio mixer // NESSIE
+        // NESSIE
+        musicMixer.SetFloat("mVol", musicLvl);  // change to correct names from  audio mixer 
         PlayerPrefs.SetFloat("mVol", musicLvl);
     }
 }

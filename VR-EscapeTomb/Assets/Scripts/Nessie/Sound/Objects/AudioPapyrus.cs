@@ -5,9 +5,9 @@ using UnityEngine;
 namespace Audio {
     public class AudioPapyrus : AudioObjectBase
     {
-        public GameManager gameManager;
-        
-
+        public GameObject papriusPickUp;
+        public bool hasPlayed;
+       
 
         public override void Start()
         {
@@ -16,14 +16,15 @@ namespace Audio {
 
         private void Update()
         {
-            
+            CheckCollection();
         }
 
         private void CheckCollection()
         {
-            if (gameManager.papirusTeleport)
+            if (papriusPickUp == null && !hasPlayed)
             {
                 audioSource.Play();
+                hasPlayed = true;
             }
         }
     }

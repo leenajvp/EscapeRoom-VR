@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] papirus;
     public List<Papirus> Items = new List<Papirus>();
     public bool gameComplete = false;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -105,4 +108,8 @@ public class GameManager : MonoBehaviour
         else
             AudioListener.volume = 1;
     }
+
+ 
+
+   
 }
