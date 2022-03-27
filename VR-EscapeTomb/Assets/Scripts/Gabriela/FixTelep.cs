@@ -102,7 +102,7 @@ public class FixTelep : MonoBehaviour
                                 climber.ClearHand();
                                 triggerValue = false;
 
-                                isTeleporting = false;
+                                
                               
                                 
                             }

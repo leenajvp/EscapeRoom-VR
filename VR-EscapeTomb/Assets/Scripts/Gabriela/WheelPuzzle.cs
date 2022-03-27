@@ -50,7 +50,7 @@ public class WheelPuzzle : MonoBehaviour
 
         numberShown += 1;
 
-        if (numberShown > 6)
+        if (numberShown > 5)
         {
             numberShown = 0;
         }
