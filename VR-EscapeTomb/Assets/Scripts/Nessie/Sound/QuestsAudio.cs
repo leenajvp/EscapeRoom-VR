@@ -11,7 +11,7 @@ public class QuestsAudio : MonoBehaviour
     public GameManager gameManager;
 
     [Header("Quest Sound Bools")] //Ensuring the sound only plays once
-    [SerializeField] private bool q1Play, Q2Play, Q3Play, Q4Play, Q5Play, Q6Play;
+    [SerializeField] private bool q1Play, Q2Play, Q3Play, Q4Play, Q5Play, Q6Play, gameCompletePlay;
 
     private void Start()
     {
@@ -21,6 +21,7 @@ public class QuestsAudio : MonoBehaviour
         Q4Play = false;
         Q5Play = false;
         Q6Play = false;
+        gameCompletePlay = false;
     }
     private void Update()
     {
@@ -67,9 +68,10 @@ public class QuestsAudio : MonoBehaviour
             Q6Play = true;
         }
 
-        else
+       if(gameManager.gameComplete && !gameCompletePlay)
         {
-          //  PlayerAudioSource.Stop();
+            PlayAudio();
+            gameCompletePlay = true;
         }
 
     }
