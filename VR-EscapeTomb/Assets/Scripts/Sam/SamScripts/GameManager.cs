@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour
     public List<Papirus> Items = new List<Papirus>();
     public bool gameComplete = false;
 
-    
+    private bool q1, q2, q3, q4, q5, q6;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,51 +30,76 @@ public class GameManager : MonoBehaviour
         SetSounds();
         gameComplete = false;
 
-        foreach (GameObject t in exitGameTeleports)
-           t.gameObject.SetActive(false);
+       // foreach (GameObject t in exitGameTeleports)
+          //  t.gameObject.SetActive(false);
     }
     public void Update()
     {
         if (QuestManager.instance.questsComplete[1])
         {
-            door[0].open = true;
+            if (!q1)
+            {
+                door[0].MoveDoor();
+                q1 = true;
+            }
 
         }
         if (QuestManager.instance.questsComplete[2])
         {
-            for (int i = 0; i < teleportsInSecondRoom.Length; i++)
+            if (!q2)
             {
-                teleportsInSecondRoom[i].SetActive(true);
+                for (int i = 0; i < teleportsInSecondRoom.Length; i++)
+                {
+                    teleportsInSecondRoom[i].SetActive(true);
+                }
+                q2 = true;
             }
+
         }
         if (QuestManager.instance.questsComplete[3])
         {
-            for (int i = 1; i < hiddenSpotsSecondLevel.Length; i++)
+            if (!q3)
             {
-                hiddenSpotsSecondLevel[i].unlocked = true;
+                for (int i = 1; i < hiddenSpotsSecondLevel.Length; i++)
+                {
+                    hiddenSpotsSecondLevel[i].unlocked = true;
+                }
+                q3 = true;
             }
         }
         if (QuestManager.instance.questsComplete[4])
         {
-            door[1].open = true;
-            altarTeleport.gameObject.SetActive(true);
-            if (papirusTeleport)
+            if (!q4)
             {
-                for (int i = 0; i < papirus.Length; i++)
-                    papirus[i].SetActive(true);
+                door[1].MoveDoor();
+                altarTeleport.gameObject.SetActive(true);
+                if (papirusTeleport)
+                {
+                    for (int i = 0; i < papirus.Length; i++)
+                        papirus[i].SetActive(true);
+                }
+                q4 = true;
             }
+
         }
         if (QuestManager.instance.questsComplete[5])
         {
-            hiddenSpotsSecondLevel[0].unlocked = true;
+            if (!q5)
+            {
+                hiddenSpotsSecondLevel[0].unlocked = true;
+                q5 = true;
+            }
         }
-        if(QuestManager.instance.questsComplete[6])
+        if (QuestManager.instance.questsComplete[6])
         {
-            door[2].open = true;
+            if (!q6)
+            {
+                door[2].MoveDoor();
+                gameComplete = true;
+                foreach (GameObject t in exitGameTeleports)
+                    gameObject.SetActive(true);
+            }
 
-            gameComplete = true;
-            foreach (GameObject t in exitGameTeleports)
-                gameObject.SetActive(true);
         }
     }
     public void Add(Papirus papirus)
@@ -82,7 +108,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        
+
         if (!isTesting)
         {
             player.transform.position = playerStartPosition.transform.position;
@@ -96,18 +122,23 @@ public class GameManager : MonoBehaviour
         {
             papirus[i].gameObject.SetActive(false);
         }
+        q1 = false;
+        q2 = false;
+        q3 = false;
+        q4 = false;
+        q5 = false;
+        q6 = false;
     }
 
     private void SetSounds()
     {
-        if(PlayerPrefs.GetInt("SoundSettings") == 0)
+        if (PlayerPrefs.GetInt("SoundSettings") == 0)
             AudioListener.volume = 0;
 
         else
             AudioListener.volume = 1;
     }
 
- 
 
-   
+
 }
