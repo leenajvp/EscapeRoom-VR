@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -21380,7 +21380,8 @@ AudioSource:
   m_GameObject: {fileID: 803779918}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: a4182dc58e064674d87842cf3ebc6994,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: c00959ff5ce2e594e980b6ea3437896a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -42885,7 +42886,7 @@ MonoBehaviour:
   contactPoints: []
   finalPoint: {fileID: 754239717}
   teleportPoint: {fileID: 171844539}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 648831796}
 --- !u!114 &1723901463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47688,7 +47689,7 @@ MonoBehaviour:
   contactPoints: []
   finalPoint: {fileID: 754239717}
   teleportPoint: {fileID: 171844539}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 648831796}
 --- !u!114 &1911582105
 MonoBehaviour:
   m_ObjectHideFlags: 0

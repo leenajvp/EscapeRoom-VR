@@ -106,7 +106,7 @@ public class QuestsAudio : MonoBehaviour
 
     IEnumerator EndGameTimeCheck()
     {
-        yield return new WaitForSeconds(65f); 
+        yield return new WaitForSeconds(13f); 
         endGameAudioSource.Stop();
         musicAudioSource.UnPause();
         
