@@ -12,16 +12,20 @@ public class UIRaycast : MonoBehaviour
     [SerializeField] private AudioSource toggleSound;
 
     [Header("Volume slider settings")]
-    [SerializeField] private float minVolume = -80.0f;
-    [SerializeField] private float maxVolume = 0.0f;
+    [SerializeField] private float minMusicVolume = -80.0f;
+    [SerializeField] private float maxMusicVolume = 0.0f;
     [Tooltip("Recommended to be min volume / 5")]
-    [SerializeField] private float increaseValue = 16.0f;
+    [SerializeField] private float increaseMusicValue = 16.0f;
+    [Space(10)]
+    [SerializeField] private float minSfxVolume = -80.0f;
+    [SerializeField] private float maxSfxVolume = 0.0f;
+    [Tooltip("Recommended to be min volume / 5")]
+    [SerializeField] private float increaseSfxValue = 16.0f;
 
     [Header("Haptic feedback")]
     [SerializeField] private float duration = 0.1f;
     [SerializeField] private float strenght = 0.1f;
     public bool hapticOn = false;
-
 
     private float triggerTimer = 0;
     private bool lastState = false;
@@ -87,14 +91,26 @@ public class UIRaycast : MonoBehaviour
                         {
                             if (triggerValue != lastState)
                             {
-                                if (!sliderHit.GetComponent<VolumeBar>().background)
+
+                                if (sliderHit.GetComponent<VolumeBar>().background)
+                                {
+                                    if (sliderHit.value != maxMusicVolume)
+                                        sliderHit.value += increaseMusicValue;
+
+                                    else
+                                        sliderHit.value = minMusicVolume;
+                                }
+
+                                else if (!sliderHit.GetComponent<VolumeBar>().background)
+                                {
+                                    if (sliderHit.value != maxSfxVolume)
+                                        sliderHit.value += increaseSfxValue;
+
+                                    else
+                                        sliderHit.value = minSfxVolume;
+
                                     sliderClick.Play();
-
-                                if (sliderHit.value != maxVolume)
-                                    sliderHit.value += 16f;
-
-                                else
-                                    sliderHit.value = minVolume;
+                                }
 
                                 triggerTimer = Time.time;
                             }
