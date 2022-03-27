@@ -22782,8 +22782,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1869057309}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -51225,8 +51225,11 @@ MonoBehaviour:
   buttonClick: {fileID: 643643218}
   sliderClick: {fileID: 997125549}
   toggleSound: {fileID: 590804647}
-  duration: 0.3
-  strenght: 1
+  minVolume: -80
+  maxVolume: 0
+  increaseValue: 16
+  duration: 0.03
+  strenght: 0.1
   hapticOn: 0
 --- !u!114 &912463900
 MonoBehaviour:
@@ -108054,8 +108057,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 7990495095026989179}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:

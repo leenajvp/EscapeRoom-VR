@@ -11,6 +11,12 @@ public class UIRaycast : MonoBehaviour
     [SerializeField] private AudioSource sliderClick;
     [SerializeField] private AudioSource toggleSound;
 
+    [Header("Volume slider settings")]
+    [SerializeField] private float minVolume = -80.0f;
+    [SerializeField] private float maxVolume = 0.0f;
+    [Tooltip("Recommended to be min volume / 5")]
+    [SerializeField] private float increaseValue = 16.0f;
+
     [Header("Haptic feedback")]
     [SerializeField] private float duration = 0.1f;
     [SerializeField] private float strenght = 0.1f;
@@ -84,11 +90,11 @@ public class UIRaycast : MonoBehaviour
                                 if (!sliderHit.GetComponent<VolumeBar>().background)
                                     sliderClick.Play();
 
-                                if (sliderHit.value != 1)
-                                    sliderHit.value += 0.2f;
+                                if (sliderHit.value != maxVolume)
+                                    sliderHit.value += 16f;
 
                                 else
-                                    sliderHit.value = 0;
+                                    sliderHit.value = minVolume;
 
                                 triggerTimer = Time.time;
                             }
@@ -117,7 +123,7 @@ public class UIRaycast : MonoBehaviour
                     {
                         if (!hapticOn)
                         {
-                            rightHandedControllers.ForEach(c => c.SendHapticImpulse(0, strenght, 0.01f));
+                            rightHandedControllers.ForEach(c => c.SendHapticImpulse(0, strenght, duration));
                             hapticOn = true;
                         }
 
