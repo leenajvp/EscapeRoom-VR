@@ -26,8 +26,8 @@ public class Hints : MonoBehaviour
     {
         thisRenderer = GetComponent<MeshRenderer>();
 
-        if(audioSource == null)
-        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
 
         if (player == null) { try { player = GameObject.Find("Player").gameObject; } catch { Debug.LogError(name + "object named Player not found in hierarchy"); } }
     }

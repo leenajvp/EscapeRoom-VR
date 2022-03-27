@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6731,7 +6731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &261584603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7408,7 +7408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &351998407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33939,7 +33939,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -63, y: -168}
-  m_SizeDelta: {x: 548.1, y: 343.7}
+  m_SizeDelta: {x: 598.4, y: 454.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593899230
 MonoBehaviour:
@@ -34852,7 +34852,7 @@ GameObject:
   - component: {fileID: 703857949}
   - component: {fileID: 703857948}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50526,7 +50526,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871020504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11.000082}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1.2832607, y: 1.2832607, z: 1.2832607}
   m_Children:
   - {fileID: 315171813}
@@ -50535,7 +50535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96, y: -75.60002}
+  m_AnchoredPosition: {x: 112, y: -135}
   m_SizeDelta: {x: 145.2, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871020506
@@ -63463,8 +63463,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 44.99994}
-  m_SizeDelta: {x: 522.2, y: 102}
+  m_AnchoredPosition: {x: -0, y: 12}
+  m_SizeDelta: {x: 522.2, y: 317.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357538965
 MonoBehaviour:
@@ -63487,7 +63487,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3141b2b1cdde1544b8a34c3bb38af339, type: 3}
-    m_FontSize: 40
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -63498,7 +63498,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "If you begin to feel unwell, \nstop playing immediately."
+  m_Text: "The game requires you to move your arms and reach. Please ensure you have
+    enough empty space around you.\n\nIf you begin to feel unwell, \nstop playing
+    immediately."
 --- !u!222 &1357538966
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -87238,7 +87240,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1.5748901, y: 1.3999939}
   m_SizeDelta: {x: -4.81, y: -14.400024}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -87358,7 +87360,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871840868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11.000082}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1.2832607, y: 1.2832607, z: 1.2832607}
   m_Children:
   - {fileID: 854547986}
@@ -87367,7 +87369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -108, y: -75.60002}
+  m_AnchoredPosition: {x: -120, y: -135}
   m_SizeDelta: {x: 145.2, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871840870
@@ -106753,7 +106755,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5778341129813186648}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 433c686dbca7e754686d3e51cecf4d5f, type: 3}
   m_Name: 
@@ -107964,7 +107966,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1.5748901, y: 1.3999939}
   m_SizeDelta: {x: -4.81, y: -14.400024}
   m_Pivot: {x: 0.5, y: 0.5}

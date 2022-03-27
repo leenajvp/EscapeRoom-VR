@@ -121,6 +121,7 @@ namespace UI
                     {
                         hide.playerNeedsHint = true;
                         hide.audioSource.Play();
+                        Debug.Log(hide.audioSource.isPlaying.ToString());
                         break;
                     }
                 }

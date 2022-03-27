@@ -26,19 +26,19 @@ public class ThrowBalls : MonoBehaviour
 
         if (joint == null && held)
         {
-            if (velocity.y > 1f)
+            if (velocity.y > 1f || velocity.y < -1f)
             {
                 rb.drag = 1;
                 Debug.Log("y slowed");
             }
 
-            if (velocity.x > 1f)
+            if (velocity.x > 1f || velocity.x < -1f)
             {
-                rb.drag = 1;
+                rb.drag = 2;
                 Debug.Log("x slowed");
             }
 
-            if (velocity.z > 1f)
+            if (velocity.z > 1f || velocity.z < -1f)
             {
                 rb.drag = 2;
                 Debug.Log("z slowed");
