@@ -14,7 +14,7 @@ public class ThrowBalls : MonoBehaviour
 
     void Update()
     {
-        float maxDarg = 1.5f;
+        float maxDarg = 1f;
 
         if (transform.childCount != 0)
         {
@@ -26,13 +26,28 @@ public class ThrowBalls : MonoBehaviour
         {
             if (velocity.z > -0.5f || velocity.z < -0.5f || velocity.x > -0.5f || velocity.x < -0.5f || velocity.y > 0.5f || velocity.y < -0.5f)
             {
-                rb.mass += 2f;
+                rb.mass += 5f;
 
                 if (rb.drag <= maxDarg)
-                    rb.drag += 1f;
+                    rb.drag += 0.1f;
 
                 Debug.Log("speed");
             }
+
+            if (velocity.z < -3f || velocity.x > -3f)
+            {
+                rb.drag += 0.5f * Time.deltaTime;
+                rb.mass += 5 * Time.deltaTime;
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (held)
+        {
+            rb.drag = 0;
+            rb.mass = 0;
         }
     }
 }

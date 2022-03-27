@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Button_Puzzle_Glow
+  m_Shader: {fileID: -6465566751694194690, guid: f6f7b81d6446e77448a9a1c830eb3e89,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_4B61A53C:
+        m_Texture: {fileID: 2800000, guid: ddb3f8eb1144d0543ae06aa65309f022, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_AA67CDE8:
+        m_Texture: {fileID: 2800000, guid: 42c8112df52e81747af96bdeb00fb0fb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_54638963: 0
+    - Vector1_86495EB4: 1.28
+    - Vector1_AC82A07C: 0
+    m_Colors:
+    - Color_600361A: {r: 1, g: 1, b: 1, a: 0}
+    - Color_D8172DD0: {r: 1.247059, g: 1.098039, b: 0.172549, a: 0}

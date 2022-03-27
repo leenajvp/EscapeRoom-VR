@@ -40,6 +40,7 @@ namespace Controllers
 
         [Header("Climbing - Teleport")]
         public Transform teleportPoint;
+        public AudioSource audioSource;
 
         void Start()
         {
@@ -243,6 +244,9 @@ namespace Controllers
             {
                 climber.transform.position = teleportPoint.transform.position;
                 climber.ClearHand();
+                currentPoint = null;
+                audioSource.Play();
+                
             }
         }
 

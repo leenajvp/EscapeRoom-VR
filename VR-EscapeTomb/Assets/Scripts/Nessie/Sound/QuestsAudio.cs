@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class QuestsAudio : MonoBehaviour
 {
-    [Header("Audio")]
+    [Header("Audio Sources")]
     public AudioSource PlayerAudioSource;
+    public AudioSource musicAudioSource;
+    public AudioSource endGameAudioSource;
 
     [Header("Game Manager")]
     public GameManager gameManager;
@@ -15,6 +17,10 @@ public class QuestsAudio : MonoBehaviour
 
     private void Start()
     {
+        
+        musicAudioSource.Play();
+        endGameAudioSource.Stop();
+
         q1Play = false;
         Q2Play = false;
         Q3Play = false;
@@ -26,6 +32,7 @@ public class QuestsAudio : MonoBehaviour
     private void Update()
     {
         checkQuests();
+        EndGameCheck();
     }
 
     private void checkQuests()
@@ -68,16 +75,41 @@ public class QuestsAudio : MonoBehaviour
             Q6Play = true;
         }
 
-       if(gameManager.gameComplete && !gameCompletePlay)
-        {
-            PlayAudio();
-            gameCompletePlay = true;
-        }
 
     }
 
     private void PlayAudio()
     {
         PlayerAudioSource.Play();
+    }
+
+    private void EndGameCheck()
+    {
+        if (gameManager.gameComplete && !gameCompletePlay)
+        {
+
+            changeMusic();
+
+        }
+    }
+
+    private void changeMusic()
+    {
+        musicAudioSource.Pause();
+        endGameAudioSource.Play();
+
+        gameCompletePlay = true;
+        Debug.Log("Changing");
+        StartCoroutine(EndGameTimeCheck());
+
+    }
+
+    IEnumerator EndGameTimeCheck()
+    {
+        yield return new WaitForSeconds(65f); 
+        endGameAudioSource.Stop();
+        musicAudioSource.UnPause();
+        
+
     }
 }

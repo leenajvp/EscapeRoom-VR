@@ -18,7 +18,7 @@ namespace Audio {
 
             soundLength = audioSource.clip.length;
 
-           button = GetComponent<Buttons>();
+             button = GetComponent<Buttons>();
         }
 
         private void checkPush()
