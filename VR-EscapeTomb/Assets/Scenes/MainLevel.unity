@@ -2462,8 +2462,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67782831}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -2.05, y: 0.88, z: -3.52}
+  m_LocalRotation: {x: -0, y: 0.29765958, z: -0, w: -0.9546721}
+  m_LocalPosition: {x: -4.878, y: 0.88, z: -8.346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1723901461}
@@ -2474,7 +2474,7 @@ Transform:
   - {fileID: 477637365}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 325.366, z: 0}
 --- !u!1001 &71095036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4729,7 +4729,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 2.7672625
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -6885,7 +6885,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c5ec9abe643b9084781b2786ec118d5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.664
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5ec9abe643b9084781b2786ec118d5d,
         type: 3}
@@ -15754,7 +15754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605500708}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.611, y: 1.0260465, z: 0.716}
+  m_LocalPosition: {x: -0.611, y: 1.0260465, z: 0.708}
   m_LocalScale: {x: -1.4464378, y: -0.33416015, z: -0.38675666}
   m_Children:
   - {fileID: 574713389}
@@ -21003,8 +21003,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: c00959ff5ce2e594e980b6ea3437896a, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -21013,7 +21013,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 2.6775255
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -23001,7 +23001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5096aefd3923b60408b18f063b1098a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 874396099}
+  audioSource: {fileID: 143860589}
   rigiBod: {fileID: 0}
   isMoving: 0
   thud: {fileID: 0}
@@ -25582,7 +25582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9930274c78d49bc4b9aa9f64b8a6c398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 143860589}
   finalsPos: 0
   startPos: 0
   isRotating: 0
@@ -53003,7 +53003,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: a4182dc58e064674d87842cf3ebc6994,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: bc2fc690176a4ab42b41dcbc660cd73e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd8fbe111a1a7314fb31d6b1c6eae13b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -53096,7 +53096,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582813067566375975}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742e45577dcbec842a0138174bae2013, type: 3}
   m_Name: 
@@ -53494,7 +53494,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: a4182dc58e064674d87842cf3ebc6994,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: bc2fc690176a4ab42b41dcbc660cd73e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd8fbe111a1a7314fb31d6b1c6eae13b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -53587,7 +53587,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076850632187467828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742e45577dcbec842a0138174bae2013, type: 3}
   m_Name: 
@@ -55189,7 +55189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 67782831}
   playerStartPosition: {fileID: 705733716}
-  isTesting: 1
+  isTesting: 0
   door:
   - {fileID: 1916256373}
   - {fileID: 1232008797}
@@ -56960,7 +56960,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: a4182dc58e064674d87842cf3ebc6994,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: bc2fc690176a4ab42b41dcbc660cd73e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd8fbe111a1a7314fb31d6b1c6eae13b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -57053,7 +57053,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623545439176661178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742e45577dcbec842a0138174bae2013, type: 3}
   m_Name: 
@@ -57667,7 +57667,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: a4182dc58e064674d87842cf3ebc6994,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: bc2fc690176a4ab42b41dcbc660cd73e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd8fbe111a1a7314fb31d6b1c6eae13b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -57760,7 +57760,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8416272007765636512}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742e45577dcbec842a0138174bae2013, type: 3}
   m_Name: 
@@ -57988,7 +57988,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: a4182dc58e064674d87842cf3ebc6994,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: bc2fc690176a4ab42b41dcbc660cd73e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd8fbe111a1a7314fb31d6b1c6eae13b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -58081,7 +58081,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8707273951235716181}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742e45577dcbec842a0138174bae2013, type: 3}
   m_Name: 

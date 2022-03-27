@@ -17,13 +17,13 @@ namespace ButtonPuzzle
         private float timer = 0;
         private Vector3 defaultPos;
         private Rigidbody rb;
-
+        private AudioSource audioSource;
         public GameObject trigger;
         float pressTimer = 0;
 
         void Start()
         {
-            
+            audioSource = GetComponent<AudioSource>();
             rb = GetComponent<Rigidbody>();
             pressed = false;
             reset = false;
@@ -48,6 +48,11 @@ namespace ButtonPuzzle
                     timer = 0;
                 }
             }
+        }
+
+        public void Sound()
+        {
+            audioSource.Play();
         }
 
         private void OnCollisionEnter(Collision collision)

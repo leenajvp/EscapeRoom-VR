@@ -112,7 +112,7 @@ namespace UI
 
         private void GetClue()
         {
-            //Check quest 1 item puzzle
+           // Check quest 1 item puzzle
             if (!statuePuzzle.quest1Complete)
             {
                 foreach (Hints hide in quest1Clues)
@@ -121,7 +121,6 @@ namespace UI
                     {
                         hide.playerNeedsHint = true;
                         hide.audioSource.Play();
-                        Debug.Log(hide.audioSource.isPlaying.ToString());
                         break;
                     }
                 }
@@ -145,11 +144,11 @@ namespace UI
                 return;
             }
 
-            //Check quest 4 rotation puzzle
+           // Check quest 4 rotation puzzle
             if (!rotPuzzle.isPuzzleCompleted)
             {
                 quest4Clues.ForEach(hint => hint.playerNeedsHint = true);
-                quest4Clues.ForEach(hint => hint.audioSource.Play());
+                quest4Clues[1].audioSource.Play();
                 return;
             }
 
@@ -157,7 +156,7 @@ namespace UI
             if (!finalPuzzle.gameComplete)
             {
                 quest5Clues.ForEach(hint => hint.playerNeedsHint = true);
-                quest5Clues.ForEach(hint => hint.audioSource.Play());
+                quest5Clues[1].audioSource.Play();
             }
         }
 
