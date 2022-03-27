@@ -73,12 +73,12 @@ public class GameManager : MonoBehaviour
             {
                 door[1].MoveDoor();
                 altarTeleport.gameObject.SetActive(true);
-                if (papirusTeleport)
-                {
-                    for (int i = 0; i < papirus.Length; i++)
-                        papirus[i].SetActive(true);
-                }
                 q4 = true;
+            }
+            if (papirusTeleport)
+            {
+                for (int i = 0; i < papirus.Length; i++)
+                    papirus[i].SetActive(true);
             }
 
         }
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         {
             if (!q6)
             {
-                door[2].MoveDoor();
+                door[2].open = true;
                 gameComplete = true;
                 foreach (GameObject t in exitGameTeleports)
                     gameObject.SetActive(true);
