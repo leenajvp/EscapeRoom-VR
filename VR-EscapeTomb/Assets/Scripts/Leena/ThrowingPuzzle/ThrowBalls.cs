@@ -28,7 +28,7 @@ public class ThrowBalls : MonoBehaviour
         {
             if (velocity.z > -0.5f || velocity.z < -0.5f || velocity.x > -0.5f || velocity.x < -0.5f || velocity.y > 0.5f || velocity.y < -0.5f)
             {
-                rb.mass += 1f;
+                rb.mass += 0.5f;
 
                 if (rb.drag <= maxDarg)
                     rb.drag += 0.1f;
