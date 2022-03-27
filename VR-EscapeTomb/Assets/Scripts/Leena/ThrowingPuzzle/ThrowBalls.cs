@@ -20,8 +20,6 @@ public class ThrowBalls : MonoBehaviour
         {
             velocity = rb.velocity;
             held = true;
-            rb.mass = 0;
-            rb.drag = 0;
         }
 
         if (transform.childCount == 0 && held)
@@ -32,6 +30,8 @@ public class ThrowBalls : MonoBehaviour
 
                 if (rb.drag <= maxDarg)
                     rb.drag += 0.1f;
+
+                Debug.Log("speed");
             }
         }
     }
