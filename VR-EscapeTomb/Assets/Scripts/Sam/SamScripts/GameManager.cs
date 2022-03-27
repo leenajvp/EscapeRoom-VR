@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public List<Papirus> Items = new List<Papirus>();
     public bool gameComplete = false;
 
-    private bool q1, q2, q3, q4, q5, q6;
+    public bool q1, q2, q3, q4, q5, q6;
 
 
     // Start is called before the first frame update

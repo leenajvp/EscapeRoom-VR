@@ -7484,7 +7484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433c686dbca7e754686d3e51cecf4d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlocked: 0
+  unlocked: 1
   open: 0
   moveAxis: 3
   moveBackAmount: 0.1
@@ -18553,7 +18553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433c686dbca7e754686d3e51cecf4d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlocked: 0
+  unlocked: 1
   open: 0
   moveAxis: 0
   moveBackAmount: 0.1
@@ -45145,7 +45145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433c686dbca7e754686d3e51cecf4d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlocked: 1
+  unlocked: 0
   open: 0
   moveAxis: 2
   moveBackAmount: 0.1
@@ -51928,7 +51928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2086899099}
-  - component: {fileID: 2086899101}
+  - component: {fileID: 2086899098}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -51936,6 +51936,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2086899098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086899097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ba792e780826b4e8010b3e9a7b57b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerAudioSource: {fileID: 330718450}
+  gameManager: {fileID: 4784684544195036031}
+  q1Play: 0
+  Q2Play: 0
+  Q3Play: 0
+  Q4Play: 0
+  Q5Play: 0
+  Q6Play: 0
 --- !u!4 &2086899099
 Transform:
   m_ObjectHideFlags: 0
@@ -51953,35 +51973,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2086899101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086899097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af606ea96ef96fb418ef8693d315fe82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  PlayerAudioSource: {fileID: 330718450}
-  questMan: {fileID: 4784684545765286097}
-  throwPuzzle: {fileID: 120367587}
-  rotaPuzzle: {fileID: 616158449}
-  wheelPuzzle: {fileID: 0}
-  buttonPuzzle: {fileID: 919132147928844565}
-  quest4:
-    part1: 0
-    part2: 0
-    part3: 0
-  Quest1Sound: 0
-  throwPuzzleSound: 0
-  rotaPuzzleSound: 0
-  wheelPuzzleSound: 0
-  buttonPuzzleSound: 0
-  quest4Sound: 0
 --- !u!4 &2091154550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4043172837206585890, guid: 39a344472f55836499a7bfddba4a074f,
@@ -56055,6 +56046,12 @@ MonoBehaviour:
   - {fileID: 1938091462}
   Items: []
   gameComplete: 0
+  q1: 0
+  q2: 0
+  q3: 0
+  q4: 0
+  q5: 0
+  q6: 0
 --- !u!65 &4784684544229989384
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -21,6 +21,8 @@ namespace Audio {
         public ButtonPuzzleManager buttonPuzzle;
         public Quest4 quest4;
 
+        public GameManager gameManager;
+
       
 
        [Header("Quest Sound Bools")] //Ensuring the sound only plays once
@@ -33,7 +35,7 @@ namespace Audio {
 
         public override void Start()
         {
-           
+         
         }
 
         private void Update()
