@@ -8,13 +8,15 @@ namespace Audio {
     {
         [Header("Other Classes")]
         public FixTelep teleporting;
+        public AudioClip SandStep;
 
-       
 
-        private void Update()
+
+        private void FixedUpdate()
         {
             checkTeleport();
         }
+       
 
         private void checkTeleport()
         {
@@ -23,12 +25,18 @@ namespace Audio {
         if (teleporting.isTeleporting && !audioSource.isPlaying)
             {
                 audioSource.Play();
+                Debug.Log("TELEPORT");
+            }
+
+        if (!teleporting.isTeleporting)
+            {
+                audioSource.Stop();
             }
 
 
-            
-
 
         }
+
+         
     }
 }

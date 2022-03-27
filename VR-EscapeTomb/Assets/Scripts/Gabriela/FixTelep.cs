@@ -92,6 +92,9 @@ public class FixTelep : MonoBehaviour
 
                             if (teleportTime >= teleportGap)
                             {
+                                //NESSIE - AUDIO
+                                isTeleporting = true;
+
                                 fillPod = false;
                                 CameraXR.transform.position = hit.transform.position;
                                 laser.gameObject.SetActive(false);
@@ -99,9 +102,8 @@ public class FixTelep : MonoBehaviour
                                 climber.ClearHand();
                                 triggerValue = false;
 
-                                //NESSIE - AUDIO
-                                isTeleporting = true;
-                              //  Debug.Log("istele");
+                                isTeleporting = false;
+                              
                                 
                             }
                             return;
@@ -119,6 +121,9 @@ public class FixTelep : MonoBehaviour
                     }
                     else
                     {
+                        //NESSIE - AUDIO
+                        isTeleporting = false;
+
                         laser.SetPosition(i + 1, origin + offset);
                         origin += offset;
                     }
