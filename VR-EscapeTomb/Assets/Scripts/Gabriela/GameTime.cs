@@ -39,10 +39,15 @@ public class GameTime : MonoBehaviour
             if (startTime > 0)
             {
                 startTime -= Time.deltaTime;
-                timerText.text = totalTime.ToString();
-                int minutes = (int)totalTime / 60;
-                int seconds = (int)totalTime % 60;
-                timerText.text = string.Format(" {0} : {1} ", minutes.ToString("00"), seconds.ToString("00"));
+                float minutes = Mathf.FloorToInt(startTime / 60);
+                float seconds = Mathf.FloorToInt(startTime % 60);
+                timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+                //startTime -= Time.deltaTime;
+                //timerText.text = totalTime.ToString();
+                //int minutes = (int)totalTime / 60;
+                //int seconds = (int)totalTime % 60;
+                //timerText.text = string.Format(" {0} : {1} ", minutes.ToString("00"), seconds.ToString("00"));
             }
 
             else

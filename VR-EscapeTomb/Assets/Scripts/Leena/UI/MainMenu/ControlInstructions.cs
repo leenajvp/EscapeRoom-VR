@@ -5,30 +5,49 @@ using UnityEngine.XR;
 
 public class ControlInstructions : UIFade
 {
+    public enum RequiredButton { trigger, grib};
+    [Header("Instruction Panel")]
+    [SerializeField]private bool activateFromStart = false;
+    public RequiredButton instructedButton;
     [SerializeField] private float activateAfterSeconds = 5.0f;
-    public bool startGame;
     private List<InputDevice> rightHandedControllers = new List<InputDevice>();
     private bool triggerValue;
+
+    protected override void Start()
+    {
+        base.Start();
+        FadeOut();
+
+        if (activateFromStart)
+            StartCoroutine(ShowInstructions());
+    }
 
     protected override void Update()
     {
         base.Update();
-        FadeIn();
         var desiredCharacteristics = InputDeviceCharacteristics.HeldInHand | InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
         var triggerButton = CommonUsages.triggerButton;
+        var gribButton = CommonUsages.gripButton;
         InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, rightHandedControllers);
 
-        if (gameObject.activeSelf)
+        if (fadeInOrOut == InOut.FadeIn)
         {
-            gameObject.SetActive(true);
-
             foreach (var controller in rightHandedControllers)
             {
-                Debug.Log(controller);
-                if (controller.TryGetFeatureValue(triggerButton, out triggerValue) && triggerValue)
+                if(instructedButton == RequiredButton.trigger)
                 {
-                    gameObject.SetActive(true);
-                    FadeOut();
+                    if (controller.TryGetFeatureValue(triggerButton, out triggerValue) && triggerValue)
+                    {
+                        FadeOut();
+                    }
+                }
+
+                else
+                {
+                    if (controller.TryGetFeatureValue(gribButton, out triggerValue) && triggerValue)
+                    {
+                        FadeOut();
+                    }
                 }
             }
         }
@@ -37,6 +56,6 @@ public class ControlInstructions : UIFade
     public IEnumerator ShowInstructions()
     {
         yield return new WaitForSeconds(activateAfterSeconds);
-        gameObject.SetActive(true);
+        FadeIn();
     }
 }

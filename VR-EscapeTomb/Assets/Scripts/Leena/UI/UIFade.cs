@@ -3,11 +3,12 @@
 [RequireComponent(typeof(CanvasGroup))]
 public class UIFade : MonoBehaviour
 {
-    public enum InOut { FadeIn, FadeOut}
+    public enum InOut { FadeIn, FadeOut }
     public InOut fadeInOrOut;
     [Header("Fade In/Out Speed")]
     [SerializeField] protected float speed = 1f;
     [SerializeField] protected CanvasGroup canvasGroup;
+    [SerializeField] private bool disableOn0;
     protected float zeroAlpha = 0f;
 
     protected virtual void Start()
@@ -38,9 +39,12 @@ public class UIFade : MonoBehaviour
         fadeInOrOut = InOut.FadeOut;
         canvasGroup.alpha -= Time.deltaTime * speed;
 
-        if (canvasGroup.alpha <= 0.1)
+        if (disableOn0)
         {
-            gameObject.SetActive(false);
+            if (canvasGroup.alpha <= 0.1)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

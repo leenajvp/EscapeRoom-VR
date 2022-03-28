@@ -48,7 +48,7 @@ namespace ButtonPuzzle
             if (entry == currentNum)
             {
                 currentNum++;
-                buttons[currentNum].Sound();
+                buttons[entry].Sound();
                 return;
             }
 

@@ -34,7 +34,7 @@ public class ThrowBalls : MonoBehaviour
                 Debug.Log("speed");
             }
 
-            if (velocity.z < -3f || velocity.x > -3f)
+            if (velocity.z < -4f || velocity.x > -4f)
             {
                 rb.drag += 0.5f * Time.deltaTime;
                 rb.mass += 5 * Time.deltaTime;

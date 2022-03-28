@@ -87,7 +87,7 @@ namespace Controllers
                 }
             }
 
-            else if (isGrabbing && gribStrenght < 0.9f)
+            else if (isGrabbing && gribStrenght < 0.8f)
             {
                 isGrabbing = false;
                 Release();
