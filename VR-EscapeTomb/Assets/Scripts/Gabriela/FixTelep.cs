@@ -20,7 +20,7 @@ public class FixTelep : MonoBehaviour
     private float teleportTime;
     private bool triggerValue;
     private bool fillPod;
-
+    public bool jakijest = false;
     public GameObject[] pods;
     private GameObject[] shaders;
 
@@ -84,11 +84,10 @@ public class FixTelep : MonoBehaviour
                         if (hit.transform.gameObject.tag == "Teleport")
 
                         {
-                            laser.material.color = teleportMaterial.color;
+                            laser.material = teleportMaterial;
+                            //laser.material.color = teleportMaterial.color;
                             StartCoroutine(TeleportCorutine());
                             teleportTime = teleportTime + 1f * Time.deltaTime;
-
-                        
 
                             if (teleportTime >= teleportGap)
                             {
@@ -97,33 +96,29 @@ public class FixTelep : MonoBehaviour
 
                                 fillPod = false;
                                 CameraXR.transform.position = hit.transform.position;
+                                laser.material = normalMaterial;
                                 laser.gameObject.SetActive(false);
                                 RestartTeleportTime();
                                 climber.ClearHand();
                                 triggerValue = false;
-
-                                
-                              
-                                
                             }
                             return;
 
                         }
-                        else
+                        else 
                         {
+                            //laser.material.color = normalMaterial.color;
+                            laser.material = normalMaterial;
                             //NESSIE - AUDIO
                             isTeleporting = false;
-                            
-
-                            laser.material.color = normalMaterial.color;
                             return;
                         }
                     }
                     else
                     {
+                        
                         //NESSIE - AUDIO
                         isTeleporting = false;
-
                         laser.SetPosition(i + 1, origin + offset);
                         origin += offset;
                     }
@@ -131,6 +126,7 @@ public class FixTelep : MonoBehaviour
             }
             else
             {
+                laser.material = normalMaterial;
                 //pod restart color
                 foreach (GameObject pod in pods)
                 {
@@ -145,6 +141,7 @@ public class FixTelep : MonoBehaviour
                 return;
             }
         }
+        
     }
     void RestartTeleportTime()
     {
@@ -169,9 +166,6 @@ public class FixTelep : MonoBehaviour
                         fillRender.gameObject.GetComponent<Image>().fillAmount += Mathf.MoveTowards(0, 1, speed * Time.deltaTime);
                         selectionRender.SetActive(true);
                         yield return new WaitForSeconds(2);
-                        
-                       
-
                     }   
                 }
             }
