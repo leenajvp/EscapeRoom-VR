@@ -51156,7 +51156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84d5d8f128b94fc4d8f0f04815afbe27, type: 2}
+  - {fileID: 2100000, guid: 3f887d0c3a743184797e01efe115ef8e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106983,8 +106983,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cca93039fcd2c4b9a99ae72b494d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flame: {fileID: 1003698106}
   isLit: 0
+  flame: {fileID: 1003698106}
   MenuToActivate: {fileID: 261584602}
   otherLamps:
   - {fileID: 6862609318786628415}
@@ -107981,8 +107981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cca93039fcd2c4b9a99ae72b494d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flame: {fileID: 2068712294}
   isLit: 0
+  flame: {fileID: 2068712294}
   MenuToActivate: {fileID: 351998406}
   otherLamps:
   - {fileID: 7829982442943392360}
@@ -108265,8 +108265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cca93039fcd2c4b9a99ae72b494d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flame: {fileID: 1586987872}
   isLit: 0
+  flame: {fileID: 1586987872}
   MenuToActivate: {fileID: 593899228}
   otherLamps:
   - {fileID: 6862609318786628415}

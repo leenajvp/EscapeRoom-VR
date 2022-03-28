@@ -79,7 +79,6 @@ public class FixTelep : MonoBehaviour
                         for (int j = i + 1; j < laser.positionCount; j++)
                         {
                             laser.SetPosition(j, hit.point);
-
                         }
                         if (hit.transform.gameObject.tag == "Teleport")
 
@@ -87,8 +86,6 @@ public class FixTelep : MonoBehaviour
                             laser.material.color = teleportMaterial.color;
                             StartCoroutine(TeleportCorutine());
                             teleportTime = teleportTime + 1f * Time.deltaTime;
-
-                        
 
                             if (teleportTime >= teleportGap)
                             {
@@ -101,9 +98,6 @@ public class FixTelep : MonoBehaviour
                                 RestartTeleportTime();
                                 climber.ClearHand();
                                 triggerValue = false;
-
-                                
-                              
                                 
                             }
                             return;
@@ -114,7 +108,6 @@ public class FixTelep : MonoBehaviour
                             //NESSIE - AUDIO
                             isTeleporting = false;
                             
-
                             laser.material.color = normalMaterial.color;
                             return;
                         }
@@ -152,7 +145,6 @@ public class FixTelep : MonoBehaviour
     }
     public IEnumerator TeleportCorutine()
     {
-
         if (hit.transform.gameObject.tag == "Teleport" )
         {
             //pod color change
@@ -169,8 +161,6 @@ public class FixTelep : MonoBehaviour
                         fillRender.gameObject.GetComponent<Image>().fillAmount += Mathf.MoveTowards(0, 1, speed * Time.deltaTime);
                         selectionRender.SetActive(true);
                         yield return new WaitForSeconds(2);
-                        
-                       
 
                     }   
                 }
