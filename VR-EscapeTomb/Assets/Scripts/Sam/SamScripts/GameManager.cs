@@ -30,8 +30,8 @@ public class GameManager : MonoBehaviour
         SetSounds();
         gameComplete = false;
 
-       // foreach (GameObject t in exitGameTeleports)
-          //  t.gameObject.SetActive(false);
+       foreach (GameObject t in exitGameTeleports)
+       t.gameObject.SetActive(false);
     }
     public void Update()
     {
@@ -96,10 +96,9 @@ public class GameManager : MonoBehaviour
             {
                 door[2].open = true;
                 gameComplete = true;
-                foreach (GameObject t in exitGameTeleports)
-                    gameObject.SetActive(true);
             }
-
+            foreach (GameObject t in exitGameTeleports)
+                t.gameObject.SetActive(true);
         }
     }
     public void Add(Papirus papirus)
