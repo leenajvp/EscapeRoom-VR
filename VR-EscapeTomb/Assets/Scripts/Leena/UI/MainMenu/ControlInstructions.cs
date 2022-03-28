@@ -5,11 +5,14 @@ using UnityEngine.XR;
 
 public class ControlInstructions : UIFade
 {
-    public enum RequiredButton { trigger, grib};
+    public enum RequiredButton { trigger, grib };
+
     [Header("Instruction Panel")]
-    [SerializeField]private bool activateFromStart = false;
+    [SerializeField] private bool activateFromStart = false;
     public RequiredButton instructedButton;
+    [Tooltip("Wait time before actiovation when called")]
     [SerializeField] private float activateAfterSeconds = 5.0f;
+
     private List<InputDevice> rightHandedControllers = new List<InputDevice>();
     private bool triggerValue;
 
@@ -34,7 +37,7 @@ public class ControlInstructions : UIFade
         {
             foreach (var controller in rightHandedControllers)
             {
-                if(instructedButton == RequiredButton.trigger)
+                if (instructedButton == RequiredButton.trigger)
                 {
                     if (controller.TryGetFeatureValue(triggerButton, out triggerValue) && triggerValue)
                     {

@@ -31,7 +31,6 @@ public class SlidingDoor : MonoBehaviour
     public void MoveDoor()
     {
         open = !open;
-
         doorSound.Play();
     }
 

@@ -5,7 +5,6 @@ public class ThrowBalls : MonoBehaviour
     private bool held = false;
     private Vector3 velocity;
     private Rigidbody rb;
-    private GameObject holdingHand;
 
     void Start()
     {

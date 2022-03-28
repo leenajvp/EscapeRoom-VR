@@ -20,7 +20,6 @@ public class UpdateText : UIFade
                 FadeIn();
             }
         }
-
     }
 
     public void SetText()

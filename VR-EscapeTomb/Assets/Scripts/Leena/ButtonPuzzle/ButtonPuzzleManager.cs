@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace ButtonPuzzle
@@ -7,7 +6,6 @@ namespace ButtonPuzzle
     public class ButtonPuzzleManager : MonoBehaviour
     {
         public bool completed;
-
         [Header("Button Puzzle")]
         [Tooltip("All buttons in list should be childed to this object")]
         [SerializeField] private List<Buttons> buttons = new List<Buttons>();

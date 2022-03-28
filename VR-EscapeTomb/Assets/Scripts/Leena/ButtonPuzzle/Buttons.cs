@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ButtonPuzzle
 {
@@ -8,12 +7,12 @@ namespace ButtonPuzzle
         [Header("Button values")]
         [Tooltip("Object to manage the buttons")]
         [SerializeField] private ButtonPuzzleManager manager;
-        //[SerializeField] string orderNumber = "1";
         [SerializeField] public int num = 1;
         [Tooltip("Speed that the button returns to default position")]
         [SerializeField] float resetSpeed = 1.0f;
         [HideInInspector] public bool reset = false;
         public bool pressed = false;
+
         private float timer = 0;
         private Vector3 defaultPos;
         private Rigidbody rb;
@@ -43,7 +42,6 @@ namespace ButtonPuzzle
 
                 if (timer >= 1.5f)
                 {
-                  //  rb.isKinematic = false;
                     reset = false;
                     timer = 0;
                 }
@@ -57,7 +55,7 @@ namespace ButtonPuzzle
 
         private void OnCollisionEnter(Collision collision)
         {
-            if(collision.gameObject == trigger && !pressed)
+            if (collision.gameObject == trigger && !pressed)
             {
                 rb.isKinematic = true;
                 manager.AddNumber(num);
@@ -72,7 +70,6 @@ namespace ButtonPuzzle
             {
                 pressed = false;
             }
-
         }
     }
 }

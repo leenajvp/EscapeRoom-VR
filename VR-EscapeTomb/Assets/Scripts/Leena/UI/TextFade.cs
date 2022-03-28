@@ -4,6 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CanvasGroup), typeof(Text))]
 public class TextFade : MonoBehaviour
 {
+    [Header("UI Text fade")]
     [SerializeField] private float changeSpeed = 0.5f;
     private Text text;
     private CanvasGroup canvasGroup;
@@ -17,7 +18,6 @@ public class TextFade : MonoBehaviour
     }
     void Update()
     {
-
         if (!change && canvasGroup.alpha < 0.9f)
         {
             canvasGroup.alpha += changeSpeed * Time.deltaTime;

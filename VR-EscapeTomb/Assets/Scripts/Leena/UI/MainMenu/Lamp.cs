@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Lamp : MonoBehaviour, IDiegeticUI
 {
-    [SerializeField] protected GameObject flame;
+    [Header("Lamps")]
     public bool isLit;
+    [SerializeField] protected GameObject flame;
     [SerializeField] private GameObject MenuToActivate;
     [SerializeField] private List<Lamp> otherLamps = new List<Lamp>();
 
@@ -39,7 +40,6 @@ public class Lamp : MonoBehaviour, IDiegeticUI
 
     private void GetMenu()
     {
-        // could put sound here
         MenuToActivate.SetActive(true);
         MenuToActivate.GetComponent<UIFade>().FadeIn();
     }
@@ -49,6 +49,5 @@ public class Lamp : MonoBehaviour, IDiegeticUI
         isLit = false;
         flame.SetActive(false);
         MenuToActivate.GetComponent<UIFade>().FadeOut();
-        // Could add sound here for cancel
     }
 }

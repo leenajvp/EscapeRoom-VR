@@ -4,15 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Stick : MonoBehaviour
 {
+    [Header("Sticks to lit lamps")]
     public bool isLit;
     public GameObject fire;
     public float burnTime = 10.0f;
 
-    private AudioSource sfx;
     private bool hitFire = false;
     private bool soundPlaying = false;
-
     private float soundLenght;
+    private AudioSource sfx;
 
     private void Start()
     {
@@ -74,5 +74,4 @@ public class Stick : MonoBehaviour
         hitFire = false;
         sfx.Stop();
     }
-
 }

@@ -112,7 +112,7 @@ namespace UI
 
         private void GetClue()
         {
-           // Check quest 1 item puzzle
+            // Check quest 1 item puzzle
             if (!statuePuzzle.quest1Complete)
             {
                 foreach (Hints hide in quest1Clues)
@@ -144,7 +144,7 @@ namespace UI
                 return;
             }
 
-           // Check quest 4 rotation puzzle
+            // Check quest 4 rotation puzzle
             if (!rotPuzzle.isPuzzleCompleted)
             {
                 quest4Clues.ForEach(hint => hint.playerNeedsHint = true);
@@ -177,7 +177,6 @@ namespace UI
             reset = true;
             exitDoor.GetComponent<SlidingDoor>().MoveDoor();
             exitTeleportation.SetActive(true);
-
         }
     }
 }

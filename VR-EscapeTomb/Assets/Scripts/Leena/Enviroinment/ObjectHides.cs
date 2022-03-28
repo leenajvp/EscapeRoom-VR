@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ObjectHides : MonoBehaviour
 {
     public enum MoveDir { xPlus, zPlus, xMinus, zMinus }
@@ -32,11 +33,6 @@ public class ObjectHides : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     private void Update()
     {
         Sounds();
@@ -55,18 +51,14 @@ public class ObjectHides : MonoBehaviour
 
             if (moveAxis == MoveDir.zPlus)
                 currentPos.position = new Vector3(currentPos.position.x, currentPos.position.y, Mathf.Lerp(currentPos.position.z, defaultPos.z + moveBackAmount, Time.deltaTime * openSpeed)); // move back z
-           movingXZ = true;
-            //NESSIE - AUDIO
-            //if (!audioSource.isPlaying)
-            //    audioSource.PlayOneShot(moveBack);
+
+            movingXZ = true;
 
             if (openTime >= 1.0f)
             {
                 currentPos.position = new Vector3(currentPos.position.x, Mathf.Lerp(currentPos.position.y, defaultPos.y + moveUpkAmount, Time.deltaTime * openSpeed), currentPos.position.z); // move up
-                movingXZ=false;
+                movingXZ = false;
                 movingY = true;
-                //if (!audioSource.isPlaying)
-                //    audioSource.PlayOneShot(moveUp);
             }
         }
     }
@@ -83,6 +75,7 @@ public class ObjectHides : MonoBehaviour
         {
             if (!audioSource.isPlaying)
                 audioSource.PlayOneShot(moveUp);
+
             movingY = false;
         }
 

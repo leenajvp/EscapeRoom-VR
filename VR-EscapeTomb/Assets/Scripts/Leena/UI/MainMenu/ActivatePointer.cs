@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ActivatePointer : MonoBehaviour
 {
-    [SerializeField]private UIRaycast uiPointer;
+    [SerializeField] private UIRaycast uiPointer;
 
     private void OnEnable()
     {
