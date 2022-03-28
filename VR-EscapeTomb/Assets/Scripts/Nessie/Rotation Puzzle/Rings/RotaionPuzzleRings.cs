@@ -36,7 +36,7 @@ namespace RotationPuzzle {
         {
             if (transform.eulerAngles.y >= LowRotationTarget && transform.eulerAngles.y <= HighRotationTarget)
             {
-              //  Debug.Log("MIDDLE = TRUE");
+              
                 rotaPuzzleMain.isMiddlePartCompleted = true;
                 
             }
@@ -45,7 +45,7 @@ namespace RotationPuzzle {
             {
                 rotaPuzzleMain.isMiddlePartCompleted = false;
                 
-              //  Debug.Log("MIDDLE = FALSE");
+              
 
 
             }

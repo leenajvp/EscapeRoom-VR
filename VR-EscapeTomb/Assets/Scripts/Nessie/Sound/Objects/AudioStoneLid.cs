@@ -40,7 +40,7 @@ namespace Audio
             else
                 audioSource.Stop();
 
-            //COULD HAVE A THUD SOUND HERE
+           
             if (gameObject.transform.childCount == 0)
             {
                 if (!audioSource.isPlaying)
@@ -62,8 +62,7 @@ namespace Audio
 
             if (isMoving)
             {
-                // audioSource.Play();
-                //  Debug.Log("Moving");
+                
             }
         }
 

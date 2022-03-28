@@ -54,7 +54,7 @@ namespace Audio {
             startPos = transform.eulerAngles.y;
             yield return new WaitForSeconds(0.5f);
             finalsPos = transform.eulerAngles.y;
-          //  Debug.Log(finalsPos);
+          
 
           
         }

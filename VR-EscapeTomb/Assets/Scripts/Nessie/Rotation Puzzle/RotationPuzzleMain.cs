@@ -18,10 +18,7 @@ namespace RotationPuzzle {
         {
             rigiBods = GetComponentsInChildren<Rigidbody>();
 
-           /* foreach(Rigidbody rigibod in rigiBods)
-            {
-                rigiBods[i].GetComponent<Rigidbody>();
-            } */
+         
         }
 
         private void Update()

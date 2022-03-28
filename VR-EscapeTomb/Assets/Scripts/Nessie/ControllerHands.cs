@@ -222,7 +222,7 @@ namespace Controllers
                 heldObject = null;
             }
 
-            // isGrabbing = false;
+            
             followTarget = controller.gameObject.transform;
         }
 
@@ -236,7 +236,7 @@ namespace Controllers
             if (currentPoint)
             {
                 climber.SetHand(this);
-               // Debug.Log("grabbing point");
+              
 
             }
 
@@ -261,38 +261,24 @@ namespace Controllers
             currentPoint = null;
         }
 
-        /*   private void OnTriggerEnter(Collider other)
-           {
-               AddPoint(other.gameObject);
-           }*/
+      
 
 
         public void AddPoint(GameObject newObject)
         {
-            //Will be replaced with checking for layer/layer mask - Tag is just for testing 
-            /* if (newObject.CompareTag("ClimbPoint"))
-             {
-                 contactPoints.Add(newObject);
-             }*/
-
+             
+          
             contactPoints.Add(newObject);
 
-            // Debug.Log("Point Added");
         }
 
-        /* private void OnTriggerExit(Collider other)
-          {
-              RemovePoint(other.gameObject);
-          } */
+       
 
         public void RemovePoint(GameObject newObject)
         {
-            //  if (newObject.CompareTag("ClimbPoint"))
-            //{
+          
             contactPoints.Remove(newObject);
 
-            // Debug.Log("Point Removed");
-            //}
         }
         private void OnCollisionEnter(Collision collision)
         {
