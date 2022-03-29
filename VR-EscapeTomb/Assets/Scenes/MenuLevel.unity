@@ -20,10 +20,10 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.7169812, g: 0.30082786, b: 0.15557137, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.82
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -6541,13 +6541,13 @@ Transform:
   m_Children:
   - {fileID: 747500585}
   - {fileID: 125741721}
-  - {fileID: 183729061}
   - {fileID: 5001298890067712332}
   - {fileID: 1169506951}
-  - {fileID: 1618098674}
   - {fileID: 383602197}
   - {fileID: 761627017}
   - {fileID: 1296700401}
+  - {fileID: 183729061}
+  - {fileID: 1618098674}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -17796,7 +17796,7 @@ Transform:
   - {fileID: 751108258}
   - {fileID: 654380564}
   m_Father: {fileID: 213859491}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383607616
 GameObject:
@@ -35557,7 +35557,7 @@ Transform:
   - {fileID: 543450652992082557}
   - {fileID: 811392881}
   m_Father: {fileID: 213859491}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767912441
 GameObject:
@@ -62976,7 +62976,7 @@ Transform:
   - {fileID: 783372518}
   - {fileID: 174088275}
   m_Father: {fileID: 213859491}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1202391573 stripped
 Transform:
@@ -63633,7 +63633,7 @@ Transform:
   - {fileID: 647978354}
   - {fileID: 1685812692}
   m_Father: {fileID: 213859491}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1326458216
 PrefabInstance:
@@ -87696,7 +87696,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.6551724, b: 0, a: 1}
-  m_Intensity: 0.01
+  m_Intensity: 0.07
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -107504,7 +107504,7 @@ Transform:
   - {fileID: 2118011583}
   - {fileID: 778530708}
   m_Father: {fileID: 213859491}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5011519539814157864
 Transform:
