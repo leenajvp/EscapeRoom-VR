@@ -10,6 +10,5 @@ The given task was to design and develop a VR escape room game that implements g
 - [Samuel Krzyszpien](https://github.com/taksobie95) (Programming (Interactions and physics, Game Manager))
 - [Vanessa Pointer](https://github.com/Nessie-J) (Programming (Climbing, Puzzles), Sound Design and implementation, VFX)
 
-![menu1](https://user-images.githubusercontent.com/58009594/175833887-ee7adc2c-5573-48a1-a0f4-1441ffd98b9e.png)
-![Picture8](https://user-images.githubusercontent.com/58009594/175833885-a8f8c733-2e62-4469-bfb5-3cf1d612b4e5.png)
-![statues](https://user-images.githubusercontent.com/58009594/175833886-fe082fca-2595-48f4-8b3f-8f829671c79b.JPG)
+
+![Picture9](https://user-images.githubusercontent.com/58009594/175833992-7257ece3-c413-49b3-8009-095f0e109849.png)
