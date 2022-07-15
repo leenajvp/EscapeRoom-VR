@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -107151,7 +107151,7 @@ GameObject:
   - component: {fileID: 912463898}
   - component: {fileID: 912463900}
   - component: {fileID: 4568458226228234121}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CanvasPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

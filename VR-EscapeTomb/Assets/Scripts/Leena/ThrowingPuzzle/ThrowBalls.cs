@@ -36,15 +36,17 @@ public class ThrowBalls : MonoBehaviour
                 rb.drag += 0.5f * Time.deltaTime;
                 rb.mass += 5 * Time.deltaTime;
             }
+
+            held = false;
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (held)
+        if (!held)
         {
-            rb.drag = 0;
-            rb.mass = 0;
+            rb.drag = 0.5f;
+            rb.mass = 0.5f;
         }
     }
 }

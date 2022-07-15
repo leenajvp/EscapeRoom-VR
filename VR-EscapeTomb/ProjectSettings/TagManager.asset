@@ -13,6 +13,7 @@ TagManager:
   - Bowl
   - Shader
   - ClimbPoint
+  - Ground
   layers:
   - Default
   - TransparentFX
